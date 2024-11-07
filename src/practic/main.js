@@ -1,8 +1,8 @@
 // console.log('Hello World!');
 
-const arr = [1, 2, 3, 4, 5];
-const resultSumElementsArray = arr.reduce((a, b) => a + b);
-console.log(resultSumElementsArray);
+// const arr = [1, 2, 3, 4, 5];
+// const resultSumElementsArray = arr.reduce((a, b) => a + b);
+// console.log(resultSumElementsArray);
 
 //Комбинация клавиш для консоли коммитов
 //Сtrl + K
@@ -167,10 +167,11 @@ console.log(resultSumElementsArray);
    * Например, для [1, 2, 2] он должен вернуть 9
    *  1^2 + 2^2 + 2^2 =9.
    * */
-
-  function squareSum(numbers) {}
-
-  console.log(squareSum([1, 2])); //5
-  console.log(squareSum([0, 3, 4, 5])); //50
-  console.log(squareSum([])); //0
+  // function squareSum(numbers) {
+  //   return numbers.reduce((acc, curr) => acc + curr ** 2, 0);
+  // }
+  //
+  // console.log(squareSum([1, 2])); //5
+  // console.log(squareSum([0, 3, 4, 5])); //50
+  // console.log(squareSum([])); //0
 }
