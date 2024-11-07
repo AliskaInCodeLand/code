@@ -159,19 +159,43 @@
 // console.log(array.fill()); //заполняет массив элементами
 
 //CodeWars
+// {
+//   /**
+//    * Сумма квадратов (n)
+//    * Дополните функцию вычисления суммы квадратов так, чтобы она возводила в квадрат каждое переданное ей число, а затем суммировала результаты.
+//    *
+//    * Например, для [1, 2, 2] он должен вернуть 9
+//    *  1^2 + 2^2 + 2^2 =9.
+//    * */
+//   // function squareSum(numbers) {
+//   //   return numbers.reduce((acc, curr) => acc + curr ** 2, 0);
+//   // }
+//   //
+//   // console.log(squareSum([1, 2])); //5
+//   // console.log(squareSum([0, 3, 4, 5])); //50
+//   // console.log(squareSum([])); //0
+// }
+
 {
   /**
-   * Сумма квадратов (n)
-   * Дополните функцию вычисления суммы квадратов так, чтобы она возводила в квадрат каждое переданное ей число, а затем суммировала результаты.
+   * Перевернутые слова
+   * Дополните решение так, чтобы оно переворачивало все слова в переданной строке.
    *
-   * Например, для [1, 2, 2] он должен вернуть 9
-   *  1^2 + 2^2 + 2^2 =9.
-   * */
-  // function squareSum(numbers) {
-  //   return numbers.reduce((acc, curr) => acc + curr ** 2, 0);
-  // }
-  //
-  // console.log(squareSum([1, 2])); //5
-  // console.log(squareSum([0, 3, 4, 5])); //50
-  // console.log(squareSum([])); //0
+   * Слова разделяются ровно одним пробелом, без пробелов в начале или в конце.
+   *
+   * Пример (Ввод --> Вывод):
+   *
+   * "The greatest victory is that which requires no battle"
+   * --> "battle no requires which that is victory greatest The" */
+
+  function reverseWords(str) {
+    return str; // reverse those words
+  }
+
+  console.log(reverseWords("hello world!")); //"world! hello"
+  console.log(reverseWords("yoda doesn't speak like this")); //"this like speak doesn't yoda"
+  console.log(reverseWords("foobar")); // "foobar"
+  console.log(reverseWords("kata editor")); //"editor kata"
+  console.log(reverseWords("row row row your boat")); //"boat your row row row"
+  console.log(reverseWords("")); //""
 }
