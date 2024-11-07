@@ -147,3 +147,13 @@ console.log(resultSumElementsArray);
  * Значение NaN не равно ничему, включая себя.
  *
  * */
+
+//Мутабельные методы
+// console.log(array.pop()); //ничего не принимает
+// console.log(array.push()); //принимает элементы и возвращает новую длину
+// console.log(array.shift()); // для удаления первого элемента
+// console.log(array.unshift()); // для добавления первого элемента возвращает длину
+// console.log(array.sort()); //
+// console.log(array.reverse()); // toReverse
+// console.log(array.splice(-1, 0,)); //
+// console.log(array.fill()); //заполняет массив элементами
