@@ -179,19 +179,21 @@ const array = [
 // input: ["apple", "apple", "apple", "banana", "kiwi", "mango", "banana"]
 // output: {apple: 3, banana: 2, kiwi: 1, mango: 1}
 
-function fructs(array) {
-  const obj = {};
-  for (let i = 0; i < array.length; i++) {
-    debugger;
-    if (!obj[array[i]]) {
-      obj[array[i]] = 1;
-    } else {
-      obj[array[i]]++;
-    }
-  }
-  return obj;
-}
+// function fructs(array) {
+//   const obj = {};
+//   for (let i = 0; i < array.length; i++) {
+//     debugger;
+//     if (!obj[array[i]]) {
+//       obj[array[i]] = 1;
+//     } else {
+//       obj[array[i]]++;
+//     }
+//   }
+//   return obj;
+// }
+//
+// console.log(
+//   fructs(["apple", "apple", "apple", "banana", "kiwi", "mango", "banana"]),
+// );
 
-console.log(
-  fructs(["apple", "apple", "apple", "banana", "kiwi", "mango", "banana"]),
-);
+//
