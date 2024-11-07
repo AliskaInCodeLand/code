@@ -176,26 +176,27 @@
 //   // console.log(squareSum([])); //0
 // }
 
-{
-  /**
-   * Перевернутые слова
-   * Дополните решение так, чтобы оно переворачивало все слова в переданной строке.
-   *
-   * Слова разделяются ровно одним пробелом, без пробелов в начале или в конце.
-   *
-   * Пример (Ввод --> Вывод):
-   *
-   * "The greatest victory is that which requires no battle"
-   * --> "battle no requires which that is victory greatest The" */
-
-  function reverseWords(str) {
-    return str; // reverse those words
-  }
-
-  console.log(reverseWords("hello world!")); //"world! hello"
-  console.log(reverseWords("yoda doesn't speak like this")); //"this like speak doesn't yoda"
-  console.log(reverseWords("foobar")); // "foobar"
-  console.log(reverseWords("kata editor")); //"editor kata"
-  console.log(reverseWords("row row row your boat")); //"boat your row row row"
-  console.log(reverseWords("")); //""
-}
+// {
+//   /**
+//    * Перевернутые слова
+//    * Дополните решение так, чтобы оно переворачивало все слова в переданной строке.
+//    *
+//    * Слова разделяются ровно одним пробелом, без пробелов в начале или в конце.
+//    *
+//    * Пример (Ввод --> Вывод):
+//    *
+//    * "The greatest victory is that which requires no battle"
+//    * --> "battle no requires which that is victory greatest The" */
+//
+//   function reverseWords(str) {
+//     const arr = str.split(" ");
+//     return str.split(" ").reverse().join(" "); // reverse those words
+//   }
+//
+//   console.log(reverseWords("hello world!")); //"world! hello"
+//   console.log(reverseWords("yoda doesn't speak like this")); //"this like speak doesn't yoda"
+//   console.log(reverseWords("foobar")); // "foobar"
+//   console.log(reverseWords("kata editor")); //"editor kata"
+//   console.log(reverseWords("row row row your boat")); //"boat your row row row"
+//   console.log(reverseWords("")); //""
+// }
