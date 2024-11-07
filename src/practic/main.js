@@ -157,3 +157,20 @@ console.log(resultSumElementsArray);
 // console.log(array.reverse()); // toReverse
 // console.log(array.splice(-1, 0,)); //
 // console.log(array.fill()); //заполняет массив элементами
+
+//CodeWars
+{
+  /**
+   * Сумма квадратов (n)
+   * Дополните функцию вычисления суммы квадратов так, чтобы она возводила в квадрат каждое переданное ей число, а затем суммировала результаты.
+   *
+   * Например, для [1, 2, 2] он должен вернуть 9
+   *  1^2 + 2^2 + 2^2 =9.
+   * */
+
+  function squareSum(numbers) {}
+
+  console.log(squareSum([1, 2])); //5
+  console.log(squareSum([0, 3, 4, 5])); //50
+  console.log(squareSum([])); //0
+}
