@@ -223,3 +223,49 @@
 //   console.log(smash(["hello", "amazing", "world"])); //"hello amazing world"
 //   console.log(smash(["this", "is", "a", "really", "long", "sentence"])); //this is a really long sentence"
 // }
+
+// {
+//   //Отфильтровывать гусей
+//   /**
+//    * Напишите функцию, которая принимает в качестве аргумента
+//    * список строк и возвращает отфильтрованный список,
+//    * содержащий те же элементы, но без «гусей».
+//    *
+//    * Гуси — это любые строки из следующего массива,
+//    * который предварительно заполнен в вашем решении:
+//    * ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"]
+//    *
+//    * Например, если этот массив был передан в качестве аргумента:
+//    * ["Mallard", "Hook Bill", "African", "Crested", "Pilgrim", "Toulouse", "Blue Swedish"]
+//    *
+//    * Ваша функция вернет следующий массив:
+//    *["Mallard", "Hook Bill", "Crested", "Blue Swedish"]
+//    *
+//    * Элементы в возвращаемом массиве должны быть в том же порядке,
+//    * что и в исходном массиве, переданном вашей функции, но без «гусей».
+//    * Обратите внимание, что все строки будут в том же регистре,
+//    * что и исходные, а некоторые элементы могут повторяться.
+//    * */
+//
+//   const geeses = [
+//     "African",
+//     "Roman Tufted",
+//     "Toulouse",
+//     "Pilgrim",
+//     "Steinbacher",
+//   ];
+//   function filterOutGeese(birds) {
+//   }
+//   console.log(
+//     filterOutGeese([
+//       "Mallard",
+//       "Hook Bill",
+//       "African",
+//       "Crested",
+//       "Pilgrim",
+//       "Toulouse",
+//       "Blue Swedish",
+//     ]),
+//   );
+//   //["Mallard", "Hook Bill", "Crested", "Blue Swedish"]
+// }
