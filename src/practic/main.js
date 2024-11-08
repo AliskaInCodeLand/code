@@ -247,15 +247,23 @@
 //    * что и исходные, а некоторые элементы могут повторяться.
 //    * */
 //
-//   const geeses = [
-//     "African",
-//     "Roman Tufted",
-//     "Toulouse",
-//     "Pilgrim",
-//     "Steinbacher",
-//   ];
 //   function filterOutGeese(birds) {
+//     const geeses = [
+//       "African",
+//       "Roman Tufted",
+//       "Toulouse",
+//       "Pilgrim",
+//       "Steinbacher",
+//     ];
+//     const res = [];
+//     for (let i = 0; i < birds.length; i++) {
+//       if (!geeses.includes(birds[i])) {
+//         res.push(birds[i]);
+//       }
+//     }
+//     return res;
 //   }
+//
 //   console.log(
 //     filterOutGeese([
 //       "Mallard",
@@ -267,7 +275,7 @@
 //       "Blue Swedish",
 //     ]),
 //   );
-//
+// }
 //   //["Mallard", "Hook Bill", "Crested", "Blue Swedish"]
 // }
 

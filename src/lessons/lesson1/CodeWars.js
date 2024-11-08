@@ -65,7 +65,6 @@
 //         return sheep.filter(Boolean).length;
 //     }
 
-
 //     //Другой вариант решения
 
 //     function countSheeps(sheep) {
@@ -146,18 +145,18 @@
 //     console.log(isDivisible(8,3,4)); //false
 // }
 
-{
-    /**
-     * Дополните решение так, чтобы оно переворачивало все слова в переданной строке.
-     *
-     * Слова разделяются ровно одним пробелом, без пробелов в начале или в конце.
-     *
-     * Пример (Ввод --> Вывод):
-     *
-     * "The greatest victory is that which requires no battle" -->
-     * "battle no requires which that is victory greatest The"*/
-
-    function reverseWords(str){
-        return str;
-    }
-}
+// {
+//   /**
+//    * Дополните решение так, чтобы оно переворачивало все слова в переданной строке.
+//    *
+//    * Слова разделяются ровно одним пробелом, без пробелов в начале или в конце.
+//    *
+//    * Пример (Ввод --> Вывод):
+//    *
+//    * "The greatest victory is that which requires no battle" -->
+//    * "battle no requires which that is victory greatest The"*/
+//
+//   function reverseWords(str) {
+//     return str;
+//   }
+// }
