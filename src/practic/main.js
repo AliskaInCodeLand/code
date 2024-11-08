@@ -270,3 +270,22 @@
 //
 //   //["Mallard", "Hook Bill", "Crested", "Blue Swedish"]
 // }
+
+// {
+//   //Новичок - Сокращать, но увеличивать
+//   /**
+//    * Учитывая непустой массив целых чисел, верните результат
+//    * умножения значений по порядку. Пример:
+//    *
+//    * [1, 2, 3, 4] => 1 * 2 * 3 * 4 = 24
+//    * */
+//
+//   function multiplyNumbers(arr) {
+//     debugger;
+//     return arr.sort((a, b) => a - b).reduce((acc, curr) => acc * curr, 1);
+//   }
+//
+//   console.log(multiplyNumbers([1, 2, 3])); //6
+//   console.log(multiplyNumbers([4, 1, 1, 1, 4])); //16
+//   console.log(multiplyNumbers([2, 2, 2, 2, 2, 2])); //64
+// }
