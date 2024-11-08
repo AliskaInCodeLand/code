@@ -200,3 +200,26 @@
 //   console.log(reverseWords("row row row your boat")); //"boat your row row row"
 //   console.log(reverseWords("")); //""
 // }
+
+// {
+//   //Разгром предложения
+//   /**
+//    * апишите функцию, которая принимает массив слов,
+//    * объединяет их в предложение и возвращает это предложение.
+//    * Вы можете не обращать внимания на необходимость очистки слов
+//    * или добавления знаков препинания, но вы должны добавлять
+//    * робелы между словами. Будьте внимательны, в начале или
+//    * в конце предложения не должно быть пробелов!
+//    *
+//    * Пример
+//    * ['hello', 'world', 'this', 'is', 'great']  =>
+//    * 'hello world this is great'*/
+//
+//   function smash(words) {
+//     return words.join(" ");
+//   }
+//
+//   console.log(smash(["hello", "world"])); //"hello world"
+//   console.log(smash(["hello", "amazing", "world"])); //"hello amazing world"
+//   console.log(smash(["this", "is", "a", "really", "long", "sentence"])); //this is a really long sentence"
+// }
