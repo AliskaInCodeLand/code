@@ -434,3 +434,72 @@
 //   ); //21
 //   console.log(number([[0, 0]])); //0
 // }
+
+// {
+//   //Единицы и нули
+//   //
+//
+//   // function binaryArrayToNumber(arr) {
+//   //   debugger;
+//   //   let count = 0;
+//   //   for (let item = arr.length - 1; item >= 0; item--) {
+//   //     let index = arr.length - 1 - item;
+//   //     count += arr[index] * 2 ** item;
+//   //   }
+//   //   return count;
+//   // }
+//   //Другое решение
+//   //   const binaryArrayToNumber = (arr) => parseInt(arr.join(""), 2);
+//
+//   //Другое решение
+//   const binaryArrayToNumber = (arr) => arr.reduce((a, b) => a * 2 + b, 0);
+//
+//   console.log(binaryArrayToNumber([0, 0, 0, 1])); //1
+//   console.log(binaryArrayToNumber([0, 0, 1, 0])); //2
+//   console.log(binaryArrayToNumber([1, 1, 1, 1])); //15
+//   console.log(binaryArrayToNumber([0, 1, 1, 0])); //6
+// }
+
+{
+  //Сумма нечетных чисел
+  /**
+   * Учитывая треугольник из последовательных нечетных чисел:
+   *
+   *              1
+   *           3     5
+   *        7     9    11
+   *    13    15    17    19
+   * 21    23    25    27    29
+   * ...
+   * Вычислите сумму чисел в n-м ряду этого треугольника (начиная с индекса 1), например: (Ввод —> Вывод)
+   *
+   * 1 -->  1
+   * 2 --> 3 + 5 = 8*/
+
+  function sumOfOddNumbers(row) {
+    let sum = 0;
+    let firstRowNumber = 1;
+    let lastRowNumber = 1;
+    if (row === 1) {
+      sum = 1;
+    }
+    if (row > 1) {
+      for (let x = 1; x <= row - 1; x++) {
+        firstRowNumber += 2 * x;
+      }
+      for (let y = 2; y <= row; y++) {
+        lastRowNumber += 2 * y;
+      }
+      for (let i = firstRowNumber; i <= lastRowNumber; i += 2) {
+        sum += i;
+      }
+    }
+    return sum;
+  }
+
+  console.log(sumOfOddNumbers(1)); //1
+  console.log(sumOfOddNumbers(2)); //8
+  console.log(sumOfOddNumbers(3)); //27
+  console.log(sumOfOddNumbers(4)); //64
+  console.log(sumOfOddNumbers(42)); //74088
+}
