@@ -297,3 +297,65 @@
 //   console.log(multiplyNumbers([4, 1, 1, 1, 4])); //16
 //   console.log(multiplyNumbers([2, 2, 2, 2, 2, 2])); //64
 // }
+
+//практика после 3-его урока
+// {
+//   const firstUser = {
+//     name: "Alice",
+//     age: 21,
+//     weddings: false,
+//   };
+//
+//   const usersBase = (user, addAt = Date()) =>
+//     //     ({
+//     //   ...user,
+//     //   addAt,
+//     // });
+//     // {
+//     //   const newUser = Object.assign({ addAt }, user);
+//     //   return newUser;
+//     // };
+//
+//   console.table(usersBase(firstUser));
+// }
+
+// {
+//   const fnWithError = () => {
+//     throw new Error("AAAAAA");
+//   };
+//
+//   try {
+//     fnWithError();
+//   } catch (err) {
+//     console.error(err);
+//     console.error(err.message);
+//   }
+//
+//   console.log("continue");
+// }
+
+// Решение задач CodeWars 9/11
+
+// {
+//
+//   /**
+//    *
+//    * Суммировать смешанный массив
+//    * Учитывая массив целых чисел в виде строк и чисел,
+//    * верните сумму значений массива, как если бы все они были числами.
+//    * */
+//
+//   function sumMix(x) {
+//     let sum = 0;
+//     for (let i = 0; i < x.length; i++) {
+//       if (typeof x[i] === "string") {
+//         sum += parseInt(x[i]);
+//       } else {
+//         sum += x[i];
+//       }
+//     }
+//     return sum;
+//   }
+//   console.log(sumMix([9, 3, "7", "3"])); //22
+//   console.log(sumMix(["5", "0", 9, 3, 2, 1, "9", 6, 7])); // 42
+// }

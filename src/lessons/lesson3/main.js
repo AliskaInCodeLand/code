@@ -137,3 +137,6 @@ console.log("age" in user); //оператор in, чтобы проверить
 //
 //   console.log(maxNum(arr));
 // }
+
+//CodeWars
+//5-7 часа видео
