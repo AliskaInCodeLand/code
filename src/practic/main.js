@@ -337,7 +337,6 @@
 // Решение задач CodeWars 9/11
 
 // {
-//
 //   /**
 //    * Суммировать смешанный массив
 //    * Учитывая массив целых чисел в виде строк и чисел,
@@ -346,13 +345,19 @@
 //
 //   function sumMix(x) {
 //     let sum = 0;
-//     for (let i = 0; i < x.length; i++) {
-//       if (typeof x[i] === "string") {
-//         sum += parseInt(x[i]);
-//       } else {
-//         sum += x[i];
-//       }
-//     }
+//     // for (let i = 0; i < x.length; i++) {
+//     //   if (typeof x[i] === "string") {
+//     //     sum += parseInt(x[i]);
+//     //   } else {
+//     //     sum += x[i];
+//     //   }
+//     // }
+//
+//     // for (let n of x) {
+//     //   sum += parseInt(n);
+//     // }
+//     // sum = x.map((item) => +item).reduce((s, n) => s + n, 0);
+//     // sum = x.map((item) => item).reduce((s, n) => s + +n, 0);
 //     return sum;
 //   }
 //   console.log(sumMix([9, 3, "7", "3"])); //22
