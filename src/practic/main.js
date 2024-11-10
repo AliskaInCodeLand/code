@@ -679,3 +679,44 @@
 //   console.log(getTwoOldestAges([1, 5, 87, 45, 8, 8])); //[45, 87]
 //   console.log(getTwoOldestAges([1, 3, 10, 0])); //[3, 10]
 // }
+
+// {
+//   //Достаточно маленький? - Новичок
+//   /**
+//    * Вам будут даны array и limit значения. Вы должны проверить, что все значения в массиве меньше или равны предельному значению. Если это так, верните true. В противном случае верните false.
+//    *
+//    * Можно предположить, что все значения в массиве являются числами. */
+//
+//   // function smallEnough(arr, lim) {
+//   //   return arr.find((item) => {
+//   //     return item > lim;
+//   //   })
+//   //     ? false
+//   //     : true;
+//   // }
+//
+//   //Другой вариант решения
+//   // function smallEnough(arr, limit) {
+//   //   return Math.max(...arr) <= limit;
+//   // }
+//
+//   //Другой вариант решения
+//   // function smallEnough(arr, limit) {
+//   //   return arr.every((el) => el <= limit);
+//   // }
+//
+//   //Другой вариант решения
+//   // function smallEnough(arr, lim) {
+//   //   return arr.filter((item) => item > lim).length > 0 ? false : true;
+//   // }
+//
+//   //Другой вариант решения
+//   // function smallEnough(arr, limit) {
+//   //   return !arr.some((el) => el > limit);
+//   // }
+//
+//   console.log(smallEnough([66, 101], 200)); //true
+//   console.log(smallEnough([78, 117, 110, 99, 104, 117, 107, 115], 100)); //false
+//   console.log(smallEnough([101, 45, 75, 105, 99, 107], 107)); //true
+//   console.log(smallEnough([80, 117, 115, 104, 45, 85, 112, 115], 120)); //true
+// }
