@@ -625,17 +625,34 @@
 //    *
 //    * [output] веревка*/
 //
-//   function reverseStr(str) {
-//     // debugger;
-//     let newstr = str.split("").reverse();
-//     let regex = /^[a-zA-Z]*$/;
-//     for (let char = 0; char < newstr.length; char++) {
-//       if (!regex.test(newstr[char])) {
-//         delete newstr[char];
-//       }
-//     }
-//     return newstr.join("");
-//   }
+//   // function reverseStr(str) {
+//   //   // debugger;
+//   //   let newstr = str.split("").reverse();
+//   //   let regex = /^[a-zA-Z]*$/;
+//   //   for (let char = 0; char < newstr.length; char++) {
+//   //     if (!regex.test(newstr[char])) {
+//   //       delete newstr[char];
+//   //     }
+//   //   }
+//   //   return newstr.join("");
+//   // }
+//
+//   //Другой вариант решения
+//   // function reverseStr(str) {
+//   //   return str
+//   //     .replace(/[^a-z]/gi, "")
+//   //     .split("")
+//   //     .reverse()
+//   //     .join("");
+//   // }
+//
+//   //Другой вариант решения
+//   // Метод match возвращает массив
+//   // с найденной строкой и null в случае отсутствия
+//   // совпадения.
+//   //   function reverseStr(str) {
+//   //   return str.match(/[a-z]/g).reverse().join("");
+//   // }
 //
 //   console.log(reverseStr("krishan")); //nahsirk
 //   console.log(reverseStr("ultr53o?n")); //nortlu
