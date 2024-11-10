@@ -607,3 +607,39 @@
 //   ];
 //   console.log(sumMin(itArray)); //22
 // }
+
+// {
+//   // Простая забава # 176: Обратная буква
+//   /**
+//    * Задание
+//    * Учитывая строку str, переверните ее и опустите все не алфавитные символы.
+//    *
+//    * Пример
+//    * Для str = "krishan" результат должен быть "nahsirk".
+//    *
+//    * Для str = "ultr53o?n" результат должен быть "nortlu".
+//    *
+//    * Ввод / Вывод
+//    * [input] строка str
+//    * Строка состоит из строчных латинских букв, цифр и символов.
+//    *
+//    * [output] веревка*/
+//
+//   function reverseStr(str) {
+//     // debugger;
+//     let newstr = str.split("").reverse();
+//     let regex = /^[a-zA-Z]*$/;
+//     for (let char = 0; char < newstr.length; char++) {
+//       if (!regex.test(newstr[char])) {
+//         delete newstr[char];
+//       }
+//     }
+//     return newstr.join("");
+//   }
+//
+//   console.log(reverseStr("krishan")); //nahsirk
+//   console.log(reverseStr("ultr53o?n")); //nortlu
+//   console.log(reverseStr("ab23c")); //cba
+//   console.log(reverseStr("krish21an")); //nahsirk
+//   console.log(reverseStr("doogyw0lt1)o*tryspg(dc_aaorw]( )atqa")); //nahsirk
+// }
