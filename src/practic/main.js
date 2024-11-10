@@ -654,9 +654,28 @@
 //   //   return str.match(/[a-z]/g).reverse().join("");
 //   // }
 //
+//   //Другой вариант решения
+//   // function reverseStr(str) {
+//   //   return str
+//   //     .split("")
+//   //     .reverse()
+//   //     .filter((val) => /[a-zA-Z]/.test(val))
+//   //     .join("");
+//   // }
+//
 //   console.log(reverseStr("krishan")); //nahsirk
 //   console.log(reverseStr("ultr53o?n")); //nortlu
 //   console.log(reverseStr("ab23c")); //cba
 //   console.log(reverseStr("krish21an")); //nahsirk
 //   console.log(reverseStr("doogyw0lt1)o*tryspg(dc_aaorw]( )atqa")); //nahsirk
+// }
+
+// {
+//   function getTwoOldestAges(arr) {
+//     return arr.sort((a, b) => a - b).slice(-2);
+//   }
+//
+//   console.log(getTwoOldestAges([1, 2, 10, 8])); //[8, 10]
+//   console.log(getTwoOldestAges([1, 5, 87, 45, 8, 8])); //[45, 87]
+//   console.log(getTwoOldestAges([1, 3, 10, 0])); //[3, 10]
 // }
