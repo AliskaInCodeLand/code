@@ -460,46 +460,112 @@
 //   console.log(binaryArrayToNumber([0, 1, 1, 0])); //6
 // }
 
-{
-  //Сумма нечетных чисел
-  /**
-   * Учитывая треугольник из последовательных нечетных чисел:
-   *
-   *              1
-   *           3     5
-   *        7     9    11
-   *    13    15    17    19
-   * 21    23    25    27    29
-   * ...
-   * Вычислите сумму чисел в n-м ряду этого треугольника (начиная с индекса 1), например: (Ввод —> Вывод)
-   *
-   * 1 -->  1
-   * 2 --> 3 + 5 = 8*/
+// {
+//   //Сумма нечетных чисел
+//   /**
+//    * Учитывая треугольник из последовательных нечетных чисел:
+//    *
+//    *              1
+//    *           3     5
+//    *        7     9    11
+//    *    13    15    17    19
+//    * 21    23    25    27    29
+//    * ...
+//    * Вычислите сумму чисел в n-м ряду этого треугольника (начиная с индекса 1), например: (Ввод —> Вывод)
+//    *
+//    * 1 -->  1
+//    * 2 --> 3 + 5 = 8*/
+//
+//   function sumOfOddNumbers(row) {
+//     let sum = 0;
+//     let firstRowNumber = 1;
+//     let lastRowNumber = 1;
+//     if (row === 1) {
+//       sum = 1;
+//     }
+//     if (row > 1) {
+//       for (let x = 1; x <= row - 1; x++) {
+//         firstRowNumber += 2 * x;
+//       }
+//       for (let y = 2; y <= row; y++) {
+//         lastRowNumber += 2 * y;
+//       }
+//       for (let i = firstRowNumber; i <= lastRowNumber; i += 2) {
+//         sum += i;
+//       }
+//     }
+//     return sum;
+//   }
+//
+//   console.log(sumOfOddNumbers(1)); //1
+//   console.log(sumOfOddNumbers(2)); //8
+//   console.log(sumOfOddNumbers(3)); //27
+//   console.log(sumOfOddNumbers(4)); //64
+//   console.log(sumOfOddNumbers(42)); //74088
+// }
 
-  function sumOfOddNumbers(row) {
-    let sum = 0;
-    let firstRowNumber = 1;
-    let lastRowNumber = 1;
-    if (row === 1) {
-      sum = 1;
+// {
+//   const userProfile = {
+//     name: "Gordey",
+//     age: 9,
+//     clas: "3A",
+//   };
+//
+//   //Деструктуризация параметров функции
+//   const getUserInfo = ({ name, age }) => {
+//     return `${name} is ${age} years old`;
+//   };
+//   console.log(getUserInfo(userProfile));
+//
+//   //Деструктуризация внутри функции
+//   // const getUserInfo = (profile) => {
+//   //   const { name, clas } = profile;
+//   //   return `${name} study in ${clas} class`;
+//   // };
+//   // console.log(getUserInfo(userProfile));
+// }
+
+// Решение задач CodeWars 10/11
+{
+  //Проверьте результаты экзамена
+  /**
+   * Первый входной массив — это ключ к правильным ответам на экзамене, например ["a", "a", "b", "d"]. Второй массив содержит отправленные студентом ответы.
+   *
+   * Два массива не пусты и имеют одинаковую длину. Верните оценку для этого массива ответов, указав +4 за каждый правильный ответ, -1 за каждый неправильный ответ и +0 за каждый пустой ответ, представленный в виде пустой строки (в C используется пробел).
+   *
+   * Если счет < 0, вернитесь 0.
+   * Например:
+   *
+   *     Correct answer    |    Student's answer   |   Result
+   *  ---------------------|-----------------------|-----------
+   *  ["a", "a", "b", "b"]   ["a", "c", "b", "d"]  →     6
+   *  ["a", "a", "c", "b"]   ["a", "a", "b", "" ]  →     7
+   *  ["a", "a", "b", "c"]   ["a", "a", "b", "c"]  →     16
+   *  ["b", "c", "b", "a"]   ["" , "a", "a", "c"]  →     0*/
+
+  function getResultExam(correctAns, studentsAns) {
+    let result = 0;
+    for (let i = 0; i < correctAns.length; i++) {
+      if (correctAns[i] === studentsAns[i]) {
+        result += 4;
+      } else {
+        if (studentsAns[i] === "") {
+          result += 0;
+        } else {
+          result -= 1;
+        }
+      }
     }
-    if (row > 1) {
-      for (let x = 1; x <= row - 1; x++) {
-        firstRowNumber += 2 * x;
-      }
-      for (let y = 2; y <= row; y++) {
-        lastRowNumber += 2 * y;
-      }
-      for (let i = firstRowNumber; i <= lastRowNumber; i += 2) {
-        sum += i;
-      }
+    if (result < 0) {
+      result = 0;
+      return result;
+    } else {
+      return result;
     }
-    return sum;
   }
 
-  console.log(sumOfOddNumbers(1)); //1
-  console.log(sumOfOddNumbers(2)); //8
-  console.log(sumOfOddNumbers(3)); //27
-  console.log(sumOfOddNumbers(4)); //64
-  console.log(sumOfOddNumbers(42)); //74088
+  console.log(getResultExam(["a", "a", "b", "b"], ["a", "c", "b", "d"]));
+  console.log(getResultExam(["a", "a", "c", "b"], ["a", "a", "b", ""]));
+  console.log(getResultExam(["a", "a", "b", "c"], ["a", "a", "b", "c"]));
+  console.log(getResultExam(["b", "c", "b", "a"], ["", "a", "a", "c"]));
 }
