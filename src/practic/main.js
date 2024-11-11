@@ -722,21 +722,22 @@
 // }
 
 // // Решение задач CodeWars 11/11
-// {
-//   function lapshi(num) {
-//     let newnum = [];
-//     debugger;
-//     while (num > 0) {
-//       if (num % 10 >= 5) {
-//         num /= 10;
-//         num++;
-//       } else {
-//         num /= 10;
-//       }
-//       newnum.unshift(num);
-//     }
-//     return newnum;
-//   }
-//
-//   console.log(lapshi(1445));
-// }
+{
+  function lapshi(num) {
+    let newnum = [];
+    debugger;
+    while (num > 0) {
+      if (num % 10 >= 5) {
+        num /= 10;
+        num = num.toFixed(0);
+        num++;
+      } else {
+        num /= 10;
+      }
+      newnum.unshift(num);
+    }
+    return newnum;
+  }
+
+  console.log(lapshi(1445));
+}
