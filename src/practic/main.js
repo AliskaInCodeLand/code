@@ -720,3 +720,23 @@
 //   console.log(smallEnough([101, 45, 75, 105, 99, 107], 107)); //true
 //   console.log(smallEnough([80, 117, 115, 104, 45, 85, 112, 115], 120)); //true
 // }
+
+// // Решение задач CodeWars 11/11
+{
+  function lapshi(num) {
+    let newnum = [];
+    debugger;
+    while (num > 0) {
+      if (num % 10 >= 5) {
+        num /= 10;
+        num++;
+      } else {
+        num /= 10;
+      }
+      newnum.unshift(num);
+    }
+    return newnum;
+  }
+
+  console.log(lapshi(1445));
+}
