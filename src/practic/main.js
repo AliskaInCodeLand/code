@@ -732,8 +732,11 @@
       newCount = Math.round(newCount / 10);
       count *= 10;
     }
+    if (newCount === 10) {
+      count /= 10;
+    }
     return newCount * count;
   }
 
-  console.log(lapshi(4765929));
+  console.log(lapshi(69358538));
 }
