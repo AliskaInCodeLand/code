@@ -724,20 +724,16 @@
 // // Решение задач CodeWars 11/11
 {
   function lapshi(num) {
-    let newnum = [];
+    let count = 1;
+    let newCount = num;
     debugger;
-    while (num > 0) {
-      if (num % 10 >= 5) {
-        num /= 10;
-        num = num.toFixed(0);
-        num++;
-      } else {
-        num /= 10;
-      }
-      newnum.unshift(num);
+    while (newCount / 10 > 1) {
+      // if (num % 10 >= 5) {
+      newCount = Math.round(newCount / 10);
+      count *= 10;
     }
-    return newnum;
+    return newCount * count;
   }
 
-  console.log(lapshi(1445));
+  console.log(lapshi(4765929));
 }
