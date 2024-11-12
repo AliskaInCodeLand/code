@@ -755,30 +755,63 @@
 // }
 
 // Решение задач CodeWars 12/11
+// {
+//   //Нечетный или четный?
+//   /**Задача:
+//    Дан список целых чисел. Определите, является ли сумма его элементов нечётной или чётной.
+//
+//    Укажите свой ответ в виде строки, соответствующей "odd" или "even".
+//
+//    Если входной массив пуст, считайте его как: [0] (массив с нулём).
+//
+//    Примеры:
+//    Input: [0]
+//    Output: "even"
+//
+//    Input: [0, 1, 4]
+//    Output: "odd"
+//
+//    Input: [0, -1, -5]
+//    Output: "even"*/
+//   // function oddOrEven(arr) {
+//   //   return arr.reduce((acc, cur) => acc + cur, 0) % 2 === 0 ? "even" : "odd";
+//   // }
+//   //
+//   // console.log(oddOrEven([0])); //even
+//   // console.log(oddOrEven([0, 1, 4])); //odd
+//   // console.log(oddOrEven([0, -1, -5])); //even
+//   // console.log(oddOrEven([1])); //odd
+// }
+
 {
-  //Нечетный или четный?
-  /**Задача:
-   Дан список целых чисел. Определите, является ли сумма его элементов нечётной или чётной.
+  //Тестирование 1-2-3
+  /**Описание:
+   Ваша команда пишет новый модный текстовый редактор, и вам поручили реализовать нумерацию строк.
 
-   Укажите свой ответ в виде строки, соответствующей "odd" или "even".
+   Напишите функцию, которая принимает список строк и возвращает каждую строку с правильным номером перед ней.
 
-   Если входной массив пуст, считайте его как: [0] (массив с нулём).
+   Нумерация начинается с 1. Формат — n: string. Обратите внимание на двоеточие и пробел между ними.
 
-   Примеры:
-   Input: [0]
-   Output: "even"
+   Примеры: (Ввод --> Вывод)
 
-   Input: [0, 1, 4]
-   Output: "odd"
+   [] --> []
+   ["a", "b", "c"] --> ["1: a", "2: b", "3: c"]*/
 
-   Input: [0, -1, -5]
-   Output: "even"*/
-  // function oddOrEven(arr) {
-  //   return arr.reduce((acc, cur) => acc + cur, 0) % 2 === 0 ? "even" : "odd";
+  // function numiratingStrings(array) {
+  //   let count = 1;
+  //   return array.map(function (el) {
+  //     let newarr = `${count}: ${el}`;
+  //     count++;
+  //     return newarr;
+  //   });
   // }
-  //
-  // console.log(oddOrEven([0])); //even
-  // console.log(oddOrEven([0, 1, 4])); //odd
-  // console.log(oddOrEven([0, -1, -5])); //even
-  // console.log(oddOrEven([1])); //odd
+
+  //Другое решение
+  // function numiratingStrings(array) {
+  //   return array.map((item, index) => index + 1 + ": " + item);
+  // }
+
+  console.log(numiratingStrings([])); //[]
+  console.log(numiratingStrings(["a", "b", "c"])); //["1: a", "2: b", "3: c"]
+  console.log(numiratingStrings(["a", "b", "c"])); //["1: a", "2: b", "3: c"]
 }
