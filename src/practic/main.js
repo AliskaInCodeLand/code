@@ -722,21 +722,19 @@
 // }
 
 // // Решение задач CodeWars 11/11
-{
-  function lapshi(num) {
-    let count = 1;
-    let newCount = num;
-    debugger;
-    while (newCount / 10 > 1) {
-      // if (num % 10 >= 5) {
-      newCount = Math.round(newCount / 10);
-      count *= 10;
-    }
-    if (newCount === 10) {
-      count /= 10;
-    }
-    return newCount * count;
-  }
-
-  console.log(lapshi(69358538));
-}
+// {
+//   function rounders(value) {
+//     let count = 1;
+//     while (value > 10) {
+//       debugger;
+//       value = Math.round(value / 10);
+//       count *= 10;
+//     }
+//     return value * count;
+//   }
+//
+//   console.log(rounders(69358538)); //70 000 000
+//   console.log(rounders(1234)); //1000
+//   console.log(rounders(1445)); //2000
+//   console.log(rounders(14)); //10
+// }
