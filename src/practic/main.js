@@ -723,18 +723,62 @@
 
 // // Решение задач CodeWars 11/11
 // {
-//   function rounders(value) {
-//     let count = 1;
-//     while (value > 10) {
-//       debugger;
-//       value = Math.round(value / 10);
-//       count *= 10;
-//     }
-//     return value * count;
-//   }
+//   // function rounders(value) {
+//   //   let count = 1;
+//   //   while (value > 10) {
+//   //     debugger;
+//   //     value = Math.round(value / 10);
+//   //     count *= 10;
+//   //   }
+//   //   return value * count;
+//   // }
+//
+//   //Другое решение
+//   // function rounders(value, e = 1) {
+//   //   debugger;
+//   //   return value < 10 ? value * e : rounders(Math.round(value / 10), e * 10);
+//   // }
+//
+//   //Другое решение
+//   // function rounders(value) {
+//   //   let power = value.toString().length - 1;
+//   //   for (let i = 0; i < power; i++) {
+//   //     value = Math.round(value / 10);
+//   //   }
+//   //   return value * Math.pow(10, power);
+//   // }
 //
 //   console.log(rounders(69358538)); //70 000 000
 //   console.log(rounders(1234)); //1000
 //   console.log(rounders(1445)); //2000
 //   console.log(rounders(14)); //10
 // }
+
+// Решение задач CodeWars 12/11
+{
+  //Нечетный или четный?
+  /**Задача:
+   Дан список целых чисел. Определите, является ли сумма его элементов нечётной или чётной.
+
+   Укажите свой ответ в виде строки, соответствующей "odd" или "even".
+
+   Если входной массив пуст, считайте его как: [0] (массив с нулём).
+
+   Примеры:
+   Input: [0]
+   Output: "even"
+
+   Input: [0, 1, 4]
+   Output: "odd"
+
+   Input: [0, -1, -5]
+   Output: "even"*/
+  // function oddOrEven(arr) {
+  //   return arr.reduce((acc, cur) => acc + cur, 0) % 2 === 0 ? "even" : "odd";
+  // }
+  //
+  // console.log(oddOrEven([0])); //even
+  // console.log(oddOrEven([0, 1, 4])); //odd
+  // console.log(oddOrEven([0, -1, -5])); //even
+  // console.log(oddOrEven([1])); //odd
+}
