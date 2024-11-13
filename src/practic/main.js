@@ -952,3 +952,22 @@
 //   console.log(monkeyCount(10)); //[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 //   console.log(monkeyCount(5)); //[1, 2, 3, 4, 5]
 // }
+
+// Решение задач CodeWars 13/11
+{
+  function solution(string) {
+    let arr = string.split("");
+    let newarr = [];
+    for (let i = 0, len = arr.length; i < len; i++) {
+      if (arr[i] === arr[i].toUpperCase()) {
+        newarr.push(" ");
+      }
+      newarr.push(arr[i]);
+    }
+    return newarr.join("");
+  }
+
+  console.log(solution("camelCasing")); //"camel Casing"
+  console.log(solution("identifier")); //"identifier"
+  console.log(solution("camelCasingTest")); //"camel Casing Test"
+}
