@@ -954,20 +954,81 @@
 // }
 
 // Решение задач CodeWars 13/11
-{
-  function solution(string) {
-    let arr = string.split("");
-    let newarr = [];
-    for (let i = 0, len = arr.length; i < len; i++) {
-      if (arr[i] === arr[i].toUpperCase()) {
-        newarr.push(" ");
-      }
-      newarr.push(arr[i]);
-    }
-    return newarr.join("");
-  }
+// {
+//   // function solution(string) {
+//   //   let arr = string.split("");
+//   //   let newarr = [];
+//   //   for (let i = 0, len = arr.length; i < len; i++) {
+//   //     if (arr[i] === arr[i].toUpperCase()) {
+//   //       newarr.push(" ");
+//   //     }
+//   //     newarr.push(arr[i]);
+//   //   }
+//   //   return newarr.join("");
+//   // }
+//
+//   //Другое решение
+//   // function solution(string) {
+//   //   return string.replace(/([A-Z])/g, " $1");
+//   // }
+//
+//   //Другое решение
+//   // function solution(string) {
+//   //   return string
+//   //     .split("")
+//   //     .map((el) => {
+//   //       if (el === el.toUpperCase()) {
+//   //         el = " " + el;
+//   //       }
+//   //       return el;
+//   //     })
+//   //     .join("");
+//   // }
+//
+//   //Другое решение
+//   // function solution(string) {
+//   //   return string.replace(/([a-z])([A-Z])/g, "$1 $2");
+//   // }
+//
+//   //Другое решение
+//   // const solution = (string) => string.replace(/[A-Z]/g, " $&");
+//
+//   console.log(solution("camelCasing")); //"camel Casing"
+//   console.log(solution("identifier")); //"identifier"
+//   console.log(solution("camelCasingTest")); //"camel Casing Test"
+// }
 
-  console.log(solution("camelCasing")); //"camel Casing"
-  console.log(solution("identifier")); //"identifier"
-  console.log(solution("camelCasingTest")); //"camel Casing Test"
-}
+// {
+//   //Суммируем строки
+//   /**Описание:
+//    Создайте функцию, которая принимает на вход 2 целых числа
+//    в виде строки и выводит сумму (также в виде строки):
+//
+//    Пример: (Ввод1, Ввод2 --> Вывод)
+//
+//    "4",  "5" --> "9"
+//    "34", "5" --> "39"
+//    "", "" --> "0"
+//    "2", "" --> "2"
+//    "-5", "3" --> "-2"
+//    Примечания:
+//
+//    Если любой из входных данных представляет собой пустую строку,
+//    считайте его равным нулю.
+//
+//    Входные данные и ожидаемый результат никогда не превысят
+//    32-битный предел целого числа со знаком (2^31 - 1)*/
+//
+//   // function sumStr(a, b) {
+//   //   return "" + (Number(a) + Number(b));
+//   // }
+//
+//   //Другое решение
+//   // function sumStr(a, b) {
+//   //   return String(Number(a) + Number(b));
+//   // }
+//
+//   console.log(sumStr("4", "5")); //'9'
+//   console.log(sumStr("34", "5")); //'39'
+//   console.log(sumStr("-5", "3")); //'-2'
+// }
