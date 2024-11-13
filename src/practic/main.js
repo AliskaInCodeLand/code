@@ -1081,49 +1081,107 @@
 //   console.log(getSum(2, 2)); //2
 // }
 
-{
-  //Сортировка нечетных
-  /**
-   * Вам будет предоставлен массив чисел.
-   * Вам нужно отсортировать нечётные числа в порядке возрастания,
-   * оставив чётные числа на своих местах.
-   *
-   * Примеры
-   * [7, 1]  =>  [1, 7]
-   * [5, 8, 6, 3, 4]  =>  [3, 8, 6, 5, 4]
-   * [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
-   * =>  [1, 8, 3, 6, 5, 4, 7, 2, 9, 0] */
+// {
+//   //Сортировка нечетных
+//   /**
+//    * Вам будет предоставлен массив чисел.
+//    * Вам нужно отсортировать нечётные числа в порядке возрастания,
+//    * оставив чётные числа на своих местах.
+//    *
+//    * Примеры
+//    * [7, 1]  =>  [1, 7]
+//    * [5, 8, 6, 3, 4]  =>  [3, 8, 6, 5, 4]
+//    * [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+//    * =>  [1, 8, 3, 6, 5, 4, 7, 2, 9, 0] */
+//
+//   // function sortArray(arr) {
+//   //   let arrEven = [];
+//   //   for (let i = 0; i < arr.length; i++) {
+//   //     if (arr[i] % 2 !== 0) {
+//   //       arrEven.push(arr[i]);
+//   //       arr[i] = null;
+//   //     }
+//   //   }
+//   //   if (arrEven.length > 0) {
+//   //     arrEven.sort((a, b) => a - b);
+//   //     let item = 0;
+//   //     for (let j = 0; j < arr.length; j++) {
+//   //       if (arr[j] === null) {
+//   //         arr[j] = arrEven[item];
+//   //         item++;
+//   //       }
+//   //     }
+//   //   }
+//   //   return arr;
+//   // }
+//
+//   //Другое решение
+//   // function sortArray(array) {
+//   //   const odd = array.filter((x) => x % 2).sort((a, b) => a - b);
+//   //   return array.map((x) => (x % 2 ? odd.shift() : x));
+//   // }
+//
+//   console.log(sortArray([5, 8, 6, 3, 4])); //[3, 8, 6, 5, 4]
+//   // console.log(sortArray([7, 1])); //[1, 7]
+//   // console.log(sortArray([9, 8, 7, 6, 5, 4, 3, 2, 1, 0])); //[1, 8, 3, 6, 5, 4, 7, 2, 9, 0]
+//   // console.log(sortArray([5, 3, 2, 8, 1, 4])); //[1, 3, 2, 8, 5, 4]
+//   // console.log(sortArray([])); //[]
+// }
 
-  // function sortArray(arr) {
-  //   let arrEven = [];
-  //   for (let i = 0; i < arr.length; i++) {
-  //     if (arr[i] % 2 !== 0) {
-  //       arrEven.push(arr[i]);
-  //       arr[i] = null;
-  //     }
-  //   }
-  //   if (arrEven.length > 0) {
-  //     arrEven.sort((a, b) => a - b);
-  //     let item = 0;
-  //     for (let j = 0; j < arr.length; j++) {
-  //       if (arr[j] === null) {
-  //         arr[j] = arrEven[item];
-  //         item++;
-  //       }
-  //     }
-  //   }
-  //   return arr;
-  // }
-
-  //Другое решение
-  // function sortArray(array) {
-  //   const odd = array.filter((x) => x % 2).sort((a, b) => a - b);
-  //   return array.map((x) => (x % 2 ? odd.shift() : x));
-  // }
-
-  console.log(sortArray([5, 8, 6, 3, 4])); //[3, 8, 6, 5, 4]
-  // console.log(sortArray([7, 1])); //[1, 7]
-  // console.log(sortArray([9, 8, 7, 6, 5, 4, 3, 2, 1, 0])); //[1, 8, 3, 6, 5, 4, 7, 2, 9, 0]
-  // console.log(sortArray([5, 3, 2, 8, 1, 4])); //[1, 3, 2, 8, 5, 4]
-  // console.log(sortArray([])); //[]
-}
+// {
+//   //Построить башню
+//   /**
+//    * Построить башню
+//    * Постройте башню в форме пирамиды в виде массива/списка строк,
+//    * заданного положительным целым числом number of floors.
+//    * Блок башни обозначается символом "*".
+//    *
+//    * Например, башня с 3 этажами выглядит следующим образом:
+//    * [
+//    *   "  *  ",
+//    *   " *** ",
+//    *   "*****"
+//    * ]
+//    *
+//    * И башня с 6 этажами выглядит следующим образом:
+//    *
+//    * [
+//    *   "     *     ",
+//    *   "    ***    ",
+//    *   "   *****   ",
+//    *   "  *******  ",
+//    *   " ********* ",
+//    *   "***********"
+//    * ]
+//    * */
+//
+// //   function buildTower(floors) {
+// //     const arr = [];
+// //     let count = 1 + (floors - 1) * 2;
+// //     const size = count;
+// //     const str = [];
+// //     while (count > 0) {
+// //       let i = count;
+// //       while (i > 0) {
+// //         // if (i % 2 !== 0) {
+// //         str.push("*");
+// //         // }
+// //         i--;
+// //       }
+// //       if (str.length % 2 !== 0) {
+// //         if (str.length < size) {
+// //           while (str.length < size) {
+// //             str.push("");
+// //             str.unshift("");
+// //           }
+// //         }
+// //         arr.push(str.join(""));
+// //       }
+// //       str.splice(0, count);
+// //       count--;
+// //     }
+// //     return arr.reverse();
+// //   }
+// //
+// //   console.log(buildTower(3));
+// // }
