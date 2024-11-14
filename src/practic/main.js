@@ -1224,8 +1224,57 @@
 //       }
 //     }
 //     return arr;
+
 //   }
 //
 //   console.log(Deadfish("iiisdoso")); //[8, 64]
 //   console.log(Deadfish("iiisdosodddddiso")); //[8, 64, 3600]
+// }
+
+// {
+//   //Помогите книготорговцу !
+//   /**
+//    * Задача
+//    * Вы получите список товаров в книжном магазине и список категорий. Ваша задача — найти общее количество книг в списке товаров в книжном магазине по кодам категорий из списка категорий. Примечание: коды в обоих списках расположены в одном и том же порядке.
+//    *
+//    * Верните результат в виде строки, описанной в примере ниже, или в виде списка пар (Haskell/Clojure/Racket/Prolog).
+//    *
+//    * Если какой-либо из входных списков пуст, верните пустую строку или пустой массив/список (Clojure/Racket/Prolog).
+//    *
+//    * Пример
+//    * # the bookseller's stocklist:
+//    * "ABART 20", "CDXEF 50", "BKWRK 25", "BTSQZ 89", "DRTYM 60"
+//    *
+//    * # list of categories:
+//    * "A", "B", "C", "W"
+//    *
+//    * # result:
+//    * "(A : 20) - (B : 114) - (C : 50) - (W : 0)"
+//    * Объяснение:
+//    *
+//    * категория A: 20 книг (ABART)
+//    * категория B: 114 книг = 25 (BKWRK) + 89 (BTSQZ)
+//    * категория C: 50 книг (CDXEF)
+//    * категория W: 0 книг */
+//
+//   function counterBook(stocklist, categories) {
+//     let arr = [];
+//     let its = false;
+//     for (let i = 0; i < stocklist.length; i++) {
+//       let str = stocklist[i].split(" ");
+//       console.log(str);
+//
+//       categories.forEach((category) => {
+//         str[0]
+//       });
+//     }
+//     return arr;
+//   }
+//
+//   console.log(
+//     counterBook(
+//       ["ABART 20", "CDXEF 50", "BKWRK 25", "BTSQZ 89", "DRTYM 60"],
+//       ["A", "B", "C", "W"],
+//     ),
+//   );
 // }
