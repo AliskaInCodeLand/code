@@ -1328,13 +1328,23 @@
   // }
 
   //Другое решение
-  const sumArray = (numbers) =>
-    numbers && numbers.length > 1
-      ? numbers
+  // const sumArray = (numbers) =>
+  //   numbers && numbers.length > 1
+  //     ? numbers
+  //         .sort((a, b) => a - b)
+  //         .slice(1, -1)
+  //         .reduce((sum, number) => sum + number, 0)
+  //     : 0;
+
+  //Другое решение
+  function sumArray(array) {
+    return !array || array.length < 4
+      ? 0
+      : array
           .sort((a, b) => a - b)
-          .slice(1, -1)
-          .reduce((sum, number) => sum + number, 0)
-      : 0;
+          .slice(1, array.length - 1)
+          .reduce((a, b) => a + b);
+  }
 
   console.log(sumArray([6, 2, 1, 8, 10])); //16
   console.log(sumArray([1, 1, 11, 2, 3])); //6
