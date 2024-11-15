@@ -1337,13 +1337,22 @@
   //     : 0;
 
   //Другое решение
+  // function sumArray(array) {
+  //   return !array || array.length < 4
+  //     ? 0
+  //     : array
+  //         .sort((a, b) => a - b)
+  //         .slice(1, array.length - 1)
+  //         .reduce((a, b) => a + b);
+  // }
+
+  //Другое решение
   function sumArray(array) {
-    return !array || array.length < 4
-      ? 0
-      : array
-          .sort((a, b) => a - b)
-          .slice(1, array.length - 1)
-          .reduce((a, b) => a + b);
+    return Array.isArray(array) && array.length > 1
+      ? array.reduce((s, n) => s + n, 0) -
+          Math.min(...array) -
+          Math.max(...array)
+      : 0;
   }
 
   console.log(sumArray([6, 2, 1, 8, 10])); //16
