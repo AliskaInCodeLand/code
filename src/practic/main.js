@@ -1466,32 +1466,49 @@
 //   94; //
 // }
 
-{
-  /**Можете ли вы реализовать функцию,
- которая будет возвращать количество слов в строке?
+// {
+//   /**Можете ли вы реализовать функцию,
+//  которая будет возвращать количество слов в строке?
+//
+// Вы должны убедиться, что пробелы в строке действительно
+// являются пробелами.*/
+//
+//   // function countWords(str) {
+//   //   let arr = str.split(" ");
+//   //   for (let char = 0; char < arr.length; char++) {
+//   //     // debugger;
+//   //     if (arr[char] == "") {
+//   //       arr.splice(char, 1);
+//   //     }
+//   //   }
+//   //   return arr.length;
+//   // }
+//
+//   //https://www.codewars.com/kata/570cc83df616a85944001315/train/javascript
+//
+//   function countWords(str) {
+//     return str.split(" ").filter((word) => word).length;
+//   }
+//
+//   console.log(countWords("Hello")); //1
+//   console.log(countWords(" Hello World! ")); //2
+//   console.log(countWords("No results for search term `s`")); //6
+//   console.log(countWords(" Hello")); //1
+// }
 
-Вы должны убедиться, что пробелы в строке действительно
-являются пробелами.*/
-
-  // function countWords(str) {
-  //   let arr = str.split(" ");
-  //   for (let char = 0; char < arr.length; char++) {
-  //     // debugger;
-  //     if (arr[char] == "") {
-  //       arr.splice(char, 1);
-  //     }
-  //   }
-  //   return arr.length;
-  // }
-
-  //https://www.codewars.com/kata/570cc83df616a85944001315/train/javascript
-
-  function countWords(str) {
-    return str.split(" ").filter((word) => word).length;
-  }
-
-  console.log(countWords("Hello")); //1
-  console.log(countWords(" Hello World! ")); //2
-  console.log(countWords("No results for search term `s`")); //6
-  console.log(countWords(" Hello")); //1
-}
+// {
+//   //Это письмо?
+//   /**
+//    * Напишите функцию isItLetter или is_it_letter или IsItLetter,
+//    * которая сообщает нам, является ли заданный
+//    * символ буквой или нет. */
+//
+//   function isItLet(char) {
+//     const regex = /^[a-zA-Z]+$/;
+//     return regex.test(char);
+//   }
+//   console.log(isItLet("a")); //true
+//   console.log(isItLet("IsItLetter")); //true
+//   console.log(isItLet("is_it_letter")); //false
+//   console.log(isItLet("1")); //false
+// }
