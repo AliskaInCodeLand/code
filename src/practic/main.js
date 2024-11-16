@@ -1286,86 +1286,182 @@
 // }
 
 // Решение задач CodeWars 15/11
-{
-  //Сумма без наибольшего и наименьшего числа
-  /**
-   * Задание
-   * Сложите все числа заданного массива (см. список),
-   * кроме самого большого и самого маленького элементов
-   * (по значению, а не по индексу!).
-   *
-   * Самый высокий или самый низкий элемент соответственно
-   * — это один элемент на каждом краю, даже если их несколько с
-   * одинаковым значением.
-   *
-   * Следите за проверкой входных данных.
-   *
-   * Пример
-   * { 6, 2, 1, 8, 10 } => 16
-   * { 1, 1, 11, 2, 3 } => 6
-   * Проверка входных данных
-   * Если вместо массива указано пустое значение
-   * ( null, None, Nothing, nil и т. д.) или если указанный массив
-   * является пустым списком или списком, содержащим только элемент 1,
-   * верните 0. */
+// {
+//   //Сумма без наибольшего и наименьшего числа
+//   /**
+//    * Задание
+//    * Сложите все числа заданного массива (см. список),
+//    * кроме самого большого и самого маленького элементов
+//    * (по значению, а не по индексу!).
+//    *
+//    * Самый высокий или самый низкий элемент соответственно
+//    * — это один элемент на каждом краю, даже если их несколько с
+//    * одинаковым значением.
+//    *
+//    * Следите за проверкой входных данных.
+//    *
+//    * Пример
+//    * { 6, 2, 1, 8, 10 } => 16
+//    * { 1, 1, 11, 2, 3 } => 6
+//    * Проверка входных данных
+//    * Если вместо массива указано пустое значение
+//    * ( null, None, Nothing, nil и т. д.) или если указанный массив
+//    * является пустым списком или списком, содержащим только элемент 1,
+//    * верните 0. */
+//
+//   // function sumArray(array) {
+//   //   if (Array.isArray(array)) {
+//   //     if (array.length > 1) {
+//   //       array.sort(function (a, b) {
+//   //         return a - b;
+//   //       });
+//   //       array.splice(0, 1);
+//   //       array.splice(-1, 1);
+//   //       let num = array.reduce((acc, cur) => acc + cur, 0);
+//   //       return num;
+//   //     } else {
+//   //       return 0;
+//   //     }
+//   //   } else {
+//   //     return 0;
+//   //   }
+//   // }
+//
+//   //Другое решение
+//   // const sumArray = (numbers) =>
+//   //   numbers && numbers.length > 1
+//   //     ? numbers
+//   //         .sort((a, b) => a - b)
+//   //         .slice(1, -1)
+//   //         .reduce((sum, number) => sum + number, 0)
+//   //     : 0;
+//
+//   //Другое решение
+//   // function sumArray(array) {
+//   //   return !array || array.length < 4
+//   //     ? 0
+//   //     : array
+//   //         .sort((a, b) => a - b)
+//   //         .slice(1, array.length - 1)
+//   //         .reduce((a, b) => a + b);
+//   // }
+//
+//   //Другое решение
+//   // function sumArray(array) {
+//   //   return Array.isArray(array) && array.length > 1
+//   //     ? array.reduce((s, n) => s + n, 0) -
+//   //         Math.min(...array) -
+//   //         Math.max(...array)
+//   //     : 0;
+//   // }
+//
+//   //Другое решение
+//   function sumArray(array) {
+//     array = array || [];
+//     return array
+//       .sort((a, b) => a - b)
+//       .slice(1, -1)
+//       .reduce((a, b) => a + b, 0);
+//   }
+//
+//   console.log(sumArray([6, 2, 1, 8, 10])); //16
+//   console.log(sumArray([1, 1, 11, 2, 3])); //6
+//   console.log(sumArray([1])); //0
+//   console.log(sumArray(null)); //0
+// }
 
-  // function sumArray(array) {
-  //   if (Array.isArray(array)) {
-  //     if (array.length > 1) {
-  //       array.sort(function (a, b) {
-  //         return a - b;
-  //       });
-  //       array.splice(0, 1);
-  //       array.splice(-1, 1);
-  //       let num = array.reduce((acc, cur) => acc + cur, 0);
-  //       return num;
-  //     } else {
-  //       return 0;
-  //     }
-  //   } else {
-  //     return 0;
-  //   }
-  // }
+// {
+//   function counterBook(stocklist, categories) {
+//     if (!stocklist.length || categories.length) {
+//       return 0;
+//     }
+//     const categoryCounts = {};
+//     for (let item = 0; item <stocklist.lengthstocklist) {
+//       let arr = item.split(" ");
+//       console.log(arr);
+//       // if (categories.includes(arr[0])) {
+//       //   categoryCounts[arr[0]] =
+//       //     (categoryCounts[arr[0]] || 0) + parseInt(count);
+//       //   console.log(categoryCounts[arr[0]]);
+//       // }
+//       // }
+//
+//       // let result = [];
+//       // for (let category of categories) {
+//       //   result.push(`${category} : ${categoryCounts[category]}`);
+//       // }
+//       // return result.join("-");
+//     }
+//   }
+//
+//   console.log(
+//     counterBook(
+//       ["ABART 20", "CDXEF 50", "BKWRK 25", "BTSQZ 89", "DRTYM 60"],
+//       ["A", "B", "C", "W"],
+//     ),
+//   );
+// }
 
-  //Другое решение
-  // const sumArray = (numbers) =>
-  //   numbers && numbers.length > 1
-  //     ? numbers
-  //         .sort((a, b) => a - b)
-  //         .slice(1, -1)
-  //         .reduce((sum, number) => sum + number, 0)
-  //     : 0;
-
-  //Другое решение
-  // function sumArray(array) {
-  //   return !array || array.length < 4
-  //     ? 0
-  //     : array
-  //         .sort((a, b) => a - b)
-  //         .slice(1, array.length - 1)
-  //         .reduce((a, b) => a + b);
-  // }
-
-  //Другое решение
-  // function sumArray(array) {
-  //   return Array.isArray(array) && array.length > 1
-  //     ? array.reduce((s, n) => s + n, 0) -
-  //         Math.min(...array) -
-  //         Math.max(...array)
-  //     : 0;
-  // }
-
-  //Другое решение
-  function sumArray(array) {
-    array = array || [];
-    return array
-      .sort((a, b) => a - b)
-      .slice(1, -1)
-      .reduce((a, b) => a + b, 0);
-  }
-
-  console.log(sumArray([6, 2, 1, 8, 10])); //16
-  console.log(sumArray([1, 1, 11, 2, 3])); //6
-  console.log(sumArray([1])); //0
-  console.log(sumArray(null)); //0
-}
+//Решение задач CodeWars 16/11
+// {
+//   /**
+//    * Описание:
+//    * В начале года в маленьком городке проживало p0 = 1000 человек.
+//    * Население регулярно увеличивается на 2 percent человек в год,
+//    * и, кроме того, 50 новых жителей в год приезжают в город.
+//    * Сколько лет потребуется городку, чтобы его население превысило
+//    * или стало равным p = 1200 жителям?
+//    *
+//    * At the end of the first year there will be:
+//    * 1000 + 1000 * 0.02 + 50 => 1070 inhabitants
+//    *
+//    * At the end of the 2nd year there will be:
+//    * 1070 + 1070 * 0.02 + 50 => 1141 inhabitants (** number of inhabitants is an integer **)
+//    *
+//    * At the end of the 3rd year there will be:
+//    * 1141 + 1141 * 0.02 + 50 => 1213
+//    *
+//    * It will need 3 entire years.
+//    * Более общие параметры:
+//    *
+//    * p0, percent, aug (inhabitants coming or leaving each year),
+//    * p (population to equal or surpass)
+//    *
+//    * функция nb_year должна возвращать n количество полных лет,
+//    * необходимых для того, чтобы численность населения стала больше
+//    * или равна p.
+//    *
+//    * aug - целое число, percent - положительное или нулевое плавающее
+//    * число, p0 и p - положительные целые числа (> 0)
+//    *
+//    * Examples:
+//    * nb_year(1500, 5, 100, 5000) -> 15
+//    * nb_year(1500000, 2.5, 10000, 2000000) -> 10
+//    * Примечание:
+//    * Не забудьте преобразовать параметр «процент» в
+//    * процентах в теле вашей функции: если параметр «процент» равен 2,
+//    * вам нужно преобразовать его в 0,02.
+//    *
+//    * Доли людей не учитываются. В конце каждого года численность
+//    * населения округляется до целого числа: 252.8 человек
+//    * округляются до 252 человек.*/
+//
+//   function nb_year(p0, percent, aug, p) {
+//     let people = p0;
+//     let year = 0;
+//     while (people <= p) {
+//       people += people * (percent / 100) + aug;
+//       console.log(people);
+//       people = Math.floor(people);
+//       console.log(people);
+//       year++;
+//     }
+//     return year;
+//   }
+//   0;
+//   console.log(nb_year(1500, 5, 100, 5000)); //15
+//   console.log(nb_year(1500000, 2.5, 10000, 2000000)); //10
+//   console.log(nb_year(1500000, 0.25, 1000, 2000000)); //94
+//   console.log(nb_year(1000, 2.0, 50, 1214)); //4
+//   94; //
+// }
