@@ -1544,14 +1544,24 @@
   // }
 
   //Другое решение
+  // function accum(s) {
+  //   return s
+  //     .split("")
+  //     .map((char, i) => {
+  //       return char.toUpperCase() + char.toLowerCase().repeat(i);
+  //     })
+  //     .join("-");
+  // }
+
+  //Другое решение
   function accum(s) {
-    return s
-      .split("")
-      .map((char, i) => {
-        return char.toUpperCase() + char.toLowerCase().repeat(i);
+    return [...s]
+      .map((el, i) => {
+        return el.toUpperCase() + el.toLowerCase().repeat(i);
       })
       .join("-");
   }
+
   console.log(accum("abcd")); //"A-Bb-Ccc-Dddd"
   console.log(accum("RqaEzty")); //"R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
   console.log(accum("cwAt")); //"C-Ww-Aaa-Tttt"
