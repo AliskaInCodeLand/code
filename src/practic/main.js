@@ -1465,3 +1465,28 @@
 //   console.log(nb_year(1000, 2.0, 50, 1214)); //4
 //   94; //
 // }
+
+// {
+//  /**Можете ли вы реализовать функцию,
+//  которая будет возвращать количество слов в строке?
+//
+// Вы должны убедиться, что пробелы в строке действительно
+// являются пробелами.
+//
+// */
+//   function countWords(str) {
+//     let arr = str.split(" ");
+//     for (let char = 0; char < arr.length; char++) {
+//       // debugger;
+//       if (arr[char] == " " || arr[char] == "" || arr[char] == null) {
+//         arr.splice(char, 1);
+//       }
+//     }
+//     return arr.length;
+//   }
+//
+//   console.log(countWords("Hello")); //1
+//   console.log(countWords(" Hello World! ")); //2
+//   console.log(countWords("No results for search term `s`")); //6
+//   console.log(countWords(" Hello")); //1
+// }
