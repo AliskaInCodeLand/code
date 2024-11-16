@@ -1503,12 +1503,47 @@
 //    * которая сообщает нам, является ли заданный
 //    * символ буквой или нет. */
 //
-//   function isItLet(char) {
-//     const regex = /^[a-zA-Z]+$/;
-//     return regex.test(char);
-//   }
+//   // function isItLet(char) {
+//   //   const regex = /^[a-zA-Z]+$/;
+//   //   return regex.test(char);
+//   // }
+//
 //   console.log(isItLet("a")); //true
 //   console.log(isItLet("IsItLetter")); //true
 //   console.log(isItLet("is_it_letter")); //false
 //   console.log(isItLet("1")); //false
+// }
+
+// {
+//   //Бормотание
+//   /**
+//    * Описание:
+//    * На этот раз никакой истории, никакой теории. Приведённые ниже примеры показывают, как написать функцию accum:
+//    *
+//    * Примеры:
+//    * accum("abcd") -> "A-Bb-Ccc-Dddd"
+//    * accum("RqaEzty") -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+//    * accum("cwAt") -> "C-Ww-Aaa-Tttt"
+//    * Параметр accum — это строка,
+//    * которая содержит только буквы a..z и A..Z.*/
+//
+//   function accum(s) {
+//     s = s.split("");
+//     let newstr = "";
+//     for (let i = 0; i < s.length; i++) {
+//       debugger;
+//       let count = i + 1;
+//       newstr += s[i].toUpperCase();
+//       while (count > 1) {
+//         newstr += s[i].toLowerCase();
+//         count--;
+//       }
+//       if (i !== s.length - 1) newstr += "-";
+//     }
+//     return newstr;
+//   }
+//
+//   console.log(accum("abcd")); //"A-Bb-Ccc-Dddd"
+//   console.log(accum("RqaEzty")); //"R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+//   console.log(accum("cwAt")); //"C-Ww-Aaa-Tttt"
 // }
