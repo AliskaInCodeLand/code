@@ -1584,12 +1584,11 @@
    * массива. */
 
   function checkLetters(arr) {
-    let str1 = arr[0].split("");
-    let str2 = arr[1].split("");
+    let str1 = arr[0].toLowerCase().split("");
+    let str2 = arr[1].toLowerCase().split("");
     let res = [];
     for (let i = 0; i < str2.length; i++) {
-      debugger;
-      if (str1.includes(str2[i]) || str1.includes(str2[i].toLowerCase())) {
+      if (str1.includes(str2[i]) || str1.includes(str2[i])) {
         res.push(1);
       } else {
         res.push(0);
@@ -1604,5 +1603,6 @@
   console.log(checkLetters(["ab", "aaa"])); //true
   console.log(checkLetters(["trances", "nectar"])); //true
   console.log(checkLetters(["compadres", "DRAPES"])); //true
+  console.log(checkLetters(["THE EYES", "they see"])); //true
   console.log(checkLetters(["parses", "parsecs"])); //false
 }
