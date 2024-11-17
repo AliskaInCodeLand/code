@@ -1514,55 +1514,95 @@
 //   console.log(isItLet("1")); //false
 // }
 
+// {
+//   //Бормотание
+//   /**
+//    * Описание:
+//    * На этот раз никакой истории, никакой теории. Приведённые ниже примеры показывают, как написать функцию accum:
+//    *
+//    * Примеры:
+//    * accum("abcd") -> "A-Bb-Ccc-Dddd"
+//    * accum("RqaEzty") -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+//    * accum("cwAt") -> "C-Ww-Aaa-Tttt"
+//    * Параметр accum — это строка,
+//    * которая содержит только буквы a..z и A..Z.*/
+//
+//   // function accum(s) {
+//   //   s = s.split("");
+//   //   let newstr = "";
+//   //   for (let i = 0; i < s.length; i++) {
+//   //     debugger;
+//   //     let count = i + 1;
+//   //     newstr += s[i].toUpperCase();
+//   //     while (count > 1) {
+//   //       newstr += s[i].toLowerCase();
+//   //       count--;
+//   //     }
+//   //     if (i !== s.length - 1) newstr += "-";
+//   //   }
+//   //   return newstr;
+//   // }
+//
+//   //Другое решение
+//   // function accum(s) {
+//   //   return s
+//   //     .split("")
+//   //     .map((char, i) => {
+//   //       return char.toUpperCase() + char.toLowerCase().repeat(i);
+//   //     })
+//   //     .join("-");
+//   // }
+//
+//   //Другое решение
+//   function accum(s) {
+//     return [...s]
+//       .map((el, i) => {
+//         return el.toUpperCase() + el.toLowerCase().repeat(i);
+//       })
+//       .join("-");
+//   }
+//
+//   console.log(accum("abcd")); //"A-Bb-Ccc-Dddd"
+//   console.log(accum("RqaEzty")); //"R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+//   console.log(accum("cwAt")); //"C-Ww-Aaa-Tttt"
+// }
+
+//Решение задач CodeWars 17/11
 {
-  //Бормотание
   /**
-   * Описание:
-   * На этот раз никакой истории, никакой теории. Приведённые ниже примеры показывают, как написать функцию accum:
+   noobCode 03: ПРОВЕРЬТЕ ЭТИ БУКВЫ... посмотрите,
+   есть ли буквы из «Строки 2» в «Строке 1»*/
+  /**
+   * Напишите функцию, которая проверяет, присутствуют ли все буквы из второй строки в первой хотя бы один раз, независимо от того, сколько раз они встречаются:
    *
-   * Примеры:
-   * accum("abcd") -> "A-Bb-Ccc-Dddd"
-   * accum("RqaEzty") -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
-   * accum("cwAt") -> "C-Ww-Aaa-Tttt"
-   * Параметр accum — это строка,
-   * которая содержит только буквы a..z и A..Z.*/
+   * ["ab", "aaa"]    =>  true
+   * ["trances", "nectar"]    =>  true
+   * ["compadres", "DRAPES"]  =>  true
+   * ["parses", "parsecs"]    =>  false
+   * Функция не должна учитывать регистр, как показано в примере № 2.
+   * Примечание: обе строки представлены в виде одного аргумента в форме
+   * массива. */
 
-  // function accum(s) {
-  //   s = s.split("");
-  //   let newstr = "";
-  //   for (let i = 0; i < s.length; i++) {
-  //     debugger;
-  //     let count = i + 1;
-  //     newstr += s[i].toUpperCase();
-  //     while (count > 1) {
-  //       newstr += s[i].toLowerCase();
-  //       count--;
-  //     }
-  //     if (i !== s.length - 1) newstr += "-";
-  //   }
-  //   return newstr;
-  // }
-
-  //Другое решение
-  // function accum(s) {
-  //   return s
-  //     .split("")
-  //     .map((char, i) => {
-  //       return char.toUpperCase() + char.toLowerCase().repeat(i);
-  //     })
-  //     .join("-");
-  // }
-
-  //Другое решение
-  function accum(s) {
-    return [...s]
-      .map((el, i) => {
-        return el.toUpperCase() + el.toLowerCase().repeat(i);
-      })
-      .join("-");
+  function checkLetters(arr) {
+    let str1 = arr[0].split("");
+    let str2 = arr[1].split("");
+    let res = [];
+    for (let i = 0; i < str2.length; i++) {
+      debugger;
+      if (str1.includes(str2[i]) || str1.includes(str2[i].toLowerCase())) {
+        res.push(1);
+      } else {
+        res.push(0);
+      }
+    }
+    if (res.includes(0)) {
+      return false;
+    }
+    return true;
   }
 
-  console.log(accum("abcd")); //"A-Bb-Ccc-Dddd"
-  console.log(accum("RqaEzty")); //"R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
-  console.log(accum("cwAt")); //"C-Ww-Aaa-Tttt"
+  console.log(checkLetters(["ab", "aaa"])); //true
+  console.log(checkLetters(["trances", "nectar"])); //true
+  console.log(checkLetters(["compadres", "DRAPES"])); //true
+  console.log(checkLetters(["parses", "parsecs"])); //false
 }
