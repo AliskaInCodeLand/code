@@ -1583,21 +1583,28 @@
    * Примечание: обе строки представлены в виде одного аргумента в форме
    * массива. */
 
+  // function checkLetters(arr) {
+  //   let str1 = arr[0].toLowerCase().split("");
+  //   let str2 = arr[1].toLowerCase().split("");
+  //   let res = [];
+  //   for (let i = 0; i < str2.length; i++) {
+  //     if (str1.includes(str2[i]) || str1.includes(str2[i])) {
+  //       res.push(1);
+  //     } else {
+  //       res.push(0);
+  //     }
+  //   }
+  //   if (res.includes(0)) {
+  //     return false;
+  //   }
+  //   return true;
+  // }
+
+  //Другое решение
   function checkLetters(arr) {
-    let str1 = arr[0].toLowerCase().split("");
-    let str2 = arr[1].toLowerCase().split("");
-    let res = [];
-    for (let i = 0; i < str2.length; i++) {
-      if (str1.includes(str2[i]) || str1.includes(str2[i])) {
-        res.push(1);
-      } else {
-        res.push(0);
-      }
-    }
-    if (res.includes(0)) {
-      return false;
-    }
-    return true;
+    return [...arr[1].toLowerCase()].every((x) =>
+      arr[0].toLowerCase().includes(x),
+    );
   }
 
   console.log(checkLetters(["ab", "aaa"])); //true
