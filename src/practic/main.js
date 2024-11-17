@@ -1608,13 +1608,38 @@
   // }
 
   //Другое решение
-  function letterCheck(arr) {
-    for (let i = 0; i < arr[1].length; i++) {
-      if (arr[0].toLowerCase().includes(arr[1][i])) {
-        continue;
-      } else {
+  // function letterCheck(arr) {
+  //   for (let i = 0; i < arr[1].length; i++) {
+  //     if (arr[0].toLowerCase().includes(arr[1][i])) {
+  //       continue;
+  //     } else {
+  //       return false;
+  //     }
+  //   }
+  //   return true;
+  // }
+
+  //Другое решение
+  // function checkLetters(arr) {
+  //   const arr1 = arr[0].toLowerCase().split("").sort();
+  //   const arr2 = arr[1].toLowerCase().split("").sort();
+  //   return arr2.every((e) => arr1.includes(e)) ? true : false;
+  // }
+
+  //Другое решение
+  function checkLetters(arr) {
+    let lowercased = arr.map((word) => word.toLowerCase());
+
+    var str1 = lowercased[0];
+    var str2 = lowercased[1];
+    var newString = "";
+
+    for (i = 0; i < str2.length; i++) {
+      newString = str1.replace(str2[i], "");
+      if (newString === str1) {
         return false;
       }
+      str1 = newString;
     }
     return true;
   }
