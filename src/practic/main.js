@@ -1712,13 +1712,33 @@
   //   // то же самое, что и recipeMap.entries()
   //   console.log(entry); // огурец,500 (и так далее)
   // }
-
   // массив (или другой итерируемый объект) с парами ключ-значение для инициализации
-  let map = new Map([
-    ["1", "str1"],
-    [1, "num1"],
-    [true, "bool1"],
-  ]);
+  // let map = new Map([
+  //   ["1", "str1"],
+  //   [1, "num1"],
+  //   [true, "bool1"],
+  // ]);
+  //
+  // console.log(map.get("1")); // str1
 
-  console.log(map.get("1")); // str1
+  //Set
+
+  let set = new Set();
+  let john = { name: "John" };
+  let pete = { name: "Pete" };
+  let mary = { name: "Mary" };
+
+  // считаем гостей, некоторые приходят несколько раз
+  set.add(john);
+  set.add(pete);
+  set.add(mary);
+  set.add(john);
+  set.add(mary);
+
+  // set хранит только 3 уникальных значения
+  console.log(set.size); // 3
+
+  for (let user of set) {
+    console.log(user.name); // John (потом Pete и Mary)
+  }
 }
