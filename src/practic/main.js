@@ -1568,85 +1568,111 @@
 // }
 
 //Решение задач CodeWars 17/11
-{
-  /**
+// {
+/**
    noobCode 03: ПРОВЕРЬТЕ ЭТИ БУКВЫ... посмотрите,
    есть ли буквы из «Строки 2» в «Строке 1»*/
+/**
+ * Напишите функцию, которая проверяет, присутствуют ли все буквы из второй строки в первой хотя бы один раз, независимо от того, сколько раз они встречаются:
+ *
+ * ["ab", "aaa"]    =>  true
+ * ["trances", "nectar"]    =>  true
+ * ["compadres", "DRAPES"]  =>  true
+ * ["parses", "parsecs"]    =>  false
+ * Функция не должна учитывать регистр, как показано в примере № 2.
+ * Примечание: обе строки представлены в виде одного аргумента в форме
+ * массива. */
+
+// function checkLetters(arr) {
+//   let str1 = arr[0].toLowerCase().split("");
+//   let str2 = arr[1].toLowerCase().split("");
+//   let res = [];
+//   for (let i = 0; i < str2.length; i++) {
+//     if (str1.includes(str2[i]) || str1.includes(str2[i])) {
+//       res.push(1);
+//     } else {
+//       res.push(0);
+//     }
+//   }
+//   if (res.includes(0)) {
+//     return false;
+//   }
+//   return true;
+// }
+
+//Другое решение
+// function checkLetters(arr) {
+//   return [...arr[1].toLowerCase()].every((x) =>
+//     arr[0].toLowerCase().includes(x),
+//   );
+// }
+
+//Другое решение
+// function letterCheck(arr) {
+//   for (let i = 0; i < arr[1].length; i++) {
+//     if (arr[0].toLowerCase().includes(arr[1][i])) {
+//       continue;
+//     } else {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+
+//Другое решение
+// function checkLetters(arr) {
+//   const arr1 = arr[0].toLowerCase().split("").sort();
+//   const arr2 = arr[1].toLowerCase().split("").sort();
+//   return arr2.every((e) => arr1.includes(e)) ? true : false;
+// }
+
+//Другое решение
+//   function checkLetters(arr) {
+//     let lowercased = arr.map((word) => word.toLowerCase());
+//
+//     var str1 = lowercased[0];
+//     var str2 = lowercased[1];
+//     var newString = "";
+//
+//     for (i = 0; i < str2.length; i++) {
+//       newString = str1.replace(str2[i], "");
+//       if (newString === str1) {
+//         return false;
+//       }
+//       str1 = newString;
+//     }
+//     return true;
+//   }
+//
+//   console.log(checkLetters(["ab", "aaa"])); //true
+//   console.log(checkLetters(["trances", "nectar"])); //true
+//   console.log(checkLetters(["compadres", "DRAPES"])); //true
+//   console.log(checkLetters(["THE EYES", "they see"])); //true
+//   console.log(checkLetters(["parses", "parsecs"])); //false
+// }
+
+//Решение задач CodeWars 18/11
+{
+  //Метод camelCase
   /**
-   * Напишите функцию, которая проверяет, присутствуют ли все буквы из второй строки в первой хотя бы один раз, независимо от того, сколько раз они встречаются:
+   * Описание:
+   * Напишите метод (или функцию, в зависимости от языка), который преобразует строку в верблюжий регистр, то есть все слова должны начинаться с заглавной буквы, а пробелы должны быть удалены.
    *
-   * ["ab", "aaa"]    =>  true
-   * ["trances", "nectar"]    =>  true
-   * ["compadres", "DRAPES"]  =>  true
-   * ["parses", "parsecs"]    =>  false
-   * Функция не должна учитывать регистр, как показано в примере № 2.
-   * Примечание: обе строки представлены в виде одного аргумента в форме
-   * массива. */
+   * Примеры (ввод -> вывод):
+   * "hello case" --> "HelloCase"
+   * "camel case word" --> "CamelCaseWord"
+   * Не забудьте оценить это ката! Спасибо :)
+   * */
 
-  // function checkLetters(arr) {
-  //   let str1 = arr[0].toLowerCase().split("");
-  //   let str2 = arr[1].toLowerCase().split("");
-  //   let res = [];
-  //   for (let i = 0; i < str2.length; i++) {
-  //     if (str1.includes(str2[i]) || str1.includes(str2[i])) {
-  //       res.push(1);
-  //     } else {
-  //       res.push(0);
-  //     }
-  //   }
-  //   if (res.includes(0)) {
-  //     return false;
-  //   }
-  //   return true;
-  // }
-
-  //Другое решение
-  // function checkLetters(arr) {
-  //   return [...arr[1].toLowerCase()].every((x) =>
-  //     arr[0].toLowerCase().includes(x),
-  //   );
-  // }
-
-  //Другое решение
-  // function letterCheck(arr) {
-  //   for (let i = 0; i < arr[1].length; i++) {
-  //     if (arr[0].toLowerCase().includes(arr[1][i])) {
-  //       continue;
-  //     } else {
-  //       return false;
-  //     }
-  //   }
-  //   return true;
-  // }
-
-  //Другое решение
-  // function checkLetters(arr) {
-  //   const arr1 = arr[0].toLowerCase().split("").sort();
-  //   const arr2 = arr[1].toLowerCase().split("").sort();
-  //   return arr2.every((e) => arr1.includes(e)) ? true : false;
-  // }
-
-  //Другое решение
-  function checkLetters(arr) {
-    let lowercased = arr.map((word) => word.toLowerCase());
-
-    var str1 = lowercased[0];
-    var str2 = lowercased[1];
-    var newString = "";
-
-    for (i = 0; i < str2.length; i++) {
-      newString = str1.replace(str2[i], "");
-      if (newString === str1) {
-        return false;
-      }
-      str1 = newString;
+  function camelCase(str) {
+    let arr = str.split(" ");
+    let newstr = "";
+    for (let i = 0; i < arr.length; i++) {
+      newstr += arr[i].replace(arr[i][0], arr[i][0].toUpperCase());
     }
-    return true;
+    return newstr;
   }
 
-  console.log(checkLetters(["ab", "aaa"])); //true
-  console.log(checkLetters(["trances", "nectar"])); //true
-  console.log(checkLetters(["compadres", "DRAPES"])); //true
-  console.log(checkLetters(["THE EYES", "they see"])); //true
-  console.log(checkLetters(["parses", "parsecs"])); //false
+  console.log(camelCase("hello case")); //"HelloCase"
+  console.log(camelCase("camel case word")); //"CamelCaseWord"
 }
