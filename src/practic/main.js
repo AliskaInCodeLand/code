@@ -1652,27 +1652,44 @@
 // }
 
 //Решение задач CodeWars 18/11
+// {
+//   //Метод camelCase
+//   /**
+//    * Описание:
+//    * Напишите метод (или функцию, в зависимости от языка), который преобразует строку в верблюжий регистр, то есть все слова должны начинаться с заглавной буквы, а пробелы должны быть удалены.
+//    *
+//    * Примеры (ввод -> вывод):
+//    * "hello case" --> "HelloCase"
+//    * "camel case word" --> "CamelCaseWord"
+//    * Не забудьте оценить это ката! Спасибо :)
+//    * */
+//
+//   function camelCase(str) {
+//     let arr = str.split(" ");
+//     let newstr = "";
+//     for (let i = 0; i < arr.length; i++) {
+//       newstr += arr[i].replace(arr[i][0], arr[i][0].toUpperCase());
+//     }
+//     return newstr;
+//   }
+//
+//   console.log(camelCase("hello case")); //"HelloCase"
+//   console.log(camelCase("camel case word")); //"CamelCaseWord"
+// }
+
 {
-  //Метод camelCase
-  /**
-   * Описание:
-   * Напишите метод (или функцию, в зависимости от языка), который преобразует строку в верблюжий регистр, то есть все слова должны начинаться с заглавной буквы, а пробелы должны быть удалены.
-   *
-   * Примеры (ввод -> вывод):
-   * "hello case" --> "HelloCase"
-   * "camel case word" --> "CamelCaseWord"
-   * Не забудьте оценить это ката! Спасибо :)
-   * */
+  //Map и Set
 
-  function camelCase(str) {
-    let arr = str.split(" ");
-    let newstr = "";
-    for (let i = 0; i < arr.length; i++) {
-      newstr += arr[i].replace(arr[i][0], arr[i][0].toUpperCase());
-    }
-    return newstr;
-  }
+  let map = new Map();
 
-  console.log(camelCase("hello case")); //"HelloCase"
-  console.log(camelCase("camel case word")); //"CamelCaseWord"
+  map.set("1", "str1"); // строка в качестве ключа
+  map.set(1, "num1"); // цифра как ключ
+  map.set(true, "bool1"); // булево значение как ключ
+
+  // объект Object приводит ключи к строкам
+  // Map сохраняет тип ключей, так что сохранится 2 разных значения:
+  console.log(map.get(1)); // "num1"
+  console.log(map.get("1")); // "str1"
+
+  console.log(map.size); // 3
 }
