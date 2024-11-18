@@ -1679,7 +1679,6 @@
 
 {
   //Map и Set
-
   // let map = new Map();
   //
   // map.set("1", "str1"); // строка в качестве ключа
@@ -1692,26 +1691,34 @@
   // console.log(map.get("1")); // "str1"
   //
   // console.log(map.size); // 3
+  // let recipeMap = new Map([
+  //   ["огурец", 500],
+  //   ["помидор", 350],
+  //   ["лук", 50],
+  // ]);
+  //
+  // // перебор по ключам (овощи)
+  // for (let vegetable of recipeMap.keys()) {
+  //   console.log(vegetable); // огурец, помидор, лук
+  // }
+  //
+  // // перебор по значениям (числа)
+  // for (let amount of recipeMap.values()) {
+  //   console.log(amount); // 500, 350, 50
+  // }
+  //
+  // // перебор по элементам в формате [ключ, значение]
+  // for (let entry of recipeMap) {
+  //   // то же самое, что и recipeMap.entries()
+  //   console.log(entry); // огурец,500 (и так далее)
+  // }
 
-  let recipeMap = new Map([
-    ["огурец", 500],
-    ["помидор", 350],
-    ["лук", 50],
+  // массив пар [ключ, значение]
+  let map = new Map([
+    ["1", "str1"],
+    [1, "num1"],
+    [true, "bool1"],
   ]);
 
-  // перебор по ключам (овощи)
-  for (let vegetable of recipeMap.keys()) {
-    console.log(vegetable); // огурец, помидор, лук
-  }
-
-  // перебор по значениям (числа)
-  for (let amount of recipeMap.values()) {
-    console.log(amount); // 500, 350, 50
-  }
-
-  // перебор по элементам в формате [ключ, значение]
-  for (let entry of recipeMap) {
-    // то же самое, что и recipeMap.entries()
-    console.log(entry); // огурец,500 (и так далее)
-  }
+  console.log(map.get("1")); // str1
 }
