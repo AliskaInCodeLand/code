@@ -1850,54 +1850,76 @@
 //   console.log(unique(values)); //Hare,Krishna,
 // }
 
+// {
+//   //Отфильтруйте анаграммы
+//   /**Анаграммы – это слова, у которых те же буквы
+//    * в том же количестве, но они располагаются в другом порядке. Анаграммы – это слова, у которых те же буквы в том же количестве, но они располагаются в другом порядке.
+//    *
+//    * Например:
+//    *
+//    * nap - pan
+//    * ear - are - era
+//    * cheaters - hectares - teachers
+//    * Напишите функцию aclean(arr), которая возвращает массив слов,
+//    * очищенный от анаграмм.
+//    *
+//    * Например:
+//    *
+//    * let arr = ["nap", "teachers", "cheaters", "PAN",
+//    * "ear", "era", "hectares"];
+//    *
+//    * alert( aclean(arr) ); // "nap,teachers,ear" или "PAN,cheaters,era"
+//    * Из каждой группы анаграмм должно остаться только одно слово,
+//    * не важно какое.*/
+//
+//   function aclean(arr) {
+//     // let word = new Map();
+//     // for (let item of arr) {
+//     //   let sorted = item.toLowerCase().split("").sort().join("");
+//     //
+//     //   // console.log(sorted);
+//     //   word.set(sorted, item);
+//     //   // console.log(word);
+//     // }
+//     // return console.log(word.values());
+//
+//     let obj = {};
+//     //можно так
+//     // arr.forEach((str, index) => {
+//     //   obj[str.toLowerCase().split("").sort().join("")] = str;
+//     // });
+//
+//     for (let str = 0; str < arr.length; str++) {
+//       let template = arr[str].toLowerCase().split("").sort().join("");
+//       obj[template] = arr[str];
+//     }
+//
+//     return Object.values(obj);
+//   }
+//   console.log(
+//     aclean(["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"]),
+//   );
+//   // "nap,teachers,ear" или "PAN,cheaters,era"
+// }
+
 {
-  //Отфильтруйте анаграммы
-  /**Анаграммы – это слова, у которых те же буквы
-   * в том же количестве, но они располагаются в другом порядке. Анаграммы – это слова, у которых те же буквы в том же количестве, но они располагаются в другом порядке.
-   *
-   * Например:
-   *
-   * nap - pan
-   * ear - are - era
-   * cheaters - hectares - teachers
-   * Напишите функцию aclean(arr), которая возвращает массив слов,
-   * очищенный от анаграмм.
-   *
-   * Например:
-   *
-   * let arr = ["nap", "teachers", "cheaters", "PAN",
-   * "ear", "era", "hectares"];
-   *
-   * alert( aclean(arr) ); // "nap,teachers,ear" или "PAN,cheaters,era"
-   * Из каждой группы анаграмм должно остаться только одно слово,
-   * не важно какое.*/
+  //Перебираемые ключи
+  //   Мы хотели бы получить массив ключей map.keys() в переменную
+  //   и далее работать с ними, например, применить метод .push.
+  //     Но это не выходит:
+  //
+  //   let map = new Map();
+  //   map.set("name", "John");
+  //   let keys = map.keys();
+  //
+  // // Error: keys.push is not a function
+  // // Ошибка: keys.push -- это не функция
+  //   keys.push("more");
+  //   Почему? Что нужно поправить в коде, чтобы вызов keys.push сработал?
 
-  function aclean(arr) {
-    // let word = new Map();
-    // for (let item of arr) {
-    //   let sorted = item.toLowerCase().split("").sort().join("");
-    //
-    //   // console.log(sorted);
-    //   word.set(sorted, item);
-    //   // console.log(word);
-    // }
-    // return console.log(word.values());
-
-    let obj = {};
-    //можно так
-    // arr.forEach((str, index) => {
-    //   obj[str.toLowerCase().split("").sort().join("")] = str;
-    // });
-
-    for (let str = 0; str < arr.length; str++) {
-      let template = arr[str].toLowerCase().split("").sort().join("");
-      obj[template] = arr[str];
-    }
-
-    return Object.values(obj);
-  }
-  console.log(
-    aclean(["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"]),
-  );
-  // "nap,teachers,ear" или "PAN,cheaters,era"
+  let map = new Map();
+  map.set("name", "John");
+  let keys = Array.from(map.keys());
+  keys.push("more");
+  console.log(keys);
 }
