@@ -1873,15 +1873,23 @@
    * не важно какое.*/
 
   function aclean(arr) {
-    let word = new Map();
-    for (let item of arr) {
-      let sorted = item.toLowerCase().split("").sort().join("");
+    // let word = new Map();
+    // for (let item of arr) {
+    //   let sorted = item.toLowerCase().split("").sort().join("");
+    //
+    //   // console.log(sorted);
+    //   word.set(sorted, item);
+    //   // console.log(word);
+    // }
+    // return console.log(word.values());
 
-      // console.log(sorted);
-      word.set(sorted, item);
-      // console.log(word);
-    }
-    return console.log(word.values());
+    let obj = {};
+    //можно так
+    arr.forEach((str, index) => {
+      obj[str.toLowerCase().split("").sort().join("")] = str;
+    });
+
+    return Object.values(obj);
   }
   console.log(
     aclean(["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"]),
