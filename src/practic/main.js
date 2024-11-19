@@ -1720,25 +1720,67 @@
   // ]);
   //
   // console.log(map.get("1")); // str1
-
   //Set
+  // let set = new Set();
+  // let john = { name: "John" };
+  // let pete = { name: "Pete" };
+  // let mary = { name: "Mary" };
+  //
+  // // считаем гостей, некоторые приходят несколько раз
+  // set.add(john);
+  // set.add(pete);
+  // set.add(mary);
+  // set.add(john);
+  // set.add(mary);
+  //
+  // // set хранит только 3 уникальных значения
+  // console.log(set.size); // 3
+  //
+  // for (let user of set) {
+  //   console.log(user.name); // John (потом Pete и Mary)
+  // }
+}
 
-  let set = new Set();
-  let john = { name: "John" };
-  let pete = { name: "Pete" };
-  let mary = { name: "Mary" };
+//Теория с учебника JSlearn 19/11
+{
+  let recipeMap = new Map([
+    ["огурец", 500],
+    ["помидор", 350],
+    ["лук", 50],
+  ]);
 
-  // считаем гостей, некоторые приходят несколько раз
-  set.add(john);
-  set.add(pete);
-  set.add(mary);
-  set.add(john);
-  set.add(mary);
+  // for (let vegetable of recipeMap.entries()) {
+  //   console.log(vegetable); // огурец, помидор, лук
+  // }
 
-  // set хранит только 3 уникальных значения
-  console.log(set.size); // 3
+  // recipeMap.forEach((value, key, map) => {
+  //   console.log(`${key}: ${value}`); // огурец: 500 и так далее
+  // });
 
-  for (let user of set) {
-    console.log(user.name); // John (потом Pete и Mary)
-  }
+  let base = new Map([
+    ["Bob", "USA"],
+    ["Alice", "Russia"],
+  ]);
+
+  let obj = { Bob: "USA" };
+  console.log(base.get("Alice"));
+  let objMap = new Map(Object.entries(obj));
+  console.log(objMap.get("Bob"));
+
+  let prices = Object.fromEntries([
+    ["banana", 1],
+    ["orange", 2],
+    ["meat", 4],
+  ]);
+
+  console.log(prices);
+  console.log(Object.fromEntries(base));
+
+  let map = new Map();
+  map.set("banana", 1);
+  map.set("orange", 2);
+  map.set("meat", 4);
+
+  let fruits = Object.fromEntries(map);
+  console.log(fruits);
 }
