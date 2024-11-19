@@ -1677,110 +1677,130 @@
 //   console.log(camelCase("camel case word")); //"CamelCaseWord"
 // }
 
-{
-  //Map и Set
-  // let map = new Map();
-  //
-  // map.set("1", "str1"); // строка в качестве ключа
-  // map.set(1, "num1"); // цифра как ключ
-  // map.set(true, "bool1"); // булево значение как ключ
-  //
-  // // объект Object приводит ключи к строкам
-  // // Map сохраняет тип ключей, так что сохранится 2 разных значения:
-  // console.log(map.get(1)); // "num1"
-  // console.log(map.get("1")); // "str1"
-  //
-  // console.log(map.size); // 3
-  // let recipeMap = new Map([
-  //   ["огурец", 500],
-  //   ["помидор", 350],
-  //   ["лук", 50],
-  // ]);
-  //
-  // // перебор по ключам (овощи)
-  // for (let vegetable of recipeMap.keys()) {
-  //   console.log(vegetable); // огурец, помидор, лук
-  // }
-  //
-  // // перебор по значениям (числа)
-  // for (let amount of recipeMap.values()) {
-  //   console.log(amount); // 500, 350, 50
-  // }
-  //
-  // // перебор по элементам в формате [ключ, значение]
-  // for (let entry of recipeMap) {
-  //   // то же самое, что и recipeMap.entries()
-  //   console.log(entry); // огурец,500 (и так далее)
-  // }
-  // массив (или другой итерируемый объект) с парами ключ-значение для инициализации
-  // let map = new Map([
-  //   ["1", "str1"],
-  //   [1, "num1"],
-  //   [true, "bool1"],
-  // ]);
-  //
-  // console.log(map.get("1")); // str1
-  //Set
-  // let set = new Set();
-  // let john = { name: "John" };
-  // let pete = { name: "Pete" };
-  // let mary = { name: "Mary" };
-  //
-  // // считаем гостей, некоторые приходят несколько раз
-  // set.add(john);
-  // set.add(pete);
-  // set.add(mary);
-  // set.add(john);
-  // set.add(mary);
-  //
-  // // set хранит только 3 уникальных значения
-  // console.log(set.size); // 3
-  //
-  // for (let user of set) {
-  //   console.log(user.name); // John (потом Pete и Mary)
-  // }
-}
+// {
+//Map и Set
+// let map = new Map();
+//
+// map.set("1", "str1"); // строка в качестве ключа
+// map.set(1, "num1"); // цифра как ключ
+// map.set(true, "bool1"); // булево значение как ключ
+//
+// // объект Object приводит ключи к строкам
+// // Map сохраняет тип ключей, так что сохранится 2 разных значения:
+// console.log(map.get(1)); // "num1"
+// console.log(map.get("1")); // "str1"
+//
+// console.log(map.size); // 3
+// let recipeMap = new Map([
+//   ["огурец", 500],
+//   ["помидор", 350],
+//   ["лук", 50],
+// ]);
+//
+// // перебор по ключам (овощи)
+// for (let vegetable of recipeMap.keys()) {
+//   console.log(vegetable); // огурец, помидор, лук
+// }
+//
+// // перебор по значениям (числа)
+// for (let amount of recipeMap.values()) {
+//   console.log(amount); // 500, 350, 50
+// }
+//
+// // перебор по элементам в формате [ключ, значение]
+// for (let entry of recipeMap) {
+//   // то же самое, что и recipeMap.entries()
+//   console.log(entry); // огурец,500 (и так далее)
+// }
+// массив (или другой итерируемый объект) с парами ключ-значение для инициализации
+// let map = new Map([
+//   ["1", "str1"],
+//   [1, "num1"],
+//   [true, "bool1"],
+// ]);
+//
+// console.log(map.get("1")); // str1
+//Set
+// let set = new Set();
+// let john = { name: "John" };
+// let pete = { name: "Pete" };
+// let mary = { name: "Mary" };
+//
+// // считаем гостей, некоторые приходят несколько раз
+// set.add(john);
+// set.add(pete);
+// set.add(mary);
+// set.add(john);
+// set.add(mary);
+//
+// // set хранит только 3 уникальных значения
+// console.log(set.size); // 3
+//
+// for (let user of set) {
+//   console.log(user.name); // John (потом Pete и Mary)
+// }
+// }
 
 //Теория с учебника JSlearn 19/11
+// {
+//   let recipeMap = new Map([
+//     ["огурец", 500],
+//     ["помидор", 350],
+//     ["лук", 50],
+//   ]);
+
+// for (let vegetable of recipeMap.entries()) {
+//   console.log(vegetable); // огурец, помидор, лук
+// }
+
+// recipeMap.forEach((value, key, map) => {
+//   console.log(`${key}: ${value}`); // огурец: 500 и так далее
+// });
+
+// let base = new Map([
+//   ["Bob", "USA"],
+//   ["Alice", "Russia"],
+// ]);
+//
+// let obj = { Bob: "USA" };
+// console.log(base.get("Alice"));
+// let objMap = new Map(Object.entries(obj));
+// console.log(objMap.get("Bob"));
+//
+// let prices = Object.fromEntries([
+//   ["banana", 1],
+//   ["orange", 2],
+//   ["meat", 4],
+// ]);
+//
+// console.log(prices);
+// console.log(Object.fromEntries(base));
+//
+// let map = new Map();
+// map.set("banana", 1);
+// map.set("orange", 2);
+// map.set("meat", 4);
+//
+// let fruits = Object.fromEntries(map);
+// console.log(fruits);
+// }
+
 {
-  let recipeMap = new Map([
-    ["огурец", 500],
-    ["помидор", 350],
-    ["лук", 50],
-  ]);
+  let set = new Set();
 
-  // for (let vegetable of recipeMap.entries()) {
-  //   console.log(vegetable); // огурец, помидор, лук
-  // }
+  let user1 = { name: "Ludmila", age: 35 };
+  let user2 = { name: "Anton", age: 36 };
+  let user3 = { name: "Anfisa", age: 18 };
 
-  // recipeMap.forEach((value, key, map) => {
-  //   console.log(`${key}: ${value}`); // огурец: 500 и так далее
-  // });
+  set.add(user1);
+  set.add(user2);
+  set.add(user3);
+  set.add(user1);
+  set.add(user2);
 
-  let base = new Map([
-    ["Bob", "USA"],
-    ["Alice", "Russia"],
-  ]);
+  console.log(set.size);
 
-  let obj = { Bob: "USA" };
-  console.log(base.get("Alice"));
-  let objMap = new Map(Object.entries(obj));
-  console.log(objMap.get("Bob"));
-
-  let prices = Object.fromEntries([
-    ["banana", 1],
-    ["orange", 2],
-    ["meat", 4],
-  ]);
-
-  console.log(prices);
-  console.log(Object.fromEntries(base));
-
-  let map = new Map();
-  map.set("banana", 1);
-  map.set("orange", 2);
-  map.set("meat", 4);
-
-  let fruits = Object.fromEntries(map);
-  console.log(fruits);
+  for (let el of set) {
+    console.log(el.name);
+  }
 }
