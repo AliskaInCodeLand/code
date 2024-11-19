@@ -1785,22 +1785,67 @@
 // console.log(fruits);
 // }
 
+// {
+//   // let set = new Set();
+//   //
+//   // let user1 = { name: "Ludmila", age: 35 };
+//   // let user2 = { name: "Anton", age: 36 };
+//   // let user3 = { name: "Anfisa", age: 18 };
+//   //
+//   // set.add(user1);
+//   // set.add(user2);
+//   // set.add(user3);
+//   // set.add(user1);
+//   // set.add(user2);
+//   //
+//   // console.log(set.size);
+//   //
+//   // for (let el of set) {
+//   //   console.log(el.name);
+//   // }
+//
+//   let set = new Set(["Math", "History", "Music"]);
+//   console.log(set);
+//   set.forEach((value, valueAgain, set) => console.log(value));
+//   console.log(set.values());
+//   console.log(set.keys());
+//   console.log(set.entries());
+// }
+
+//Задачи из учебника
 {
-  let set = new Set();
+  /**
+   * Допустим, у нас есть массив arr.
+   *
+   * Создайте функцию unique(arr), которая вернёт массив уникальных, не повторяющихся значений массива arr.
+   *
+   * Например:
+   * */
+  // function unique(arr) {
+  //   /* ваш код */
+  // }
+  //
+  // let values = ["Hare", "Krishna", "Hare", "Krishna",
+  //   "Krishna", "Krishna", "Hare", "Hare", ":-O"
+  // ];
+  //
+  // alert( unique(values) ); // Hare,Krishna,:-O
 
-  let user1 = { name: "Ludmila", age: 35 };
-  let user2 = { name: "Anton", age: 36 };
-  let user3 = { name: "Anfisa", age: 18 };
-
-  set.add(user1);
-  set.add(user2);
-  set.add(user3);
-  set.add(user1);
-  set.add(user2);
-
-  console.log(set.size);
-
-  for (let el of set) {
-    console.log(el.name);
+  function unique(arr) {
+    return Array.from(new Set(arr));
   }
+
+  let values = [
+    "Hare",
+    "Krishna",
+    "Hare",
+    "Krishna",
+    "Krishna",
+    "Krishna",
+    "Hare",
+    "Hare",
+    ":-O",
+  ];
+
+  console.log(unique(values)); //Hare,Krishna,
 }
