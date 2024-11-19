@@ -1885,9 +1885,14 @@
 
     let obj = {};
     //можно так
-    arr.forEach((str, index) => {
-      obj[str.toLowerCase().split("").sort().join("")] = str;
-    });
+    // arr.forEach((str, index) => {
+    //   obj[str.toLowerCase().split("").sort().join("")] = str;
+    // });
+
+    for (let str = 0; str < arr.length; str++) {
+      let template = arr[str].toLowerCase().split("").sort().join("");
+      obj[template] = arr[str];
+    }
 
     return Object.values(obj);
   }
