@@ -2026,3 +2026,23 @@
 //   ); //, [0,2,4,6]
 //   console.log(zipWith((a, b) => a + b, [0, 1, 2, 3], [0, 1, 2, 3])); //, [0,2,4,6]
 // }
+
+{
+  //Moving Zeros To The End
+  /**
+   * Описание:
+   * Напишите алгоритм, который принимает массив и перемещает
+   * все нули в конец, сохраняя порядок остальных элементов.
+   *
+   * moveZeros([false,1,0,1,2,0,1,3,"a"]) // returns[false,1,1,2,1,3,"a",0,0]*/
+
+  function moveZeros(arr) {
+    let newArr = arr.filter((item) => item !== 0);
+    while (newArr.length < arr.length) {
+      newArr.push(0);
+    }
+    return newArr;
+  }
+
+  console.log(moveZeros([1, 2, 0, 1, 0, 1, 0, 3, 0, 1])); // [1, 2, 1, 1, 3, 1, 0, 0, 0, 0]
+}
