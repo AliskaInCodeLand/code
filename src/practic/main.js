@@ -2027,34 +2027,50 @@
 //   console.log(zipWith((a, b) => a + b, [0, 1, 2, 3], [0, 1, 2, 3])); //, [0,2,4,6]
 // }
 
+// {
+//   //Moving Zeros To The End
+//   /**
+//    * Описание:
+//    * Напишите алгоритм, который принимает массив и перемещает
+//    * все нули в конец, сохраняя порядок остальных элементов.
+//    *
+//    * moveZeros([false,1,0,1,2,0,1,3,"a"]) // returns[false,1,1,2,1,3,"a",0,0]*/
+//
+//   // function moveZeros(arr) {
+//   //   let newArr = arr.filter((item) => item !== 0);
+//   //   while (newArr.length < arr.length) {
+//   //     newArr.push(0);
+//   //   }
+//   //   return newArr;
+//   // }
+//
+//   var moveZeros = function (arr) {
+//     return arr
+//       .filter(function (x) {
+//         return x !== 0;
+//       })
+//       .concat(
+//         arr.filter(function (x) {
+//           return x === 0;
+//         }),
+//       );
+//   };
+//
+//   console.log(moveZeros([1, 2, 0, 1, 0, 1, 0, 3, 0, 1])); // [1, 2, 1, 1, 3, 1, 0, 0, 0, 0]
+// }
+
 {
-  //Moving Zeros To The End
+  //Количество гласных
   /**
    * Описание:
-   * Напишите алгоритм, который принимает массив и перемещает
-   * все нули в конец, сохраняя порядок остальных элементов.
+   * Возвращает количество гласных в заданной строке.
    *
-   * moveZeros([false,1,0,1,2,0,1,3,"a"]) // returns[false,1,1,2,1,3,"a",0,0]*/
+   * В этой ката мы будем считать гласные a, e, i, o, u (но не y).
+   *
+   * Входная строка будет состоять только из строчных букв и / или пробелов. */
 
-  // function moveZeros(arr) {
-  //   let newArr = arr.filter((item) => item !== 0);
-  //   while (newArr.length < arr.length) {
-  //     newArr.push(0);
-  //   }
-  //   return newArr;
-  // }
-
-  var moveZeros = function (arr) {
-    return arr
-      .filter(function (x) {
-        return x !== 0;
-      })
-      .concat(
-        arr.filter(function (x) {
-          return x === 0;
-        }),
-      );
-  };
-
-  console.log(moveZeros([1, 2, 0, 1, 0, 1, 0, 3, 0, 1])); // [1, 2, 1, 1, 3, 1, 0, 0, 0, 0]
+  function getCount(str) {
+    return str.split("").filter((item) => "aeiou".includes(item)).length;
+  }
+  console.log(getCount("abracadabra")); //5
 }
