@@ -2170,15 +2170,21 @@
   //   return dt === 10 && dx === 0 && dy === 0;
   // }
 
+  // function isValidWalk(walk) {
+  //   function count(val) {
+  //     return walk.filter(function (a) {
+  //       return a == val;
+  //     }).length;
+  //   }
+  //   return (
+  //     walk.length == 10 && count("n") == count("s") && count("w") == count("e")
+  //   );
+  // }
+
   function isValidWalk(walk) {
-    function count(val) {
-      return walk.filter(function (a) {
-        return a == val;
-      }).length;
-    }
-    return (
-      walk.length == 10 && count("n") == count("s") && count("w") == count("e")
-    );
+    var res = { n: 0, w: 0, s: 0, e: 0 };
+    walk.forEach((c) => res[c]++);
+    return walk.length === 10 && res.n == res.s && res.e == res.w;
   }
 
   console.log(isValidWalk(["n", "s", "n", "s", "n", "s", "n", "s", "n", "s"])); //, 'should return true'
