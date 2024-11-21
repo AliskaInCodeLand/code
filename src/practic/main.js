@@ -2145,29 +2145,40 @@
   //   walk.length == 10 &&
   //   !walk.reduce((prev, curr) => prev + { n: 1, e: 2, s: -1, w: -2 }[curr], 0);
 
+  // function isValidWalk(walk) {
+  //   var dx = 0;
+  //   var dy = 0;
+  //   var dt = walk.length;
+  //
+  //   for (var i = 0; i < walk.length; i++) {
+  //     switch (walk[i]) {
+  //       case "n":
+  //         dy--;
+  //         break;
+  //       case "s":
+  //         dy++;
+  //         break;
+  //       case "w":
+  //         dx--;
+  //         break;
+  //       case "e":
+  //         dx++;
+  //         break;
+  //     }
+  //   }
+  //
+  //   return dt === 10 && dx === 0 && dy === 0;
+  // }
+
   function isValidWalk(walk) {
-    var dx = 0;
-    var dy = 0;
-    var dt = walk.length;
-
-    for (var i = 0; i < walk.length; i++) {
-      switch (walk[i]) {
-        case "n":
-          dy--;
-          break;
-        case "s":
-          dy++;
-          break;
-        case "w":
-          dx--;
-          break;
-        case "e":
-          dx++;
-          break;
-      }
+    function count(val) {
+      return walk.filter(function (a) {
+        return a == val;
+      }).length;
     }
-
-    return dt === 10 && dx === 0 && dy === 0;
+    return (
+      walk.length == 10 && count("n") == count("s") && count("w") == count("e")
+    );
   }
 
   console.log(isValidWalk(["n", "s", "n", "s", "n", "s", "n", "s", "n", "s"])); //, 'should return true'
