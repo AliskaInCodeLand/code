@@ -2141,9 +2141,34 @@
    набор букв направления («n», «s», «e» или «w» только). Вы никогда не получите
    пустой массив (это не прогулка, это стояние на месте!).*/
 
-  const isValidWalk = (walk) =>
-    walk.length == 10 &&
-    !walk.reduce((prev, curr) => prev + { n: 1, e: 2, s: -1, w: -2 }[curr], 0);
+  // const isValidWalk = (walk) =>
+  //   walk.length == 10 &&
+  //   !walk.reduce((prev, curr) => prev + { n: 1, e: 2, s: -1, w: -2 }[curr], 0);
+
+  function isValidWalk(walk) {
+    var dx = 0;
+    var dy = 0;
+    var dt = walk.length;
+
+    for (var i = 0; i < walk.length; i++) {
+      switch (walk[i]) {
+        case "n":
+          dy--;
+          break;
+        case "s":
+          dy++;
+          break;
+        case "w":
+          dx--;
+          break;
+        case "e":
+          dx++;
+          break;
+      }
+    }
+
+    return dt === 10 && dx === 0 && dy === 0;
+  }
 
   console.log(isValidWalk(["n", "s", "n", "s", "n", "s", "n", "s", "n", "s"])); //, 'should return true'
   console.log(
