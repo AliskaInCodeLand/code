@@ -2196,86 +2196,102 @@
 // }
 
 //Решение задач CodeWars 22/11
+// {
+//   //Reverse words
+//   /**
+//    * Напишите функцию, которая принимает строковый параметр и меняет местами каждое слово в строке. Все пробелы в строке должны сохраняться.
+//    *
+//    * Примеры
+//    * "This is an example!" ==> "sihT si na !elpmaxe"
+//    * "double  spaces"      ==> "elbuod  secaps" */
+//
+//   // function reverseWords(str) {
+//   //   let newStr = "";
+//   //   let res = str.split("");
+//   //   let item = [];
+//   //   for (let i = 0; i < res.length; i++) {
+//   //     debugger;
+//   //     if (res[i] !== " " && i < res.length - 1) {
+//   //       item.push(res[i]);
+//   //     } else {
+//   //       if (i === res.length - 1) {
+//   //         if (res[i] !== " ") {
+//   //           item.push(res[i]);
+//   //           let word = item.reverse();
+//   //           newStr += word.join("");
+//   //           item = [];
+//   //           word = null;
+//   //         } else {
+//   //           let word = item.reverse();
+//   //           newStr += word.join("");
+//   //           newStr += " ";
+//   //         }
+//   //       } else {
+//   //         if (item) {
+//   //           let word = item.reverse();
+//   //           newStr += word.join("");
+//   //           item = [];
+//   //           word = null;
+//   //         }
+//   //         newStr += " ";
+//   //       }
+//   //     }
+//   //   }
+//   //   return newStr;
+//   // }
+//
+//   //Другое решение
+//   // function reverseWords(str) {
+//   //   return str
+//   //     .split(" ")
+//   //     .map((word) => word.split("").reverse().join(""))
+//   //     .join(" ");
+//   // }
+//
+//   //Другое решение
+//   // function reverseWords(str) {
+//   //   let newStr = "";
+//   //   let word = "";
+//   //   for (let i = 0; i < str.length; i++) {
+//   //     debugger;
+//   //     if (str[i] !== " ") {
+//   //       word = str[i] + word;
+//   //     } else {
+//   //       newStr += word + " ";
+//   //       word = "";
+//   //     }
+//   //   }
+//   //   return newStr;
+//   // }
+//
+//   //Другое решение
+//   function reverseWords(str) {
+//     var newStr = "";
+//     for (var i = str.length - 1; i >= 0; i--) {
+//       newStr += str[i];
+//     }
+//     return newStr.split(" ").reverse().join(" ");
+//   }
+//
+//   console.log(reverseWords("The quick brown fox jumps over the lazy dog.")); //, 'ehT kciuq nworb xof spmuj revo eht yzal .god'
+//   // console.log(reverseWords("apple")); //'elppa'
+//   // console.log(reverseWords("a b c d")); //'a b c d'
+//   // console.log(reverseWords("  double  spaced  words  ")); //'  elbuod  decaps  sdrow  '
+//   console.log(reverseWords("a    hardocoded Kata ")); //'a    dedocodrah  ataK'
+// }
+
 {
-  //Reverse words
-  /**
-   * Напишите функцию, которая принимает строковый параметр и меняет местами каждое слово в строке. Все пробелы в строке должны сохраняться.
-   *
-   * Примеры
-   * "This is an example!" ==> "sihT si na !elpmaxe"
-   * "double  spaces"      ==> "elbuod  secaps" */
-
-  // function reverseWords(str) {
-  //   let newStr = "";
-  //   let res = str.split("");
-  //   let item = [];
-  //   for (let i = 0; i < res.length; i++) {
-  //     debugger;
-  //     if (res[i] !== " " && i < res.length - 1) {
-  //       item.push(res[i]);
-  //     } else {
-  //       if (i === res.length - 1) {
-  //         if (res[i] !== " ") {
-  //           item.push(res[i]);
-  //           let word = item.reverse();
-  //           newStr += word.join("");
-  //           item = [];
-  //           word = null;
-  //         } else {
-  //           let word = item.reverse();
-  //           newStr += word.join("");
-  //           newStr += " ";
-  //         }
-  //       } else {
-  //         if (item) {
-  //           let word = item.reverse();
-  //           newStr += word.join("");
-  //           item = [];
-  //           word = null;
-  //         }
-  //         newStr += " ";
-  //       }
-  //     }
-  //   }
-  //   return newStr;
-  // }
-
-  //Другое решение
-  // function reverseWords(str) {
-  //   return str
-  //     .split(" ")
-  //     .map((word) => word.split("").reverse().join(""))
-  //     .join(" ");
-  // }
-
-  //Другое решение
-  // function reverseWords(str) {
-  //   let newStr = "";
-  //   let word = "";
-  //   for (let i = 0; i < str.length; i++) {
-  //     debugger;
-  //     if (str[i] !== " ") {
-  //       word = str[i] + word;
-  //     } else {
-  //       newStr += word + " ";
-  //       word = "";
-  //     }
-  //   }
-  //   return newStr;
-  // }
-
-  //Другое решение
-  function reverseWords(str) {
-    var newStr = "";
-    for (var i = str.length - 1; i >= 0; i--) {
-      newStr += str[i];
+  //
+  //"CodEWaRs" --> [0,3,4,6]
+  function getUpperCase(word) {
+    let res = [];
+    for (let i = 0; i < word.length; i++) {
+      if (word[i] === word[i].toUpperCase()) {
+        res.push(i);
+      }
     }
-    return newStr.split(" ").reverse().join(" ");
+    return res;
   }
 
-  console.log(reverseWords("The quick brown fox jumps over the lazy dog.")); //, 'ehT kciuq nworb xof spmuj revo eht yzal .god'
-  // console.log(reverseWords("apple")); //'elppa'
-  // console.log(reverseWords("a b c d")); //'a b c d'
-  // console.log(reverseWords("  double  spaced  words  ")); //'  elbuod  decaps  sdrow  '
-  console.log(reverseWords("a    hardocoded Kata ")); //'a    dedocodrah  ataK'
+  console.log(getUpperCase("CodEWaRs"));
 }
