@@ -2211,14 +2211,21 @@
     let item = [];
     for (let i = 0; i < res.length; i++) {
       debugger;
-      if (res[i] !== " " && i + 1 !== res.length) {
+      if (res[i] !== " " && i < res.length - 1) {
         item.push(res[i]);
       } else {
         if (i === res.length - 1) {
-          let word = item.reverse();
-          newStr += word.join("");
-          item = [];
-          word = null;
+          if (res[i] !== " ") {
+            item.push(res[i]);
+            let word = item.reverse();
+            newStr += word.join("");
+            item = [];
+            word = null;
+          } else {
+            let word = item.reverse();
+            newStr += word.join("");
+            newStr += " ";
+          }
         } else {
           if (item) {
             let word = item.reverse();
@@ -2230,11 +2237,12 @@
         }
       }
     }
-    console.log(newStr);
+    return newStr;
   }
 
-  console.log(reverseWords("lazy dog.")); //, 'ehT kciuq nworb xof spmuj revo eht yzal .god'
-  // console.log(reverseWords('apple')); //'elppa'
-  // console.log(reverseWords('a b c d')); //'a b c d'
-  // console.log(reverseWords('  double  spaced  words  ')); //'  elbuod  decaps  sdrow  '
+  // console.log(reverseWords("The quick brown fox jumps over the lazy dog.")); //, 'ehT kciuq nworb xof spmuj revo eht yzal .god'
+  // console.log(reverseWords("apple")); //'elppa'
+  // console.log(reverseWords("a b c d")); //'a b c d'
+  // console.log(reverseWords("  double  spaced  words  ")); //'  elbuod  decaps  sdrow  '
+  console.log(reverseWords("a    hardocoded Kata ")); //'a    dedocodrah  ataK'
 }
