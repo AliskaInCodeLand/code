@@ -2241,12 +2241,29 @@
   // }
 
   //Другое решение
+  // function reverseWords(str) {
+  //   return str
+  //     .split(" ")
+  //     .map((word) => word.split("").reverse().join(""))
+  //     .join(" ");
+  // }
+
+  //Другое решение
   function reverseWords(str) {
-    return str
-      .split(" ")
-      .map((word) => word.split("").reverse().join(""))
-      .join(" ");
+    let newStr = "";
+    let word = "";
+    for (let i = 0; i < str.length; i++) {
+      debugger;
+      if (str[i] !== " ") {
+        word = str[i] + word;
+      } else {
+        newStr += word + " ";
+        word = "";
+      }
+    }
+    return newStr;
   }
+
   console.log(reverseWords("The quick brown fox jumps over the lazy dog.")); //, 'ehT kciuq nworb xof spmuj revo eht yzal .god'
   // console.log(reverseWords("apple")); //'elppa'
   // console.log(reverseWords("a b c d")); //'a b c d'
