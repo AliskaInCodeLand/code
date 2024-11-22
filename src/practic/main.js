@@ -2249,19 +2249,28 @@
   // }
 
   //Другое решение
+  // function reverseWords(str) {
+  //   let newStr = "";
+  //   let word = "";
+  //   for (let i = 0; i < str.length; i++) {
+  //     debugger;
+  //     if (str[i] !== " ") {
+  //       word = str[i] + word;
+  //     } else {
+  //       newStr += word + " ";
+  //       word = "";
+  //     }
+  //   }
+  //   return newStr;
+  // }
+
+  //Другое решение
   function reverseWords(str) {
-    let newStr = "";
-    let word = "";
-    for (let i = 0; i < str.length; i++) {
-      debugger;
-      if (str[i] !== " ") {
-        word = str[i] + word;
-      } else {
-        newStr += word + " ";
-        word = "";
-      }
+    var newStr = "";
+    for (var i = str.length - 1; i >= 0; i--) {
+      newStr += str[i];
     }
-    return newStr;
+    return newStr.split(" ").reverse().join(" ");
   }
 
   console.log(reverseWords("The quick brown fox jumps over the lazy dog.")); //, 'ehT kciuq nworb xof spmuj revo eht yzal .god'
