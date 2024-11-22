@@ -2123,74 +2123,118 @@
 //   ); // [[1,4],[2,5],[3,6]]
 // }
 
+// {
+//   //Take a Ten Minutes Walk
+//   /**Вы живёте в городе Картезия, где все дороги проложены в виде идеальной сетки.
+//    * Вы пришли на встречу на десять минут раньше, поэтому решили воспользоваться
+//    * возможностью и немного прогуляться. Город предоставляет своим жителям приложение
+//    * для прогулок на телефонах — каждый раз, когда вы нажимаете кнопку, оно отправляет
+//    * вам набор однобуквенных строк, обозначающих направление движения (например,
+//    * ['n', 's', 'w', 'e']). Вы всегда проходите только один квартал для каждой
+//    * буквы (направления) и знаете, что вам требуется одна минута, чтобы пройти
+//    * один квартал, поэтому создайте функцию, которая будет возвращать true,
+//    * если путь, который вам предлагает приложение, займёт ровно десять минут
+//    * (вы же не хотите прийти раньше или опоздать!) и, конечно, вернёт вас в исходную точку.
+//    * В противном случае верните false.
+//
+//    Примечание: вы всегда будете получать допустимый массив, содержащий случайный
+//    набор букв направления («n», «s», «e» или «w» только). Вы никогда не получите
+//    пустой массив (это не прогулка, это стояние на месте!).*/
+//
+//   // const isValidWalk = (walk) =>
+//   //   walk.length == 10 &&
+//   //   !walk.reduce((prev, curr) => prev + { n: 1, e: 2, s: -1, w: -2 }[curr], 0);
+//
+//   // function isValidWalk(walk) {
+//   //   var dx = 0;
+//   //   var dy = 0;
+//   //   var dt = walk.length;
+//   //
+//   //   for (var i = 0; i < walk.length; i++) {
+//   //     switch (walk[i]) {
+//   //       case "n":
+//   //         dy--;
+//   //         break;
+//   //       case "s":
+//   //         dy++;
+//   //         break;
+//   //       case "w":
+//   //         dx--;
+//   //         break;
+//   //       case "e":
+//   //         dx++;
+//   //         break;
+//   //     }
+//   //   }
+//   //
+//   //   return dt === 10 && dx === 0 && dy === 0;
+//   // }
+//
+//   // function isValidWalk(walk) {
+//   //   function count(val) {
+//   //     return walk.filter(function (a) {
+//   //       return a == val;
+//   //     }).length;
+//   //   }
+//   //   return (
+//   //     walk.length == 10 && count("n") == count("s") && count("w") == count("e")
+//   //   );
+//   // }
+//
+//   function isValidWalk(walk) {
+//     var res = { n: 0, w: 0, s: 0, e: 0 };
+//     walk.forEach((c) => res[c]++);
+//     return walk.length === 10 && res.n == res.s && res.e == res.w;
+//   }
+//
+//   console.log(isValidWalk(["n", "s", "n", "s", "n", "s", "n", "s", "n", "s"])); //, 'should return true'
+//   console.log(
+//     isValidWalk(["w", "e", "w", "e", "w", "e", "w", "e", "w", "e", "w", "e"]),
+//   ); //, 'should return false'
+//   console.log(isValidWalk(["w"])); //, 'should return false'
+//   console.log(isValidWalk(["n", "n", "n", "s", "n", "s", "n", "s", "n", "s"])); //, 'should return false'
+// }
+
+//Решение задач CodeWars 22/11
 {
-  //Take a Ten Minutes Walk
-  /**Вы живёте в городе Картезия, где все дороги проложены в виде идеальной сетки.
-   * Вы пришли на встречу на десять минут раньше, поэтому решили воспользоваться
-   * возможностью и немного прогуляться. Город предоставляет своим жителям приложение
-   * для прогулок на телефонах — каждый раз, когда вы нажимаете кнопку, оно отправляет
-   * вам набор однобуквенных строк, обозначающих направление движения (например,
-   * ['n', 's', 'w', 'e']). Вы всегда проходите только один квартал для каждой
-   * буквы (направления) и знаете, что вам требуется одна минута, чтобы пройти
-   * один квартал, поэтому создайте функцию, которая будет возвращать true,
-   * если путь, который вам предлагает приложение, займёт ровно десять минут
-   * (вы же не хотите прийти раньше или опоздать!) и, конечно, вернёт вас в исходную точку.
-   * В противном случае верните false.
+  //Reverse words
+  /**
+   * Напишите функцию, которая принимает строковый параметр и меняет местами каждое слово в строке. Все пробелы в строке должны сохраняться.
+   *
+   * Примеры
+   * "This is an example!" ==> "sihT si na !elpmaxe"
+   * "double  spaces"      ==> "elbuod  secaps" */
 
-   Примечание: вы всегда будете получать допустимый массив, содержащий случайный
-   набор букв направления («n», «s», «e» или «w» только). Вы никогда не получите
-   пустой массив (это не прогулка, это стояние на месте!).*/
-
-  // const isValidWalk = (walk) =>
-  //   walk.length == 10 &&
-  //   !walk.reduce((prev, curr) => prev + { n: 1, e: 2, s: -1, w: -2 }[curr], 0);
-
-  // function isValidWalk(walk) {
-  //   var dx = 0;
-  //   var dy = 0;
-  //   var dt = walk.length;
-  //
-  //   for (var i = 0; i < walk.length; i++) {
-  //     switch (walk[i]) {
-  //       case "n":
-  //         dy--;
-  //         break;
-  //       case "s":
-  //         dy++;
-  //         break;
-  //       case "w":
-  //         dx--;
-  //         break;
-  //       case "e":
-  //         dx++;
-  //         break;
-  //     }
-  //   }
-  //
-  //   return dt === 10 && dx === 0 && dy === 0;
-  // }
-
-  // function isValidWalk(walk) {
-  //   function count(val) {
-  //     return walk.filter(function (a) {
-  //       return a == val;
-  //     }).length;
-  //   }
-  //   return (
-  //     walk.length == 10 && count("n") == count("s") && count("w") == count("e")
-  //   );
-  // }
-
-  function isValidWalk(walk) {
-    var res = { n: 0, w: 0, s: 0, e: 0 };
-    walk.forEach((c) => res[c]++);
-    return walk.length === 10 && res.n == res.s && res.e == res.w;
+  function reverseWords(str) {
+    let newStr = "";
+    let res = str.split("");
+    let item = [];
+    for (let i = 0; i < res.length; i++) {
+      debugger;
+      if (res[i] !== " " && i + 1 !== res.length) {
+        item.push(res[i]);
+      } else {
+        if (i === res.length - 1) {
+          let word = item.reverse();
+          newStr += word.join("");
+          item = [];
+          word = null;
+        } else {
+          if (item) {
+            let word = item.reverse();
+            newStr += word.join("");
+            item = [];
+            word = null;
+          }
+          newStr += " ";
+        }
+      }
+    }
+    console.log(newStr);
   }
 
-  console.log(isValidWalk(["n", "s", "n", "s", "n", "s", "n", "s", "n", "s"])); //, 'should return true'
-  console.log(
-    isValidWalk(["w", "e", "w", "e", "w", "e", "w", "e", "w", "e", "w", "e"]),
-  ); //, 'should return false'
-  console.log(isValidWalk(["w"])); //, 'should return false'
-  console.log(isValidWalk(["n", "n", "n", "s", "n", "s", "n", "s", "n", "s"])); //, 'should return false'
+  console.log(reverseWords("lazy dog.")); //, 'ehT kciuq nworb xof spmuj revo eht yzal .god'
+  // console.log(reverseWords('apple')); //'elppa'
+  // console.log(reverseWords('a b c d')); //'a b c d'
+  // console.log(reverseWords('  double  spaced  words  ')); //'  elbuod  decaps  sdrow  '
 }
