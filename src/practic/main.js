@@ -2280,18 +2280,50 @@
 //   console.log(reverseWords("a    hardocoded Kata ")); //'a    dedocodrah  ataK'
 // }
 
+// {
+//   //
+//   //"CodEWaRs" --> [0,3,4,6]
+//   function getUpperCase(word) {
+//     let res = [];
+//     for (let i = 0; i < word.length; i++) {
+//       if (word[i] === word[i].toUpperCase()) {
+//         res.push(i);
+//       }
+//     }
+//     return res;
+//   }
+//
+//   console.log(getUpperCase("CodEWaRs"));
+// }
+
+//Решение задач Object.keys, values, entries 23/11
 {
-  //
-  //"CodEWaRs" --> [0,3,4,6]
-  function getUpperCase(word) {
-    let res = [];
-    for (let i = 0; i < word.length; i++) {
-      if (word[i] === word[i].toUpperCase()) {
-        res.push(i);
-      }
-    }
-    return res;
+  //Сумма свойств объекта
+  /**
+   * Есть объект salaries с произвольным количеством свойств,
+   * содержащих заработные платы.
+   *
+   * Напишите функцию sumSalaries(salaries), которая возвращает
+   * сумму всех зарплат с помощью метода Object.values и цикла for..of.
+   *
+   * Если объект salaries пуст, то результат должен быть 0.
+   *
+   * Например:
+   * let salaries = {
+   *   "John": 100,
+   *   "Pete": 300,
+   *   "Mary": 250
+   * };*/
+
+  let salaries = {
+    John: 100,
+    Pete: 300,
+    Mary: 250,
+  };
+
+  function sumSalaries(salaries) {
+    return Object.values(salaries).reduce((acc, cur) => acc + cur, 0);
   }
 
-  console.log(getUpperCase("CodEWaRs"));
+  console.log(sumSalaries(salaries));
 }
