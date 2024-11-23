@@ -2364,13 +2364,17 @@
 // }
 
 {
+  // function binToDec(bin) {
+  //   let dec = 0;
+  //   for (let i = bin.length - 1; i >= 0; i--) {
+  //     debugger;
+  //     dec += bin[bin.length - 1 - i] * 2 ** i;
+  //   }
+  //   return dec;
+  // }
+
   function binToDec(bin) {
-    let dec = 0;
-    for (let i = bin.length - 1; i >= 0; i--) {
-      debugger;
-      dec += bin[bin.length - 1 - i] * 2 ** i;
-    }
-    return dec;
+    return parseInt(bin, 2);
   }
   console.log(binToDec("1011"));
 }
