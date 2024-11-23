@@ -2354,11 +2354,23 @@
 // }
 
 //CodeWars
-{
-  //FIXME: Замените все точки
-  var replaceDots = function (str) {
-    return str.replace(/\./g, "-");
-  };
+// {
+//   //FIXME: Замените все точки
+//   var replaceDots = function (str) {
+//     return str.replace(/\./g, "-");
+//   };
+//
+//   console.log(replaceDots("one.two.three")); //"one-two-three"
+// }
 
-  console.log(replaceDots("one.two.three")); //"one-two-three"
+{
+  function binToDec(bin) {
+    let dec = 0;
+    for (let i = bin.length - 1; i >= 0; i--) {
+      debugger;
+      dec += bin[bin.length - 1 - i] * 2 ** i;
+    }
+    return dec;
+  }
+  console.log(binToDec("1011"));
 }
