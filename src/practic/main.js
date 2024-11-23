@@ -2328,27 +2328,37 @@
 //   console.log(sumSalaries(salaries));
 // }
 
-{
-  //Подсчёт количества свойств объекта
-  /**
-   * Напишите функцию count(obj),
-   * которая возвращает количество свойств объекта:
-   * let user = {
-   *   name: 'John',
-   *   age: 30
-   * };
-   *
-   * alert( count(user) ); // 2
-   * */
+// {
+//   //Подсчёт количества свойств объекта
+//   /**
+//    * Напишите функцию count(obj),
+//    * которая возвращает количество свойств объекта:
+//    * let user = {
+//    *   name: 'John',
+//    *   age: 30
+//    * };
+//    *
+//    * alert( count(user) ); // 2
+//    * */
+//
+//   let user = {
+//     name: "John",
+//     age: 30,
+//   };
+//
+//   function count(obj) {
+//     return Object.keys(obj).length;
+//   }
+//
+//   console.log(count(user));
+// }
 
-  let user = {
-    name: "John",
-    age: 30,
+//CodeWars
+{
+  //FIXME: Замените все точки
+  var replaceDots = function (str) {
+    return str.replace(/\./g, "-");
   };
 
-  function count(obj) {
-    return Object.keys(obj).length;
-  }
-
-  console.log(count(user));
+  console.log(replaceDots("one.two.three")); //"one-two-three"
 }
