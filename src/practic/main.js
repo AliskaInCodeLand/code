@@ -2363,18 +2363,50 @@
 //   console.log(replaceDots("one.two.three")); //"one-two-three"
 // }
 
-{
-  // function binToDec(bin) {
-  //   let dec = 0;
-  //   for (let i = bin.length - 1; i >= 0; i--) {
-  //     debugger;
-  //     dec += bin[bin.length - 1 - i] * 2 ** i;
-  //   }
-  //   return dec;
-  // }
+// {
+// function binToDec(bin) {
+//   let dec = 0;
+//   //   for (let i = bin.length - 1; i >= 0; i--) {
+//   //     debugger;
+//   //     dec += bin[bin.length - 1 - i] * 2 ** i;
+//   //   }
+//   //   return dec;
+//   // }
+//
+//   function binToDec(bin) {
+//     return parseInt(bin, 2);
+//   }
+//   console.log(binToDec("1011"));
+// }
 
-  function binToDec(bin) {
-    return parseInt(bin, 2);
+//Решение задач CodeWars 24/11
+{
+  class PowerArray extends Array {
+    square() {
+      return this.map((number) => number * number);
+    }
+    cube() {
+      return this.map((number) => number ** 3);
+    }
+    average() {
+      return this.reduce((a, b) => a + b, 0) / this.length;
+    }
+    sum() {
+      return this.reduce((a, b) => a + b, 0);
+    }
+    even() {
+      return this.filter((number) => number % 2 == 0);
+    }
+    odd() {
+      return this.filter((number) => number % 2 != 0);
+    }
   }
-  console.log(binToDec("1011"));
+
+  let arr = new PowerArray(1, 2, 3, 4, 5);
+  console.log(arr.square());
+  console.log(arr.cube());
+  console.log(arr.average());
+  console.log(arr.sum());
+  console.log(arr.even());
+  console.log(arr.odd());
 }
