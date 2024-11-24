@@ -2381,28 +2381,57 @@
 
 //Решение задач CodeWars 24/11
 {
-  class PowerArray extends Array {
-    square() {
-      return this.map((number) => number * number);
-    }
-    cube() {
-      return this.map((number) => number ** 3);
-    }
-    average() {
-      return this.reduce((a, b) => a + b, 0) / this.length;
-    }
-    sum() {
-      return this.reduce((a, b) => a + b, 0);
-    }
-    even() {
-      return this.filter((number) => number % 2 == 0);
-    }
-    odd() {
-      return this.filter((number) => number % 2 != 0);
-    }
-  }
+  // class PowerArray extends Array {
+  //   square() {
+  //     return this.map((number) => number * number);
+  //   }
+  //   cube() {
+  //     return this.map((number) => number ** 3);
+  //   }
+  //   average() {
+  //     return this.reduce((a, b) => a + b, 0) / this.length;
+  //   }
+  //   sum() {
+  //     return this.reduce((a, b) => a + b, 0);
+  //   }
+  //   even() {
+  //     return this.filter((number) => number % 2 == 0);
+  //   }
+  //   odd() {
+  //     return this.filter((number) => number % 2 != 0);
+  //   }
+  // }
 
-  let arr = new PowerArray(1, 2, 3, 4, 5);
+  Array.prototype.square = function () {
+    return this.map(function (n) {
+      return n * n;
+    });
+  };
+  Array.prototype.cube = function () {
+    return this.map(function (n) {
+      return n * n * n;
+    });
+  };
+  Array.prototype.average = function () {
+    return this.sum() / this.length;
+  };
+  Array.prototype.sum = function () {
+    return this.reduce(function (a, b) {
+      return a + b;
+    }, 0);
+  };
+  Array.prototype.even = function () {
+    return this.filter(function (item) {
+      return 0 == item % 2;
+    });
+  };
+  Array.prototype.odd = function () {
+    return this.filter(function (item) {
+      return 0 != item % 2;
+    });
+  };
+
+  let arr = [1, 2, 3, 4, 5];
   console.log(arr.square());
   console.log(arr.cube());
   console.log(arr.average());
