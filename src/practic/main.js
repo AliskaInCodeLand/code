@@ -2440,13 +2440,39 @@
 //   console.log(arr.odd());
 // }
 
+// {
+//   //CamelCase Method
+//   function camelCase(str) {
+//     return str
+//       .split(" ")
+//       .map((el) => el.replace(el[0], el[0].toUpperCase()))
+//       .join("");
+//   }
+//   console.log(camelCase("hello case"));
+// }
+
 {
-  //CamelCase Method
-  function camelCase(str) {
-    return str
-      .split(" ")
-      .map((el) => el.replace(el[0], el[0].toUpperCase()))
-      .join("");
+  //Persistent Bugger.
+  /**
+   * Напишите функцию persistence, которая принимает положительный
+   * параметр num и возвращает его мультипликативную устойчивость,
+   * то есть количество раз, которое нужно умножить цифры в num до
+   * тех пор, пока не получится одна цифра. */
+
+  function persistence(num) {
+    let str = String(num);
+    let count = 0;
+    while (str.length > 1) {
+      let newstr = 1;
+      for (let i = str.length - 1; i >= 0; i--) {
+        newstr *= str[i];
+      }
+      str = `${newstr}`;
+      count++;
+    }
+    return count;
   }
-  console.log(camelCase("hello case"));
+  console.log(persistent(39));
+  console.log(persistent(999));
+  console.log(persistent(4));
 }
