@@ -2459,18 +2459,28 @@
    * то есть количество раз, которое нужно умножить цифры в num до
    * тех пор, пока не получится одна цифра. */
 
+  // function persistence(num) {
+  //   let str = String(num);
+  //   let count = 0;
+  //   while (str.length > 1) {
+  //     let newstr = 1;
+  //     for (let i = str.length - 1; i >= 0; i--) {
+  //       newstr *= str[i];
+  //     }
+  //     str = `${newstr}`;
+  //     count++;
+  //   }
+  //   return count;
+  // }
+
   function persistence(num) {
-    let str = String(num);
-    let count = 0;
-    while (str.length > 1) {
-      let newstr = 1;
-      for (let i = str.length - 1; i >= 0; i--) {
-        newstr *= str[i];
-      }
-      str = `${newstr}`;
-      count++;
+    for (var i = 0; num > 9; i++) {
+      num = num
+        .toString()
+        .split("")
+        .reduce((t, c) => c * t);
     }
-    return count;
+    return i;
   }
   console.log(persistent(39));
   console.log(persistent(999));
