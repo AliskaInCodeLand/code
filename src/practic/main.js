@@ -2514,49 +2514,72 @@
 //   console.log(derive(7, 8)); //"56x^7"
 // }
 
+// {
+//   //Минимизировать сумму массива (серия массивов #1)
+//   /**
+//    * Задача
+//    * Данмассив целых чисел. Найдите минимальную сумму, которая
+//    * получается при сложении произведений каждых двух целых чисел.
+//    *
+//    * Примечания
+//    * только положительные результаты будут содержать массив / список.
+//    * Массив / список всегда будет иметь четный размер
+//    * Примеры ввода >> вывода
+//    * minSum({5,4,2,3}) ==> return (22)
+//    * Объяснение:
+//    * получается при суммировании произведений каждых
+//    * двух целых чисел Минимальная сумма ,  5*2 + 3*4 = 22*/
+//
+//   // function minSum(arr) {
+//   //   let newarr = [];
+//   //   arr.sort((a, b) => a - b);
+//   //   for (let i = 0; i < arr.length; i++) {
+//   //     debugger;
+//   //     newarr.push(arr[i] * arr[arr.length - 1]);
+//   //     arr.splice(-1, 1);
+//   //   }
+//   //   return newarr.reduce((a, b) => a + b);
+//   // }
+//
+//   //Другое решение
+//   // function minSum(arr) {
+//   //   return arr
+//   //     .sort((a, b) => a - b)
+//   //     .slice(0, arr.length / 2)
+//   //     .reduce(
+//   //       (acc, curr, index) => (acc += curr * arr[arr.length - index - 1]),
+//   //       0,
+//   //     );
+//   // }
+//
+//   //Другое решение
+//   const minSum = (arr) =>
+//     arr.sort((a, b) => a - b).reduce((pre, val) => pre + val * arr.pop(), 0);
+//
+//   console.log(minSum([5, 4, 2, 3])); // 22
+//   console.log(minSum([12, 6, 10, 26, 3, 24])); // 342
+//   console.log(minSum([9, 2, 8, 7, 5, 4, 0, 6])); // 74
+// }
+
 {
-  //Минимизировать сумму массива (серия массивов #1)
-  /**
-   * Задача
-   * Данмассив целых чисел. Найдите минимальную сумму, которая
-   * получается при сложении произведений каждых двух целых чисел.
-   *
-   * Примечания
-   * только положительные результаты будут содержать массив / список.
-   * Массив / список всегда будет иметь четный размер
-   * Примеры ввода >> вывода
-   * minSum({5,4,2,3}) ==> return (22)
-   * Объяснение:
-   * получается при суммировании произведений каждых
-   * двух целых чисел Минимальная сумма ,  5*2 + 3*4 = 22*/
+  function inAscOrder(arr) {
+    let newarr = arr
+      .map(function (item) {
+        return item;
+      })
+      .sort((a, b) => a - b);
+    let res = true;
+    for (let i = 0; i < newarr.length; i++) {
+      debugger;
+      if (newarr[i] !== arr[i]) {
+        res = false;
+      }
+    }
+    return res;
+  }
 
-  // function minSum(arr) {
-  //   let newarr = [];
-  //   arr.sort((a, b) => a - b);
-  //   for (let i = 0; i < arr.length; i++) {
-  //     debugger;
-  //     newarr.push(arr[i] * arr[arr.length - 1]);
-  //     arr.splice(-1, 1);
-  //   }
-  //   return newarr.reduce((a, b) => a + b);
-  // }
-
-  //Другое решение
-  // function minSum(arr) {
-  //   return arr
-  //     .sort((a, b) => a - b)
-  //     .slice(0, arr.length / 2)
-  //     .reduce(
-  //       (acc, curr, index) => (acc += curr * arr[arr.length - index - 1]),
-  //       0,
-  //     );
-  // }
-
-  //Другое решение
-  const minSum = (arr) =>
-    arr.sort((a, b) => a - b).reduce((pre, val) => pre + val * arr.pop(), 0);
-
-  console.log(minSum([5, 4, 2, 3])); // 22
-  console.log(minSum([12, 6, 10, 26, 3, 24])); // 342
-  console.log(minSum([9, 2, 8, 7, 5, 4, 0, 6])); // 74
+  console.log(inAscOrder([1, 2, 4, 7, 19])); // true
+  console.log(inAscOrder([1, 2, 3, 4, 5])); //true
+  console.log(inAscOrder([1, 6, 10, 18, 2, 4, 20])); //false
+  console.log(inAscOrder([9, 8, 7, 6, 5, 4, 3, 2, 1])); //false
 }
