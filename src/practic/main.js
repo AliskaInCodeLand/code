@@ -2451,38 +2451,73 @@
 //   console.log(camelCase("hello case"));
 // }
 
+// {
+//Persistent Bugger.
+/**
+ * Напишите функцию persistence, которая принимает положительный
+ * параметр num и возвращает его мультипликативную устойчивость,
+ * то есть количество раз, которое нужно умножить цифры в num до
+ * тех пор, пока не получится одна цифра. */
+
+// function persistence(num) {
+//   let str = String(num);
+//   let count = 0;
+//   while (str.length > 1) {
+//     let newstr = 1;
+//     for (let i = str.length - 1; i >= 0; i--) {
+//       newstr *= str[i];
+//     }
+//     str = `${newstr}`;
+//     count++;
+//   }
+//   return count;
+// }
+//
+//   function persistence(num) {
+//     for (var i = 0; num > 9; i++) {
+//       debugger;
+//       num = num
+//         .toString()
+//         .split("")
+//         .reduce((t, c) => c * t);
+//     }
+//     return i;
+//   }
+//   console.log(persistent(39));
+//   console.log(persistent(999));
+//   console.log(persistent(4));
+// }
+
+////Решение задач CodeWars 25/11
 {
-  //Persistent Bugger.
-  /**
-   * Напишите функцию persistence, которая принимает положительный
-   * параметр num и возвращает его мультипликативную устойчивость,
-   * то есть количество раз, которое нужно умножить цифры в num до
-   * тех пор, пока не получится одна цифра. */
-
-  // function persistence(num) {
-  //   let str = String(num);
-  //   let count = 0;
-  //   while (str.length > 1) {
-  //     let newstr = 1;
-  //     for (let i = str.length - 1; i >= 0; i--) {
-  //       newstr *= str[i];
-  //     }
-  //     str = `${newstr}`;
-  //     count++;
-  //   }
-  //   return count;
-  // }
-
-  function persistence(num) {
-    for (var i = 0; num > 9; i++) {
-      num = num
-        .toString()
-        .split("")
-        .reduce((t, c) => c * t);
+  function updownrepeat(len, minimum, maximum) {
+    if (len === 0 || minimum > maximum) {
+      return "";
     }
-    return i;
+    if (len === 1) {
+      return String(minimum).slice(0, 1);
+    }
+    let result = "";
+    let current = minimum;
+    let isUp = true;
+    for (let i = 1; result.length < len; i++) {
+      if (len == str) result += Math.abs(current);
+      if (isUp) {
+        current++;
+        if (current > maximum) {
+          current = maximum - 1;
+          isUp = false;
+        }
+      } else {
+        current--;
+        if (current < minimum) {
+          current = minimum + 1;
+          isUp = false;
+        }
+      }
+    }
+    return result;
   }
-  console.log(persistent(39));
-  console.log(persistent(999));
-  console.log(persistent(4));
+
+  console.log(updownrepeat(5, 1, 3));
 }
