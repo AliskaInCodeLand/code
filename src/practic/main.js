@@ -2562,20 +2562,30 @@
 // }
 
 {
+  // function inAscOrder(arr) {
+  //   let newarr = arr
+  //     .map(function (item) {
+  //       return item;
+  //     })
+  //     .sort((a, b) => a - b);
+  //   let res = true;
+  //   for (let i = 0; i < newarr.length; i++) {
+  //     debugger;
+  //     if (newarr[i] !== arr[i]) {
+  //       res = false;
+  //     }
+  //   }
+  //   return res;
+  // }
+
+  //Другое решение
   function inAscOrder(arr) {
-    let newarr = arr
-      .map(function (item) {
-        return item;
-      })
-      .sort((a, b) => a - b);
-    let res = true;
-    for (let i = 0; i < newarr.length; i++) {
-      debugger;
-      if (newarr[i] !== arr[i]) {
-        res = false;
+    for (let i = 0; i < arr.length - 1; i++) {
+      if (arr[i] > arr[i + 1]) {
+        return false;
       }
     }
-    return res;
+    return true;
   }
 
   console.log(inAscOrder([1, 2, 4, 7, 19])); // true
