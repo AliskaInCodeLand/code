@@ -2579,14 +2579,18 @@
   // }
 
   //Другое решение
-  function inAscOrder(arr) {
-    for (let i = 0; i < arr.length - 1; i++) {
-      if (arr[i] > arr[i + 1]) {
-        return false;
-      }
-    }
-    return true;
-  }
+  // function inAscOrder(arr) {
+  //   for (let i = 0; i < arr.length - 1; i++) {
+  //     if (arr[i] > arr[i + 1]) {
+  //       return false;
+  //     }
+  //   }
+  //   return true;
+  // }
+
+  //Другое решение
+  const inAscOrder = (arr) =>
+    arr.join("") === arr.sort((a, b) => a - b).join("");
 
   console.log(inAscOrder([1, 2, 4, 7, 19])); // true
   console.log(inAscOrder([1, 2, 3, 4, 5])); //true
