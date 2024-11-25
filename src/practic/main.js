@@ -2530,15 +2530,26 @@
    * получается при суммировании произведений каждых
    * двух целых чисел Минимальная сумма ,  5*2 + 3*4 = 22*/
 
+  // function minSum(arr) {
+  //   let newarr = [];
+  //   arr.sort((a, b) => a - b);
+  //   for (let i = 0; i < arr.length; i++) {
+  //     debugger;
+  //     newarr.push(arr[i] * arr[arr.length - 1]);
+  //     arr.splice(-1, 1);
+  //   }
+  //   return newarr.reduce((a, b) => a + b);
+  // }
+
+  //Другое решение
   function minSum(arr) {
-    let newarr = [];
-    arr.sort((a, b) => a - b);
-    for (let i = 0; i < arr.length; i++) {
-      debugger;
-      newarr.push(arr[i] * arr[arr.length - 1]);
-      arr.splice(-1, 1);
-    }
-    return newarr.reduce((a, b) => a + b);
+    return arr
+      .sort((a, b) => a - b)
+      .slice(0, arr.length / 2)
+      .reduce(
+        (acc, curr, index) => (acc += curr * arr[arr.length - index - 1]),
+        0,
+      );
   }
 
   console.log(minSum([5, 4, 2, 3])); // 22
