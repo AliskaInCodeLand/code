@@ -2489,35 +2489,59 @@
 // }
 
 ////Решение задач CodeWars 25/11
+//
+
+// {
+//   //Возьмем производную
+//   /**
+//    * Эта функция принимает в качестве параметров два числа: первое число — коэффициент, а второе число — показатель степени.
+//    *
+//    * Ваша функция должна перемножать два числа, а затем вычитать 1 из показателя степени. Затем она должна возвращать выражение (например, 28x^7). "^1" Не должно быть усечения, если показатель степени равен 2.
+//    *
+//    * Например:
+//    *
+//    * derive(7, 8)
+//    * В этом случае функция должна перемножить 7 и 8, а затем вычесть 1 из 8. Она должна вывести "56x^7", где первое число 56 — это произведение двух чисел, а второе число — показатель степени минус 1.
+//    *
+//    * derive(7, 8) --> this should output "56x^7"
+//    * derive(5, 9) --> this should output "45x^8" */
+//
+//   function derive(coefficient, exponent) {
+//     return `${coefficient * exponent}x^${exponent - 1}`;
+//   }
+//
+//   console.log(derive(5, 9)); //"45x^8"
+//   console.log(derive(7, 8)); //"56x^7"
+// }
+
 {
-  function updownrepeat(len, minimum, maximum) {
-    if (len === 0 || minimum > maximum) {
-      return "";
+  //Минимизировать сумму массива (серия массивов #1)
+  /**
+   * Задача
+   * Данмассив целых чисел. Найдите минимальную сумму, которая
+   * получается при сложении произведений каждых двух целых чисел.
+   *
+   * Примечания
+   * только положительные результаты будут содержать массив / список.
+   * Массив / список всегда будет иметь четный размер
+   * Примеры ввода >> вывода
+   * minSum({5,4,2,3}) ==> return (22)
+   * Объяснение:
+   * получается при суммировании произведений каждых
+   * двух целых чисел Минимальная сумма ,  5*2 + 3*4 = 22*/
+
+  function minSum(arr) {
+    let newarr = [];
+    arr.sort((a, b) => a - b);
+    for (let i = 0; i < arr.length; i++) {
+      debugger;
+      newarr.push(arr[i] * arr[arr.length - 1]);
+      arr.splice(-1, 1);
     }
-    if (len === 1) {
-      return String(minimum).slice(0, 1);
-    }
-    let result = "";
-    let current = minimum;
-    let isUp = true;
-    for (let i = 1; result.length < len; i++) {
-      if (len == str) result += Math.abs(current);
-      if (isUp) {
-        current++;
-        if (current > maximum) {
-          current = maximum - 1;
-          isUp = false;
-        }
-      } else {
-        current--;
-        if (current < minimum) {
-          current = minimum + 1;
-          isUp = false;
-        }
-      }
-    }
-    return result;
+    return newarr.reduce((a, b) => a + b);
   }
 
-  console.log(updownrepeat(5, 1, 3));
+  console.log(minSum([5, 4, 2, 3])); // 22
+  console.log(minSum([12, 6, 10, 26, 3, 24])); // 342
+  console.log(minSum([9, 2, 8, 7, 5, 4, 0, 6])); // 74
 }
