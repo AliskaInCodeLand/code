@@ -2562,74 +2562,102 @@
 // }
 
 //Решение задач CodeWars 26/11
+// {
+//   //Самые короткие шаги к числу
+//   /**
+//    * Краткие сведения:
+//    * Учитывая число num, верните наименьшее количество steps от 1, которое потребуется, чтобы получить именно это число.
+//    *
+//    * Описание:
+//    * A step определяется как либо:
+//    *
+//    * Добавление 1 к числу: num += 1
+//    * Удвоение числа: num *= 2
+//    * Вы всегда будете начинать с числа 1 и должны будете вернуть наименьшее количество шагов, чтобы попасть точно на это число.
+//    *
+//    * 1 <= num <= 10000
+//    *
+//    * Примеры:
+//    *
+//    * num == 3 вернет 2 шаги:
+//    *
+//    * 1 -- +1 --> 2:        1 step
+//    * 2 -- +1 --> 3:        2 steps
+//    *
+//    * 2 steps
+//    * num == 12 вернет 4 шаги:
+//    *
+//    * 1 -- +1 --> 2:        1 step
+//    * 2 -- +1 --> 3:        2 steps
+//    * 3 -- x2 --> 6:        3 steps
+//    * 6 -- x2 --> 12:       4 steps
+//    *
+//    * 4 steps
+//    * num == 16 вернет 4 шаги:
+//    *
+//    * 1 -- +1 --> 2:        1 step
+//    * 2 -- x2 --> 4:        2 steps
+//    * 4 -- x2 --> 8:        3 steps
+//    * 8 -- x2 --> 16:       4 steps
+//    *
+//    * 4 steps */
+//
+//   // function shortestStepsToNum(num) {
+//   //   let count = 0;
+//   //   while (num > 1) {
+//   //     if (num % 2 == 0) {
+//   //       num /= 2;
+//   //     } else {
+//   //       num--;
+//   //     }
+//   //     count++;
+//   //   }
+//   //   return count;
+//   // }
+//
+//   //Другое решение
+//   // function shortestStepsToNum(num) {
+//   //   let count = 0;
+//   //   while (num > 1) {
+//   //     num % 2 == 0 ? (num /= 2) : num--, count++;
+//   //   }
+//   //   return count;
+//   // }
+//
+//   function shortestStepsToNum(num) {
+//     let bin = num.toString(2).substr(1);
+//     return bin.length + (bin.match(/1/g) || []).length;
+//   }
+//
+//   console.log(shortestStepsToNum(12));
+//   console.log(shortestStepsToNum(3));
+//   console.log(shortestStepsToNum(16));
+// }
+
 {
-  //Самые короткие шаги к числу
-  /**
-   * Краткие сведения:
-   * Учитывая число num, верните наименьшее количество steps от 1, которое потребуется, чтобы получить именно это число.
-   *
-   * Описание:
-   * A step определяется как либо:
-   *
-   * Добавление 1 к числу: num += 1
-   * Удвоение числа: num *= 2
-   * Вы всегда будете начинать с числа 1 и должны будете вернуть наименьшее количество шагов, чтобы попасть точно на это число.
-   *
-   * 1 <= num <= 10000
-   *
-   * Примеры:
-   *
-   * num == 3 вернет 2 шаги:
-   *
-   * 1 -- +1 --> 2:        1 step
-   * 2 -- +1 --> 3:        2 steps
-   *
-   * 2 steps
-   * num == 12 вернет 4 шаги:
-   *
-   * 1 -- +1 --> 2:        1 step
-   * 2 -- +1 --> 3:        2 steps
-   * 3 -- x2 --> 6:        3 steps
-   * 6 -- x2 --> 12:       4 steps
-   *
-   * 4 steps
-   * num == 16 вернет 4 шаги:
-   *
-   * 1 -- +1 --> 2:        1 step
-   * 2 -- x2 --> 4:        2 steps
-   * 4 -- x2 --> 8:        3 steps
-   * 8 -- x2 --> 16:       4 steps
-   *
-   * 4 steps */
-
-  // function shortestStepsToNum(num) {
-  //   let count = 0;
-  //   while (num > 1) {
-  //     if (num % 2 == 0) {
-  //       num /= 2;
-  //     } else {
-  //       num--;
-  //     }
-  //     count++;
-  //   }
-  //   return count;
-  // }
-
-  //Другое решение
-  // function shortestStepsToNum(num) {
-  //   let count = 0;
-  //   while (num > 1) {
-  //     num % 2 == 0 ? (num /= 2) : num--, count++;
-  //   }
-  //   return count;
-  // }
-
-  function shortestStepsToNum(num) {
-    let bin = num.toString(2).substr(1);
-    return bin.length + (bin.match(/1/g) || []).length;
+  function dataReverse(data) {
+    let newArr = [];
+    while (data.length > 0) {
+      newArr.push(data.slice(-8).join(""));
+      data.splice(-8, 8);
+    }
+    return newArr;
   }
 
-  console.log(shortestStepsToNum(12));
-  console.log(shortestStepsToNum(3));
-  console.log(shortestStepsToNum(16));
+  console.log(
+    dataReverse([
+      1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1,
+      0, 1, 0, 1, 0, 1, 0,
+    ]),
+  );
+
+  console.log(
+    dataReverse([
+      1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1,
+      1, 1, 1, 1, 1, 1, 1,
+    ]),
+  );
+
+  console.log(dataReverse([0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1]));
+  console.log(dataReverse([0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0]));
 }
