@@ -2561,39 +2561,61 @@
 //   console.log(minSum([9, 2, 8, 7, 5, 4, 0, 6])); // 74
 // }
 
+//Решение задач CodeWars 26/11
 {
-  // function inAscOrder(arr) {
-  //   let newarr = arr
-  //     .map(function (item) {
-  //       return item;
-  //     })
-  //     .sort((a, b) => a - b);
-  //   let res = true;
-  //   for (let i = 0; i < newarr.length; i++) {
-  //     debugger;
-  //     if (newarr[i] !== arr[i]) {
-  //       res = false;
-  //     }
-  //   }
-  //   return res;
-  // }
+  //Самые короткие шаги к числу
+  /**
+   * Краткие сведения:
+   * Учитывая число num, верните наименьшее количество steps от 1, которое потребуется, чтобы получить именно это число.
+   *
+   * Описание:
+   * A step определяется как либо:
+   *
+   * Добавление 1 к числу: num += 1
+   * Удвоение числа: num *= 2
+   * Вы всегда будете начинать с числа 1 и должны будете вернуть наименьшее количество шагов, чтобы попасть точно на это число.
+   *
+   * 1 <= num <= 10000
+   *
+   * Примеры:
+   *
+   * num == 3 вернет 2 шаги:
+   *
+   * 1 -- +1 --> 2:        1 step
+   * 2 -- +1 --> 3:        2 steps
+   *
+   * 2 steps
+   * num == 12 вернет 4 шаги:
+   *
+   * 1 -- +1 --> 2:        1 step
+   * 2 -- +1 --> 3:        2 steps
+   * 3 -- x2 --> 6:        3 steps
+   * 6 -- x2 --> 12:       4 steps
+   *
+   * 4 steps
+   * num == 16 вернет 4 шаги:
+   *
+   * 1 -- +1 --> 2:        1 step
+   * 2 -- x2 --> 4:        2 steps
+   * 4 -- x2 --> 8:        3 steps
+   * 8 -- x2 --> 16:       4 steps
+   *
+   * 4 steps */
 
-  //Другое решение
-  // function inAscOrder(arr) {
-  //   for (let i = 0; i < arr.length - 1; i++) {
-  //     if (arr[i] > arr[i + 1]) {
-  //       return false;
-  //     }
-  //   }
-  //   return true;
-  // }
+  function shortestStepsToNum(num) {
+    let count = 0;
+    while (num > 1) {
+      if (num % 2 == 0) {
+        num /= 2;
+      } else {
+        num--;
+      }
+      count++;
+    }
+    return count;
+  }
 
-  //Другое решение
-  const inAscOrder = (arr) =>
-    arr.join("") === arr.sort((a, b) => a - b).join("");
-
-  console.log(inAscOrder([1, 2, 4, 7, 19])); // true
-  console.log(inAscOrder([1, 2, 3, 4, 5])); //true
-  console.log(inAscOrder([1, 6, 10, 18, 2, 4, 20])); //false
-  console.log(inAscOrder([9, 8, 7, 6, 5, 4, 3, 2, 1])); //false
+  console.log(shortestStepsToNum(12));
+  console.log(shortestStepsToNum(3));
+  console.log(shortestStepsToNum(16));
 }
