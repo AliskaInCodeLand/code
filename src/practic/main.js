@@ -2616,12 +2616,17 @@
   // }
 
   //Другое решение
+  // function shortestStepsToNum(num) {
+  //   let count = 0;
+  //   while (num > 1) {
+  //     num % 2 == 0 ? (num /= 2) : num--, count++;
+  //   }
+  //   return count;
+  // }
+
   function shortestStepsToNum(num) {
-    let count = 0;
-    while (num > 1) {
-      num % 2 == 0 ? (num /= 2) : num--, count++;
-    }
-    return count;
+    let bin = num.toString(2).substr(1);
+    return bin.length + (bin.match(/1/g) || []).length;
   }
 
   console.log(shortestStepsToNum(12));
