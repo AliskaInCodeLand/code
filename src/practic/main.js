@@ -2635,13 +2635,35 @@
 // }
 
 {
+  // function dataReverse(data) {
+  //   let newArr = [];
+  //   while (data.length > 0) {
+  //     newArr.push(data.slice(-8).join(""));
+  //     data.splice(-8, 8);
+  //   }
+  //   return newArr;
+  // }
+
+  //Другое решение
   function dataReverse(data) {
-    let newArr = [];
+    let nestedArrs = [];
+
     while (data.length > 0) {
-      newArr.push(data.slice(-8).join(""));
-      data.splice(-8, 8);
+      nestedArrs.push(data.splice(0, 8));
     }
-    return newArr;
+
+    let reversedNestedArr = nestedArrs.reverse();
+    let finalArr = [];
+
+    reversedNestedArr.forEach(function (arr) {
+      for (let i = 0; i < arr.length; i++) {
+        let num = arr[i];
+
+        finalArr.push(num);
+      }
+    });
+
+    return finalArr;
   }
 
   console.log(
