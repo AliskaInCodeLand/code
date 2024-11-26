@@ -2602,15 +2602,24 @@
    *
    * 4 steps */
 
+  // function shortestStepsToNum(num) {
+  //   let count = 0;
+  //   while (num > 1) {
+  //     if (num % 2 == 0) {
+  //       num /= 2;
+  //     } else {
+  //       num--;
+  //     }
+  //     count++;
+  //   }
+  //   return count;
+  // }
+
+  //Другое решение
   function shortestStepsToNum(num) {
     let count = 0;
     while (num > 1) {
-      if (num % 2 == 0) {
-        num /= 2;
-      } else {
-        num--;
-      }
-      count++;
+      num % 2 == 0 ? (num /= 2) : num--, count++;
     }
     return count;
   }
