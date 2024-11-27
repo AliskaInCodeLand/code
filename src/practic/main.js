@@ -2686,41 +2686,45 @@
 
 //Решение задач CodeWars 27/11
 {
-  function wordsToMarks(string) {
-    const alphabet = [
-      "a",
-      "b",
-      "c",
-      "d",
-      "e",
-      "f",
-      "g",
-      "h",
-      "i",
-      "j",
-      "k",
-      "l",
-      "m",
-      "n",
-      "o",
-      "p",
-      "q",
-      "r",
-      "s",
-      "t",
-      "u",
-      "v",
-      "w",
-      "x",
-      "y",
-      "z",
-    ];
-    let sum = 0;
-    for (let i = 0; i < string.length; i++) {
-      sum += alphabet.indexOf(string[i]) + 1;
-    }
-    return sum;
-  }
+  // function wordsToMarks(string) {
+  //   const alphabet = [
+  //     "a",
+  //     "b",
+  //     "c",
+  //     "d",
+  //     "e",
+  //     "f",
+  //     "g",
+  //     "h",
+  //     "i",
+  //     "j",
+  //     "k",
+  //     "l",
+  //     "m",
+  //     "n",
+  //     "o",
+  //     "p",
+  //     "q",
+  //     "r",
+  //     "s",
+  //     "t",
+  //     "u",
+  //     "v",
+  //     "w",
+  //     "x",
+  //     "y",
+  //     "z",
+  //   ];
+  //   let sum = 0;
+  //   for (let i = 0; i < string.length; i++) {
+  //     sum += alphabet.indexOf(string[i]) + 1;
+  //   }
+  //   return sum;
+  // }
+
+  //Другое решение
+  const wordsToMarks = (s) =>
+    [...s].reduce((res, c) => (res += c.charCodeAt() - 96), 0);
 
   console.log(wordsToMarks("attitude")); // 100
   console.log(wordsToMarks("friends")); // 75
