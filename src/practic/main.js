@@ -2723,8 +2723,18 @@
   // }
 
   //Другое решение
-  const wordsToMarks = (s) =>
-    [...s].reduce((res, c) => (res += c.charCodeAt() - 96), 0);
+  // const wordsToMarks = (s) =>
+  //   [...s].reduce((res, c) => (res += c.charCodeAt() - 96), 0);
+
+  //Другое решение
+  function wordsToMarks(string) {
+    let alphabet = "abcdefghijklmnopqrstuvwxyz";
+    let marks = 0;
+    string.split("").forEach((char) => {
+      marks += alphabet.indexOf(char) + 1;
+    });
+    return marks;
+  }
 
   console.log(wordsToMarks("attitude")); // 100
   console.log(wordsToMarks("friends")); // 75
