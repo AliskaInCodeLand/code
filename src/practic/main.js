@@ -2764,7 +2764,6 @@
    * #####
    * ######
    * #######*/
-
   // function triangle(num) {
   //   let str = [];
   //   for (var i = 1; i <= num; i++) {
@@ -2778,13 +2777,15 @@
   //     str.splice(0, str.length);
   //   }
   // }
-
   //Другое решение
-  let i = "#";
-  while (i.length <= 7) {
-    console.log(i);
-    i = i + "#";
+  // let i = "#";
+  // while (i.length <= 7) {
+  //   console.log(i);
+  //   i = i + "#";
+  // }
+  //Другое решение
+  for (let a = "#"; a.length <= 7; a = a + "#") {
+    console.log(a);
   }
-
   // console.log(triangle(3));
 }
