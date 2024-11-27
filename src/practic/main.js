@@ -2740,16 +2740,51 @@
 //   console.log(wordsToMarks("friends")); // 75
 // }
 
+// {
+//   // function generateRange(min, max, step) {
+//   //   let arr = [];
+//   //   for (let i = min; i <= max; i += step) {
+//   //     arr.push(i);
+//   //   }
+//   //   return arr;
+//   // }
+//
+//   console.log(generateRange(1, 10, 1)); //[1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+//   console.log(generateRange(-10, 1, 1)); //[-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1]
+//   console.log(generateRange(1, 15, 20)); //[1]
+// }
+
 {
-  function generateRange(min, max, step) {
-    let arr = [];
-    for (let i = min; i <= max; i += step) {
-      arr.push(i);
-    }
-    return arr;
+  //Напишите цикл, который выводит такой треугольник:
+  /**
+   * #
+   * ##
+   * ###
+   * ####
+   * #####
+   * ######
+   * #######*/
+
+  // function triangle(num) {
+  //   let str = [];
+  //   for (var i = 1; i <= num; i++) {
+  //     debugger;
+  //     let count = 0;
+  //     while (count < i) {
+  //       str.push("#");
+  //       count++;
+  //     }
+  //     console.log(str.join(""));
+  //     str.splice(0, str.length);
+  //   }
+  // }
+
+  //Другое решение
+  let i = "#";
+  while (i.length <= 7) {
+    console.log(i);
+    i = i + "#";
   }
 
-  console.log(generateRange(1, 10, 1)); //[1, 2, 3, 4, 5, 6, 7, 8, 9, 10
-  console.log(generateRange(-10, 1, 1)); //[-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1]
-  console.log(generateRange(1, 15, 20)); //[1]
+  // console.log(triangle(3));
 }
