@@ -2685,57 +2685,71 @@
 // }
 
 //Решение задач CodeWars 27/11
+// {
+//   // function wordsToMarks(string) {
+//   //   const alphabet = [
+//   //     "a",
+//   //     "b",
+//   //     "c",
+//   //     "d",
+//   //     "e",
+//   //     "f",
+//   //     "g",
+//   //     "h",
+//   //     "i",
+//   //     "j",
+//   //     "k",
+//   //     "l",
+//   //     "m",
+//   //     "n",
+//   //     "o",
+//   //     "p",
+//   //     "q",
+//   //     "r",
+//   //     "s",
+//   //     "t",
+//   //     "u",
+//   //     "v",
+//   //     "w",
+//   //     "x",
+//   //     "y",
+//   //     "z",
+//   //   ];
+//   //   let sum = 0;
+//   //   for (let i = 0; i < string.length; i++) {
+//   //     sum += alphabet.indexOf(string[i]) + 1;
+//   //   }
+//   //   return sum;
+//   // }
+//
+//   //Другое решение
+//   // const wordsToMarks = (s) =>
+//   //   [...s].reduce((res, c) => (res += c.charCodeAt() - 96), 0);
+//
+//   //Другое решение
+//   function wordsToMarks(string) {
+//     let alphabet = "abcdefghijklmnopqrstuvwxyz";
+//     let marks = 0;
+//     string.split("").forEach((char) => {
+//       marks += alphabet.indexOf(char) + 1;
+//     });
+//     return marks;
+//   }
+//
+//   console.log(wordsToMarks("attitude")); // 100
+//   console.log(wordsToMarks("friends")); // 75
+// }
+
 {
-  // function wordsToMarks(string) {
-  //   const alphabet = [
-  //     "a",
-  //     "b",
-  //     "c",
-  //     "d",
-  //     "e",
-  //     "f",
-  //     "g",
-  //     "h",
-  //     "i",
-  //     "j",
-  //     "k",
-  //     "l",
-  //     "m",
-  //     "n",
-  //     "o",
-  //     "p",
-  //     "q",
-  //     "r",
-  //     "s",
-  //     "t",
-  //     "u",
-  //     "v",
-  //     "w",
-  //     "x",
-  //     "y",
-  //     "z",
-  //   ];
-  //   let sum = 0;
-  //   for (let i = 0; i < string.length; i++) {
-  //     sum += alphabet.indexOf(string[i]) + 1;
-  //   }
-  //   return sum;
-  // }
-
-  //Другое решение
-  // const wordsToMarks = (s) =>
-  //   [...s].reduce((res, c) => (res += c.charCodeAt() - 96), 0);
-
-  //Другое решение
-  function wordsToMarks(string) {
-    let alphabet = "abcdefghijklmnopqrstuvwxyz";
-    let marks = 0;
-    string.split("").forEach((char) => {
-      marks += alphabet.indexOf(char) + 1;
-    });
-    return marks;
+  function generateRange(min, max, step) {
+    let arr = [];
+    for (let i = min; i <= max; i += step) {
+      arr.push(i);
+    }
+    return arr;
   }
 
-  console.log(wordsToMarks("attitude")); // 100
-  console.log(wordsToMarks("friends")); // 75
+  console.log(generateRange(1, 10, 1)); //[1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+  console.log(generateRange(-10, 1, 1)); //[-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1]
+  console.log(generateRange(1, 15, 20)); //[1]
 }
