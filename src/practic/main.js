@@ -2633,53 +2633,95 @@
 //   console.log(shortestStepsToNum(3));
 //   console.log(shortestStepsToNum(16));
 // }
+//
+// {
+//   // function dataReverse(data) {
+//   //   let newArr = [];
+//   //   while (data.length > 0) {
+//   //     newArr.push(data.slice(-8));
+//   //     data.splice(-8, 8);
+//   //   }
+//   //   return newArr;
+//   // }
+//
+//   //Другое решение
+//   // function dataReverse(data) {
+//   //   let nestedArrs = [];
+//   //
+//   //   while (data.length > 0) {
+//   //     nestedArrs.push(data.splice(0, 8));
+//   //   }
+//   //
+//   //   let reversedNestedArr = nestedArrs.reverse();
+//   //   let finalArr = [];
+//   //
+//   //   reversedNestedArr.forEach(function (arr) {
+//   //     for (let i = 0; i < arr.length; i++) {
+//   //       let num = arr[i];
+//   //
+//   //       finalArr.push(num);
+//   //     }
+//   //   });
+//   //
+//   //   return finalArr;
+//   // }
+//
+//   // console.log(
+//   //   dataReverse([
+//   //     1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1,
+//   //     0, 1, 0, 1, 0, 1, 0,
+//   //   ]),
+//   // );
+//
+//   // console.log(
+//   //   dataReverse([
+//   //     1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1,
+//   //     1, 1, 1, 1, 1, 1, 1,
+//   //   ]),
+//   // );
+//
+//   console.log(dataReverse([0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1]));
+//   console.log(dataReverse([0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0]));
+// }
 
+//Решение задач CodeWars 27/11
 {
-  // function dataReverse(data) {
-  //   let newArr = [];
-  //   while (data.length > 0) {
-  //     newArr.push(data.slice(-8).join(""));
-  //     data.splice(-8, 8);
-  //   }
-  //   return newArr;
-  // }
-
-  //Другое решение
-  function dataReverse(data) {
-    let nestedArrs = [];
-
-    while (data.length > 0) {
-      nestedArrs.push(data.splice(0, 8));
+  function wordsToMarks(string) {
+    const alphabet = [
+      "a",
+      "b",
+      "c",
+      "d",
+      "e",
+      "f",
+      "g",
+      "h",
+      "i",
+      "j",
+      "k",
+      "l",
+      "m",
+      "n",
+      "o",
+      "p",
+      "q",
+      "r",
+      "s",
+      "t",
+      "u",
+      "v",
+      "w",
+      "x",
+      "y",
+      "z",
+    ];
+    let sum = 0;
+    for (let i = 0; i < string.length; i++) {
+      sum += alphabet.indexOf(string[i]) + 1;
     }
-
-    let reversedNestedArr = nestedArrs.reverse();
-    let finalArr = [];
-
-    reversedNestedArr.forEach(function (arr) {
-      for (let i = 0; i < arr.length; i++) {
-        let num = arr[i];
-
-        finalArr.push(num);
-      }
-    });
-
-    return finalArr;
+    return sum;
   }
 
-  console.log(
-    dataReverse([
-      1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1,
-      0, 1, 0, 1, 0, 1, 0,
-    ]),
-  );
-
-  console.log(
-    dataReverse([
-      1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1,
-      1, 1, 1, 1, 1, 1, 1,
-    ]),
-  );
-
-  console.log(dataReverse([0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1]));
-  console.log(dataReverse([0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0]));
+  console.log(wordsToMarks("attitude")); // 100
+  console.log(wordsToMarks("friends")); // 75
 }
