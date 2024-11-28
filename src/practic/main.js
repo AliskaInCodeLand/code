@@ -2754,38 +2754,75 @@
 //   console.log(generateRange(1, 15, 20)); //[1]
 // }
 
+// {
+//   //Напишите цикл, который выводит такой треугольник:
+//   /**
+//    * #
+//    * ##
+//    * ###
+//    * ####
+//    * #####
+//    * ######
+//    * #######*/
+//   // function triangle(num) {
+//   //   let str = [];
+//   //   for (var i = 1; i <= num; i++) {
+//   //     debugger;
+//   //     let count = 0;
+//   //     while (count < i) {
+//   //       str.push("#");
+//   //       count++;
+//   //     }
+//   //     console.log(str.join(""));
+//   //     str.splice(0, str.length);
+//   //   }
+//   // }
+//   //Другое решение
+//   // let i = "#";
+//   // while (i.length <= 7) {
+//   //   console.log(i);
+//   //   i = i + "#";
+//   // }
+//   //Другое решение
+//   for (let a = "#"; a.length <= 7; a = a + "#") {
+//     console.log(a);
+//   }
+//   // console.log(triangle(3));
+// }
+
+///Решение задач CodeWars 28/11
 {
-  //Напишите цикл, который выводит такой треугольник:
+  //Print a Rectangle Using Asterisks
+  //Выведите прямоугольник со звездочками
   /**
-   * #
-   * ##
-   * ###
-   * ####
-   * #####
-   * ######
-   * #######*/
-  // function triangle(num) {
-  //   let str = [];
-  //   for (var i = 1; i <= num; i++) {
-  //     debugger;
-  //     let count = 0;
-  //     while (count < i) {
-  //       str.push("#");
-  //       count++;
-  //     }
-  //     console.log(str.join(""));
-  //     str.splice(0, str.length);
-  //   }
-  // }
-  //Другое решение
-  // let i = "#";
-  // while (i.length <= 7) {
-  //   console.log(i);
-  //   i = i + "#";
-  // }
-  //Другое решение
-  for (let a = "#"; a.length <= 7; a = a + "#") {
-    console.log(a);
+   * Напишите метод, который, получив два аргумента width и height, возвращает строку, представляющую прямоугольник с такими размерами.
+   *
+   * Прямоугольник должен быть заполнен пробелами, а его границы должны состоять из звёздочек (*).
+   *
+   * Например, следующий вызов:
+   *
+   * getRectangleString(3, 3);
+   * Должна возвращать следующую строку:
+   *
+   * ***
+   * * *
+   * ***
+   * Завершите каждую строку (включая последнюю) комбинацией возврата каретки и перевода строки.
+   *
+   * Примечание: можно предположить, что ширина и высота всегда будут больше нуля.*/
+
+  function getRectangleString(width, height) {
+    const rn = "\r\n";
+    const tb = "*".repeat(width) + rn;
+    const canter =
+      width > 1
+        ? ("*" + " ".repeat(width - 2) + "*" + rn).repeat(height - 2)
+        : "";
+    return height > 1 ? tb + canter + tb : tb.repeat(height);
   }
-  // console.log(triangle(3));
+
+  console.log(getRectangleString(3, 3));
+  console.log(getRectangleString(5, 7));
+  console.log(getRectangleString(2, 2));
+  console.log(getRectangleString(1, 1));
 }
