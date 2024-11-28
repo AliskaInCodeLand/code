@@ -2852,13 +2852,17 @@
   //   }
   // }
 
-  const findMissing = (arr1, arr2) => {
-    arr1 = arr1.sort();
-    arr2 = arr2.sort();
-    for (let i = 0; i < arr1.length; i++) {
-      if (arr1[i] != arr2[i]) return arr1[i];
-    }
-  };
+  // const findMissing = (arr1, arr2) => {
+  //   arr1 = arr1.sort();
+  //   arr2 = arr2.sort();
+  //   for (let i = 0; i < arr1.length; i++) {
+  //     if (arr1[i] != arr2[i]) return arr1[i];
+  //   }
+  // };
+
+  const sum = (arr) => arr.reduce((a, b) => a + b, 0);
+
+  const findMissing = (arr1, arr2) => sum(arr1) - sum(arr2);
 
   console.log(findMissing([1, 2, 3], [1, 3])); //2
   console.log(findMissing([6, 6, 1, 2], [6, 1, 2])); //6
