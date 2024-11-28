@@ -2791,38 +2791,68 @@
 // }
 
 ///Решение задач CodeWars 28/11
-{
-  //Print a Rectangle Using Asterisks
-  //Выведите прямоугольник со звездочками
-  /**
-   * Напишите метод, который, получив два аргумента width и height, возвращает строку, представляющую прямоугольник с такими размерами.
-   *
-   * Прямоугольник должен быть заполнен пробелами, а его границы должны состоять из звёздочек (*).
-   *
-   * Например, следующий вызов:
-   *
-   * getRectangleString(3, 3);
-   * Должна возвращать следующую строку:
-   *
-   * ***
-   * * *
-   * ***
-   * Завершите каждую строку (включая последнюю) комбинацией возврата каретки и перевода строки.
-   *
-   * Примечание: можно предположить, что ширина и высота всегда будут больше нуля.*/
+// {
+//   //Print a Rectangle Using Asterisks
+//   //Выведите прямоугольник со звездочками
+//   /**
+//    * Напишите метод, который, получив два аргумента width и height, возвращает строку, представляющую прямоугольник с такими размерами.
+//    *
+//    * Прямоугольник должен быть заполнен пробелами, а его границы должны состоять из звёздочек (*).
+//    *
+//    * Например, следующий вызов:
+//    *
+//    * getRectangleString(3, 3);
+//    * Должна возвращать следующую строку:
+//    *
+//    * ***
+//    * * *
+//    * ***
+//    * Завершите каждую строку (включая последнюю) комбинацией возврата каретки и перевода строки.
+//    *
+//    * Примечание: можно предположить, что ширина и высота всегда будут больше нуля.*/
+//
+//   // function getRectangleString(width, height) {
+//   //   const rn = "\r\n";
+//   //   const tb = "*".repeat(width) + rn;
+//   //   const canter =
+//   //     width > 1
+//   //       ? ("*" + " ".repeat(width - 2) + "*" + rn).repeat(height - 2)
+//   //       : "";
+//   //   return height > 1 ? tb + canter + tb : tb.repeat(height);
+//   // }
+//
+//   console.log(getRectangleString(3, 3));
+//   console.log(getRectangleString(5, 7));
+//   console.log(getRectangleString(2, 2));
+//   console.log(getRectangleString(1, 1));
+// }
 
-  function getRectangleString(width, height) {
-    const rn = "\r\n";
-    const tb = "*".repeat(width) + rn;
-    const canter =
-      width > 1
-        ? ("*" + " ".repeat(width - 2) + "*" + rn).repeat(height - 2)
-        : "";
-    return height > 1 ? tb + canter + tb : tb.repeat(height);
+{
+  //Find the missing element between two arrays
+  //Найти недостающий элемент между двумя массивами
+  /**
+   * Даны два массива целых чисел, где второй массив является перемешанной копией первого массива с одним отсутствующим элементом. Найдите отсутствующий элемент.
+   *
+   * Обратите внимание, что в массивах могут быть дубликаты, поэтому проверка наличия числового значения в одном массиве и отсутствие его в другом — неверное решение.
+   *
+   * find_missing([1, 2, 2, 3], [1, 2, 3]) => 2
+   * find_missing([6, 1, 3, 6, 8, 2], [3, 6, 6, 1, 2]) => 8
+   * В первом массиве всегда будет хотя бы один элемент.
+   * */
+
+  function findMissing(arr1, arr2) {
+    let index;
+    for (let i = 0; i < arr1.length; i++) {
+      index = arr2.indexOf(arr1[i]);
+      if (index > -1) {
+        arr2.splice(index, 1);
+      } else {
+        return arr1[i];
+      }
+    }
   }
 
-  console.log(getRectangleString(3, 3));
-  console.log(getRectangleString(5, 7));
-  console.log(getRectangleString(2, 2));
-  console.log(getRectangleString(1, 1));
+  console.log(findMissing([1, 2, 3], [1, 3])); //2
+  console.log(findMissing([6, 6, 1, 2], [6, 1, 2])); //6
+  console.log(findMissing([7], [])); //7
 }
