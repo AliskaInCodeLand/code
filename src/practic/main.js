@@ -2826,45 +2826,61 @@
 //   console.log(getRectangleString(2, 2));
 //   console.log(getRectangleString(1, 1));
 // }
+//
+// {
+//   //Find the missing element between two arrays
+//   //Найти недостающий элемент между двумя массивами
+//   /**
+//    * Даны два массива целых чисел, где второй массив является перемешанной копией первого массива с одним отсутствующим элементом. Найдите отсутствующий элемент.
+//    *
+//    * Обратите внимание, что в массивах могут быть дубликаты, поэтому проверка наличия числового значения в одном массиве и отсутствие его в другом — неверное решение.
+//    *
+//    * find_missing([1, 2, 2, 3], [1, 2, 3]) => 2
+//    * find_missing([6, 1, 3, 6, 8, 2], [3, 6, 6, 1, 2]) => 8
+//    * В первом массиве всегда будет хотя бы один элемент.
+//    * */
+//
+//   // function findMissing(arr1, arr2) {
+//   //   let index;
+//   //   for (let i = 0; i < arr1.length; i++) {
+//   //     index = arr2.indexOf(arr1[i]);
+//   //     if (index > -1) {
+//   //       arr2.splice(index, 1);
+//   //     } else {
+//   //       return arr1[i];
+//   //     }
+//   //   }
+//   // }
+//
+//   // const findMissing = (arr1, arr2) => {
+//   //   arr1 = arr1.sort();
+//   //   arr2 = arr2.sort();
+//   //   for (let i = 0; i < arr1.length; i++) {
+//   //     if (arr1[i] != arr2[i]) return arr1[i];
+//   //   }
+//   // };
+//
+//   const sum = (arr) => arr.reduce((a, b) => a + b, 0);
+//
+//   const findMissing = (arr1, arr2) => sum(arr1) - sum(arr2);
+//
+//   console.log(findMissing([1, 2, 3], [1, 3])); //2
+//   console.log(findMissing([6, 6, 1, 2], [6, 1, 2])); //6
+//   console.log(findMissing([7], [])); //7
+// }
 
 {
-  //Find the missing element between two arrays
-  //Найти недостающий элемент между двумя массивами
+  //Is he gonna survive?
+  //Он выживет?
   /**
-   * Даны два массива целых чисел, где второй массив является перемешанной копией первого массива с одним отсутствующим элементом. Найдите отсутствующий элемент.
+   * Герой направляется в замок, чтобы выполнить свою миссию. Однако ему сказали, что замок окружён парой могущественных драконов! Чтобы победить каждого дракона, нужно 2 пули, но наш герой понятия не имеет, сколько пуль ему нужно взять с собой. Если предположить, что он возьмёт определённое количество пуль и отправится сражаться с другим определённым количеством драконов, выживет ли он?
    *
-   * Обратите внимание, что в массивах могут быть дубликаты, поэтому проверка наличия числового значения в одном массиве и отсутствие его в другом — неверное решение.
-   *
-   * find_missing([1, 2, 2, 3], [1, 2, 3]) => 2
-   * find_missing([6, 1, 3, 6, 8, 2], [3, 6, 6, 1, 2]) => 8
-   * В первом массиве всегда будет хотя бы один элемент.
-   * */
+   * Верните true, если да, false в противном случае :)*/
 
-  // function findMissing(arr1, arr2) {
-  //   let index;
-  //   for (let i = 0; i < arr1.length; i++) {
-  //     index = arr2.indexOf(arr1[i]);
-  //     if (index > -1) {
-  //       arr2.splice(index, 1);
-  //     } else {
-  //       return arr1[i];
-  //     }
-  //   }
-  // }
+  function hero(bullets, dragons) {
+    return dragons * 2 <= bullets;
+  }
 
-  // const findMissing = (arr1, arr2) => {
-  //   arr1 = arr1.sort();
-  //   arr2 = arr2.sort();
-  //   for (let i = 0; i < arr1.length; i++) {
-  //     if (arr1[i] != arr2[i]) return arr1[i];
-  //   }
-  // };
-
-  const sum = (arr) => arr.reduce((a, b) => a + b, 0);
-
-  const findMissing = (arr1, arr2) => sum(arr1) - sum(arr2);
-
-  console.log(findMissing([1, 2, 3], [1, 3])); //2
-  console.log(findMissing([6, 6, 1, 2], [6, 1, 2])); //6
-  console.log(findMissing([7], [])); //7
+  console.log(hero(10, 5)); //true
+  console.log(hero(7, 4)); //false
 }
