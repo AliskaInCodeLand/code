@@ -2877,8 +2877,13 @@
    *
    * Верните true, если да, false в противном случае :)*/
 
+  // function hero(bullets, dragons) {
+  //   return dragons * 2 <= bullets;
+  // }
+
   function hero(bullets, dragons) {
-    return dragons * 2 <= bullets;
+    //Get Coding!
+    return bullets / 2 >= dragons ? true : false;
   }
 
   console.log(hero(10, 5)); //true
