@@ -2891,61 +2891,75 @@
 // }
 
 //Решение задач CodeWars 29/11
+// {
+//Факториальная длина
+/**
+ * В этом задании вы реализуете функцию count,
+ * которая принимает целое число и возвращает количество цифр
+ * в factorial(n).
+ *
+ * Например, count(5) = 3, потому что 5! = 120 и 120 имеет 3 цифры.
+ *
+ * Дополнительные примеры в тестовых примерах.
+ *
+ * Грубая сила здесь не поможет.
+ * Немного исследований — и дело в шляпе,
+ * так как это хорошо известная серия.
+ */
+
+// function count(n) {
+//   let number = 0;
+//   let count = [];
+//   let res = [];
+//   for (let i = 1; i <= n; i++) {
+//     res.push(BigInt(i));
+//   }
+//   count =
+//     "" +
+//     res.reduce((acc, curr) => {
+//       return BigInt(acc * curr);
+//     });
+//   for (let char of count) {
+//     number++;
+//   }
+//
+//   return number;
+// }
+
+//   function count(n) {
+//     // Add some code
+//     if (n < 0) {
+//       return null;
+//     }
+//     if (n == 0 || n == 1) {
+//       return "1";
+//     }
+//     let result = [1];
+//     for (let num = 2; num <= n; num++) {
+//       for (let i = 0, plus = 0; i < result.length || plus != 0; i++) {
+//         let count = i < result.length ? num * result[i] + plus : plus; // If the current I is less than the number of digits that are numbered, * Num + Plus; if equal, then directly carry.
+//         result[i] = count % 10; //  , ten, 100 ... The number on the array is stored in the array result
+//         plus = (count - result[i]) / 10;
+//       }
+//     }
+//     return result.reverse().length; // After the array result is reversed, it is the last step.
+//   }
+//
+//   console.log(count(5)); //3
+//   console.log(count(50)); //65
+//   console.log(count(500)); //1135
+// }
+
 {
-  //Факториальная длина
-  /**
-   * В этом задании вы реализуете функцию count,
-   * которая принимает целое число и возвращает количество цифр
-   * в factorial(n).
-   *
-   * Например, count(5) = 3, потому что 5! = 120 и 120 имеет 3 цифры.
-   *
-   * Дополнительные примеры в тестовых примерах.
-   *
-   * Грубая сила здесь не поможет.
-   * Немного исследований — и дело в шляпе,
-   * так как это хорошо известная серия.
-   */
-
-  // function count(n) {
-  //   let number = 0;
-  //   let count = [];
-  //   let res = [];
-  //   for (let i = 1; i <= n; i++) {
-  //     res.push(BigInt(i));
-  //   }
-  //   count =
-  //     "" +
-  //     res.reduce((acc, curr) => {
-  //       return BigInt(acc * curr);
-  //     });
-  //   for (let char of count) {
-  //     number++;
-  //   }
-  //
-  //   return number;
-  // }
-
-  function count(n) {
-    // Add some code
-    if (n < 0) {
-      return null;
+  //Сверхсовершенные числа (серия специальных чисел #7)
+  function extraPerfect(n) {
+    const res = [];
+    for (var i = 1; i <= n; i += 2) {
+      res.push(i);
     }
-    if (n == 0 || n == 1) {
-      return "1";
-    }
-    let result = [1];
-    for (let num = 2; num <= n; num++) {
-      for (let i = 0, plus = 0; i < result.length || plus != 0; i++) {
-        let count = i < result.length ? num * result[i] + plus : plus; // If the current I is less than the number of digits that are numbered, * Num + Plus; if equal, then directly carry.
-        result[i] = count % 10; //  , ten, 100 ... The number on the array is stored in the array result
-        plus = (count - result[i]) / 10;
-      }
-    }
-    return result.reverse().length; // After the array result is reversed, it is the last step.
+    return res;
   }
 
-  console.log(count(5)); //3
-  console.log(count(50)); //65
-  console.log(count(500)); //1135
+  console.log(extraPerfect(3)); // [1,3]
+  console.log(extraPerfect(28)); // [1,3,5,7,9,11,13,15,17,19,21,23,25,27]
 }
