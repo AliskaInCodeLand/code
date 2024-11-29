@@ -2950,16 +2950,34 @@
 //   console.log(count(500)); //1135
 // }
 
+// {
+//   //Сверхсовершенные числа (серия специальных чисел #7)
+//   function extraPerfect(n) {
+//     const res = [];
+//     for (var i = 1; i <= n; i += 2) {
+//       res.push(i);
+//     }
+//     return res;
+//   }
+//
+//   console.log(extraPerfect(3)); // [1,3]
+//   console.log(extraPerfect(28)); // [1,3,5,7,9,11,13,15,17,19,21,23,25,27]
+// }
+
 {
-  //Сверхсовершенные числа (серия специальных чисел #7)
-  function extraPerfect(n) {
-    const res = [];
-    for (var i = 1; i <= n; i += 2) {
-      res.push(i);
+  //Are they the "same"?
+  function comp(a, b) {
+    if (a == null || b == null) return false;
+    let res = true;
+    for (let i = 0; i < a.length; i++) {
+      if (!a.includes(Math.sqrt(b[i]))) {
+        res = false;
+      }
     }
     return res;
   }
 
-  console.log(extraPerfect(3)); // [1,3]
-  console.log(extraPerfect(28)); // [1,3,5,7,9,11,13,15,17,19,21,23,25,27]
+  const a = [121, 144, 19, 161, 19, 144, 19, 11];
+  const b = [121, 14641, 20736, 361, 25921, 361, 20736, 361];
+  console.log(comp(a, b));
 }
