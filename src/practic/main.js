@@ -2907,23 +2907,42 @@
    * так как это хорошо известная серия.
    */
 
-  function count(n) {
-    let number = 0;
-    let count = [];
-    let res = [];
-    for (let i = 1; i <= n; i++) {
-      res.push(BigInt(i));
-    }
-    count =
-      "" +
-      res.reduce((acc, curr) => {
-        return BigInt(acc * curr);
-      });
-    for (let char of count) {
-      number++;
-    }
+  // function count(n) {
+  //   let number = 0;
+  //   let count = [];
+  //   let res = [];
+  //   for (let i = 1; i <= n; i++) {
+  //     res.push(BigInt(i));
+  //   }
+  //   count =
+  //     "" +
+  //     res.reduce((acc, curr) => {
+  //       return BigInt(acc * curr);
+  //     });
+  //   for (let char of count) {
+  //     number++;
+  //   }
+  //
+  //   return number;
+  // }
 
-    return number;
+  function count(n) {
+    // Add some code
+    if (n < 0) {
+      return null;
+    }
+    if (n == 0 || n == 1) {
+      return "1";
+    }
+    let result = [1];
+    for (let num = 2; num <= n; num++) {
+      for (let i = 0, plus = 0; i < result.length || plus != 0; i++) {
+        let count = i < result.length ? num * result[i] + plus : plus; // If the current I is less than the number of digits that are numbered, * Num + Plus; if equal, then directly carry.
+        result[i] = count % 10; //  , ten, 100 ... The number on the array is stored in the array result
+        plus = (count - result[i]) / 10;
+      }
+    }
+    return result.reverse().length; // After the array result is reversed, it is the last step.
   }
 
   console.log(count(5)); //3
