@@ -2967,17 +2967,23 @@
 {
   //Are they the "same"?
   function comp(a, b) {
-    if (a == null || b == null) return false;
     let res = true;
+    if (a == null || b == null) return false;
     for (let i = 0; i < a.length; i++) {
-      if (!a.includes(Math.sqrt(b[i]))) {
-        res = false;
+      debugger;
+      if (a.length !== b.length) return false;
+      if (a.includes(Math.sqrt(b[i]))) {
+        a.splice(a.indexOf(Math.sqrt(b[i])), 1);
+        b.splice(i, 1);
       }
     }
-    return res;
+    if (a.length == 0 && b.length == 0) return true;
+    else return false;
   }
 
-  const a = [121, 144, 19, 161, 19, 144, 19, 11];
-  const b = [121, 14641, 20736, 361, 25921, 361, 20736, 361];
+  // const a = [121, 144, 19, 161, 19, 144, 19, 11];
+  // const b = [121, 14641, 20736, 361, 25921, 361, 20736, 361];
+  const a = [2, 2, 3];
+  const b = [4, 9, 9];
   console.log(comp(a, b));
 }
