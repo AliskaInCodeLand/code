@@ -2964,26 +2964,50 @@
 //   console.log(extraPerfect(28)); // [1,3,5,7,9,11,13,15,17,19,21,23,25,27]
 // }
 
+// {
+//   //Are they the "same"?
+//   function comp(a, b) {
+//     let res = true;
+//     if (a == null || b == null) return false;
+//     for (let i = 0; i < a.length; i++) {
+//       debugger;
+//       if (a.length !== b.length) return false;
+//       if (a.includes(Math.sqrt(b[i]))) {
+//         a.splice(a.indexOf(Math.sqrt(b[i])), 1);
+//         b.splice(i, 1);
+//       }
+//     }
+//     if (a.length == 0 && b.length == 0) return true;
+//     else return false;
+//   }
+//
+//   const a = [121, 144, 19, 161, 19, 144, 19, 11];
+//   const b = [121, 14641, 20736, 361, 25921, 361, 20736, 361];
+//   // const a = [2, 2, 3];
+//   // const b = [4, 9, 9];
+//   console.log(comp(a, b));
+// }
+
+//Решение задач CodeWars 30/11
 {
   //Are they the "same"?
   function comp(a, b) {
-    let res = true;
-    if (a == null || b == null) return false;
-    for (let i = 0; i < a.length; i++) {
-      debugger;
-      if (a.length !== b.length) return false;
-      if (a.includes(Math.sqrt(b[i]))) {
-        a.splice(a.indexOf(Math.sqrt(b[i])), 1);
-        b.splice(i, 1);
-      }
+    //проверка на массив,а не null
+    if (a1 == null || a2 == null) return false;
+    for (var i = 0; i < a2.length; i++) {
+      //индекс в массиве а1 равный квадратному корню элемента из массива а2
+      const indexA1 = a1.indexOf(Math.sqrt(a2[i]));
+      //если элемент не найден
+      if (indexA1 === -1) return false;
+      //замена значения элемента на null
+      a1[indexA1] = null;
     }
-    if (a.length == 0 && b.length == 0) return true;
-    else return false;
+    return true;
   }
 
-  // const a = [121, 144, 19, 161, 19, 144, 19, 11];
-  // const b = [121, 14641, 20736, 361, 25921, 361, 20736, 361];
-  const a = [2, 2, 3];
-  const b = [4, 9, 9];
-  console.log(comp(a, b));
+  // const a1 = [121, 144, 19, 161, 19, 144, 19, 11];
+  // const a2 = [121, 14641, 20736, 361, 25921, 361, 20736, 361];
+  const a1 = [2, 2, 3];
+  const a2 = [4, 9, 9];
+  console.log(comp(a1, a2));
 }
