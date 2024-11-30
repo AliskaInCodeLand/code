@@ -2991,23 +2991,32 @@
 //Решение задач CodeWars 30/11
 {
   //Are they the "same"?
+  // function comp(a1, a2) {
+  //   //проверка на массив,а не null
+  //   if (a1 == null || a2 == null) return false;
+  //   for (var i = 0; i < a2.length; i++) {
+  //     //индекс в массиве а1 равный квадратному корню элемента из массива а2
+  //     const indexA1 = a1.indexOf(Math.sqrt(a2[i]));
+  //     //если элемент не найден
+  //     if (indexA1 === -1) return false;
+  //     //замена значения элемента на null
+  //     a1[indexA1] = null;
+  //   }
+  //   return true;
+  // }
+
+  //other solution
   function comp(a1, a2) {
-    //проверка на массив,а не null
     if (a1 == null || a2 == null) return false;
-    for (var i = 0; i < a2.length; i++) {
-      //индекс в массиве а1 равный квадратному корню элемента из массива а2
-      const indexA1 = a1.indexOf(Math.sqrt(a2[i]));
-      //если элемент не найден
-      if (indexA1 === -1) return false;
-      //замена значения элемента на null
-      a1[indexA1] = null;
-    }
-    return true;
+    a1.sort((a, b) => a - b);
+    a2.sort((a, b) => a - b);
+    return a1.map((v) => v * v).every((v, i) => v == a2[i]);
+    // .every((v, i) => v == a2[i]);
   }
 
   // const a1 = [121, 144, 19, 161, 19, 144, 19, 11];
   // const a2 = [121, 14641, 20736, 361, 25921, 361, 20736, 361];
-  const a1 = [2, 2, 3];
-  const a2 = [4, 9, 9];
+  const a1 = [3, 2, 2];
+  const a2 = [9, 9, 4];
   console.log(comp(a1, a2));
 }
