@@ -3014,14 +3014,25 @@
   // }
 
   //other solution
+  // function comp(a, b) {
+  //   return (
+  //     !!a &&
+  //     !!b &&
+  //     a
+  //       .map((x) => x * x)
+  //       .sort()
+  //       .join() == b.sort().join()
+  //   );
+  // }
+
+  //other solution
   function comp(a, b) {
+    if (!a || !b || a.length !== b.length) return false;
     return (
-      !!a &&
-      !!b &&
       a
         .map((x) => x * x)
         .sort()
-        .join() == b.sort().join()
+        .toString() === b.sort().toString()
     );
   }
 
