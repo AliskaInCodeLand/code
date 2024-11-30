@@ -3006,12 +3006,23 @@
   // }
 
   //other solution
-  function comp(a1, a2) {
-    if (a1 == null || a2 == null) return false;
-    a1.sort((a, b) => a - b);
-    a2.sort((a, b) => a - b);
-    return a1.map((v) => v * v).every((v, i) => v == a2[i]);
-    // .every((v, i) => v == a2[i]);
+  // function comp(a1, a2) {
+  //   if (a1 == null || a2 == null) return false;
+  //   a1.sort((a, b) => a - b);
+  //   a2.sort((a, b) => a - b);
+  //   return a1.map((v) => v * v).every((v, i) => v == a2[i]);
+  // }
+
+  //other solution
+  function comp(a, b) {
+    return (
+      !!a &&
+      !!b &&
+      a
+        .map((x) => x * x)
+        .sort()
+        .join() == b.sort().join()
+    );
   }
 
   // const a1 = [121, 144, 19, 161, 19, 144, 19, 11];
