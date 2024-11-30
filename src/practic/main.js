@@ -2989,56 +2989,72 @@
 // }
 
 //Решение задач CodeWars 30/11
+// {
+//   //Are they the "same"?
+//   // function comp(a1, a2) {
+//   //   //проверка на массив,а не null
+//   //   if (a1 == null || a2 == null) return false;
+//   //   for (var i = 0; i < a2.length; i++) {
+//   //     //индекс в массиве а1 равный квадратному корню элемента из массива а2
+//   //     const indexA1 = a1.indexOf(Math.sqrt(a2[i]));
+//   //     //если элемент не найден
+//   //     if (indexA1 === -1) return false;
+//   //     //замена значения элемента на null
+//   //     a1[indexA1] = null;
+//   //   }
+//   //   return true;
+//   // }
+//
+//   //other solution
+//   // function comp(a1, a2) {
+//   //   if (a1 == null || a2 == null) return false;
+//   //   a1.sort((a, b) => a - b);
+//   //   a2.sort((a, b) => a - b);
+//   //   return a1.map((v) => v * v).every((v, i) => v == a2[i]);
+//   // }
+//
+//   //other solution
+//   // function comp(a, b) {
+//   //   return (
+//   //     !!a &&
+//   //     !!b &&
+//   //     a
+//   //       .map((x) => x * x)
+//   //       .sort()
+//   //       .join() == b.sort().join()
+//   //   );
+//   // }
+//
+//   //other solution
+//   function comp(a, b) {
+//     if (!a || !b || a.length !== b.length) return false;
+//     return (
+//       a
+//         .map((x) => x * x)
+//         .sort()
+//         .toString() === b.sort().toString()
+//     );
+//   }
+//
+//   // const a1 = [121, 144, 19, 161, 19, 144, 19, 11];
+//   // const a2 = [121, 14641, 20736, 361, 25921, 361, 20736, 361];
+//   const a1 = [3, 2, 2];
+//   const a2 = [9, 9, 4];
+//   console.log(comp(a1, a2));
+// }
+
 {
-  //Are they the "same"?
-  // function comp(a1, a2) {
-  //   //проверка на массив,а не null
-  //   if (a1 == null || a2 == null) return false;
-  //   for (var i = 0; i < a2.length; i++) {
-  //     //индекс в массиве а1 равный квадратному корню элемента из массива а2
-  //     const indexA1 = a1.indexOf(Math.sqrt(a2[i]));
-  //     //если элемент не найден
-  //     if (indexA1 === -1) return false;
-  //     //замена значения элемента на null
-  //     a1[indexA1] = null;
-  //   }
-  //   return true;
-  // }
+  //Основы геометрии: расстояние между точками в 2D
+  /**Эта серия ката познакомит вас с основами компьютерной геометрии.
+   Point объекты имеют атрибуты x и y.
+   Напишите функцию, вычисляющую расстояние между Point a и Point b.
+   Входные координаты находятся в диапазоне
+   −50⩽x,y⩽50. Тесты сравнивают ожидаемый результат и фактический ответ
+   с допуском 1e-6.*/
 
-  //other solution
-  // function comp(a1, a2) {
-  //   if (a1 == null || a2 == null) return false;
-  //   a1.sort((a, b) => a - b);
-  //   a2.sort((a, b) => a - b);
-  //   return a1.map((v) => v * v).every((v, i) => v == a2[i]);
-  // }
-
-  //other solution
-  // function comp(a, b) {
-  //   return (
-  //     !!a &&
-  //     !!b &&
-  //     a
-  //       .map((x) => x * x)
-  //       .sort()
-  //       .join() == b.sort().join()
-  //   );
-  // }
-
-  //other solution
-  function comp(a, b) {
-    if (!a || !b || a.length !== b.length) return false;
-    return (
-      a
-        .map((x) => x * x)
-        .sort()
-        .toString() === b.sort().toString()
-    );
+  function distanceBetweenPoints(a, b) {}
+  let res;
+  if (a.x > b.x) {
+    res = Math.sqrt(Math.pow(a.x - b.x, 2) + Math.pow(a.y - b.y, 2));
   }
-
-  // const a1 = [121, 144, 19, 161, 19, 144, 19, 11];
-  // const a2 = [121, 14641, 20736, 361, 25921, 361, 20736, 361];
-  const a1 = [3, 2, 2];
-  const a2 = [9, 9, 4];
-  console.log(comp(a1, a2));
 }
