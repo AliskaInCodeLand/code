@@ -3061,14 +3061,25 @@
 
 //Решение задач CodeWars 1/12
 {
-  function adjacentElementsProduct(array) {
-    let max = array[0] * array[1];
-    for (let i = 0; i < array.length; i++) {
-      if (array[i] * array[i + 1] > max) {
-        max = array[i] * array[i + 1];
+  // function adjacentElementsProduct(array) {
+  //   let max = array[0] * array[1];
+  //   for (let i = 0; i < array.length; i++) {
+  //     if (array[i] * array[i + 1] > max) {
+  //       max = array[i] * array[i + 1];
+  //     }
+  //   }
+  //   return max;
+  // }
+
+  //other solution
+  {
+    function adjacentElementsProduct(array) {
+      let newArr = [];
+      for (i = 0; i < array.length - 1; i++) {
+        newArr.push(array[i] * array[i + 1]);
       }
+      return Math.max(...newArr);
     }
-    return max;
   }
 
   console.log(adjacentElementsProduct([1, 2, 3]));
