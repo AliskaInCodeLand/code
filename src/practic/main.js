@@ -3043,18 +3043,35 @@
 //   console.log(comp(a1, a2));
 // }
 
-{
-  //Основы геометрии: расстояние между точками в 2D
-  /**Эта серия ката познакомит вас с основами компьютерной геометрии.
-   Point объекты имеют атрибуты x и y.
-   Напишите функцию, вычисляющую расстояние между Point a и Point b.
-   Входные координаты находятся в диапазоне
-   −50⩽x,y⩽50. Тесты сравнивают ожидаемый результат и фактический ответ
-   с допуском 1e-6.*/
+// {
+//   //Основы геометрии: расстояние между точками в 2D
+//   /**Эта серия ката познакомит вас с основами компьютерной геометрии.
+//    Point объекты имеют атрибуты x и y.
+//    Напишите функцию, вычисляющую расстояние между Point a и Point b.
+//    Входные координаты находятся в диапазоне
+//    −50⩽x,y⩽50. Тесты сравнивают ожидаемый результат и фактический ответ
+//    с допуском 1e-6.*/
+//
+//   function distanceBetweenPoints(a, b) {}
+//   let res;
+//   if (a.x > b.x) {
+//     res = Math.sqrt(Math.pow(a.x - b.x, 2) + Math.pow(a.y - b.y, 2));
+//   }
+// }
 
-  function distanceBetweenPoints(a, b) {}
-  let res;
-  if (a.x > b.x) {
-    res = Math.sqrt(Math.pow(a.x - b.x, 2) + Math.pow(a.y - b.y, 2));
+//Решение задач CodeWars 1/12
+{
+  function adjacentElementsProduct(array) {
+    let max = array[0] * array[1];
+    for (let i = 0; i < array.length; i++) {
+      if (array[i] * array[i + 1] > max) {
+        max = array[i] * array[i + 1];
+      }
+    }
+    return max;
   }
+
+  console.log(adjacentElementsProduct([1, 2, 3]));
+  console.log(adjacentElementsProduct([9, 5, 10, 2, 24, -1, -48])); //50
+  console.log(adjacentElementsProduct([-23, 4, -5, 99, -27, 329, -2, 7, -921])); //-14
 }
