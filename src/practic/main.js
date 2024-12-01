@@ -3060,34 +3060,55 @@
 // }
 
 //Решение задач CodeWars 1/12
+// {
+//   // function adjacentElementsProduct(array) {
+//   //   let max = array[0] * array[1];
+//   //   for (let i = 0; i < array.length; i++) {
+//   //     if (array[i] * array[i + 1] > max) {
+//   //       max = array[i] * array[i + 1];
+//   //     }
+//   //   }
+//   //   return max;
+//   // }
+//
+//   //other solution
+//   // {
+//   //   function adjacentElementsProduct(array) {
+//   //     let newArr = [];
+//   //     for (i = 0; i < array.length - 1; i++) {
+//   //       newArr.push(array[i] * array[i + 1]);
+//   //     }
+//   //     return Math.max(...newArr);
+//   //   }
+//   // }
+//
+//   //other solution
+//   function adjacentElementsProduct(a) {
+//     return Math.max(...a.map((x, i) => x * a[i + 1]).slice(0, -1));
+//   }
+//
+//   console.log(adjacentElementsProduct([1, 2, 3]));
+//   console.log(adjacentElementsProduct([9, 5, 10, 2, 24, -1, -48])); //50
+//   console.log(adjacentElementsProduct([-23, 4, -5, 99, -27, 329, -2, 7, -921])); //-14
+// }
+
 {
-  // function adjacentElementsProduct(array) {
-  //   let max = array[0] * array[1];
-  //   for (let i = 0; i < array.length; i++) {
-  //     if (array[i] * array[i + 1] > max) {
-  //       max = array[i] * array[i + 1];
-  //     }
-  //   }
-  //   return max;
-  // }
-
-  //other solution
-  // {
-  //   function adjacentElementsProduct(array) {
-  //     let newArr = [];
-  //     for (i = 0; i < array.length - 1; i++) {
-  //       newArr.push(array[i] * array[i + 1]);
-  //     }
-  //     return Math.max(...newArr);
-  //   }
-  // }
-
-  //other solution
-  function adjacentElementsProduct(a) {
-    return Math.max(...a.map((x, i) => x * a[i + 1]).slice(0, -1));
+  //Автоморфный номер (серия специальных номеров #6)
+  function automorphic(num) {
+    let res = [];
+    res.push("" + Math.pow(num, 2));
+    res[0].split("");
+    let arr = res[0].split("");
+    let count = [];
+    count.push("" + num);
+    let arr2 = count[0].split("");
+    for (let i = 0; i < arr2.length; i++) {
+      if (arr[i] !== arr2[i]) {
+        return "Not!!";
+      }
+    }
+    return "Automorphic";
   }
 
-  console.log(adjacentElementsProduct([1, 2, 3]));
-  console.log(adjacentElementsProduct([9, 5, 10, 2, 24, -1, -48])); //50
-  console.log(adjacentElementsProduct([-23, 4, -5, 99, -27, 329, -2, 7, -921])); //-14
+  console.log(automorphic(25));
 }
