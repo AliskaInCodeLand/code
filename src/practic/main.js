@@ -3094,19 +3094,26 @@
 
 {
   //Автоморфный номер (серия специальных номеров #6)
+  // function automorphic(n) {
+  //   let res = "";
+  //   res += Math.pow(n, 2);
+  //
+  //   let newres = res.split("");
+  //
+  //   let count = "";
+  //   count += n;
+  //   let index = -count.length;
+  //   let c = count.length;
+  //   let arr = newres.slice(index).join("");
+  //   if (arr == count) return "Automorphic";
+  //   return "Not!!";
+  // }
+
+  //other solution
   function automorphic(n) {
-    let res = "";
-    res += Math.pow(n, 2);
-
-    let newres = res.split("");
-
-    let count = "";
-    count += n;
-    let index = -count.length;
-    let c = count.length;
-    let arr = newres.slice(index).join("");
-    if (arr == count) return "Automorphic";
-    return "Not!!";
+    let len = n.toString().length;
+    let num = (n * n).toString().slice(-len);
+    return n == num ? "Automorphic" : "Not!!";
   }
 
   console.log(automorphic(25));
