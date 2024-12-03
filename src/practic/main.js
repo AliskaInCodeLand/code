@@ -3143,10 +3143,24 @@
   // }
 
   //other solution
+  // function solve(arr) {
+  //   var r = {};
+  //   for (var n of arr) r[n] = r[n] + 1 || 1;
+  //   return arr.slice().sort((a, b) => r[b] - r[a] || a - b);
+  // }
+
+  //other solution
   function solve(arr) {
-    var r = {};
-    for (var n of arr) r[n] = r[n] + 1 || 1;
-    return arr.slice().sort((a, b) => r[b] - r[a] || a - b);
+    const obj = {};
+    for (let i = 0; i < arr.length; i++) {
+      if (obj.hasOwnProperty(arr[i])) {
+        obj[arr[i]]++;
+      } else {
+        obj[arr[i]] = 1;
+      }
+    }
+    arr = arr.sort((a, b) => (obj[b] === obj[a] ? a - b : obj[b] - obj[a]));
+    return arr;
   }
 
   console.log(solve([1, 2, 3, 0, 5, 0, 1, 6, 8, 8, 6, 9, 1]));
