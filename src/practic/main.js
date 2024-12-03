@@ -3150,17 +3150,25 @@
   // }
 
   //other solution
+  // function solve(arr) {
+  //   const obj = {};
+  //   for (let i = 0; i < arr.length; i++) {
+  //     if (obj.hasOwnProperty(arr[i])) {
+  //       obj[arr[i]]++;
+  //     } else {
+  //       obj[arr[i]] = 1;
+  //     }
+  //   }
+  //   arr = arr.sort((a, b) => (obj[b] === obj[a] ? a - b : obj[b] - obj[a]));
+  //   return arr;
+  // }
+
+  //other solution
   function solve(arr) {
-    const obj = {};
-    for (let i = 0; i < arr.length; i++) {
-      if (obj.hasOwnProperty(arr[i])) {
-        obj[arr[i]]++;
-      } else {
-        obj[arr[i]] = 1;
-      }
-    }
-    arr = arr.sort((a, b) => (obj[b] === obj[a] ? a - b : obj[b] - obj[a]));
-    return arr;
+    return arr
+      .map((elem) => [elem, arr.filter((num) => num == elem).length])
+      .sort((a, b) => b[1] - a[1] || a[0] - b[0])
+      .map((x) => x[0]);
   }
 
   console.log(solve([1, 2, 3, 0, 5, 0, 1, 6, 8, 8, 6, 9, 1]));
