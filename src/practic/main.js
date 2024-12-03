@@ -3092,29 +3092,58 @@
 //   console.log(adjacentElementsProduct([-23, 4, -5, 99, -27, 329, -2, 7, -921])); //-14
 // }
 
-{
-  //Автоморфный номер (серия специальных номеров #6)
-  // function automorphic(n) {
-  //   let res = "";
-  //   res += Math.pow(n, 2);
-  //
-  //   let newres = res.split("");
-  //
-  //   let count = "";
-  //   count += n;
-  //   let index = -count.length;
-  //   let c = count.length;
-  //   let arr = newres.slice(index).join("");
-  //   if (arr == count) return "Automorphic";
-  //   return "Not!!";
-  // }
+//Решение задач CodeWars 2/12
+// {
+//   //Автоморфный номер (серия специальных номеров #6)
+//   // function automorphic(n) {
+//   //   let res = "";
+//   //   res += Math.pow(n, 2);
+//   //
+//   //   let newres = res.split("");
+//   //
+//   //   let count = "";
+//   //   count += n;
+//   //   let index = -count.length;
+//   //   let c = count.length;
+//   //   let arr = newres.slice(index).join("");
+//   //   if (arr == count) return "Automorphic";
+//   //   return "Not!!";
+//   // }
+//
+//   //other solution
+//   function automorphic(n) {
+//     let len = n.toString().length;
+//     let num = (n * n).toString().slice(-len);
+//     return n == num ? "Automorphic" : "Not!!";
+//   }
+//
+//   console.log(automorphic(25));
+// }
 
-  //other solution
-  function automorphic(n) {
-    let len = n.toString().length;
-    let num = (n * n).toString().slice(-len);
-    return n == num ? "Automorphic" : "Not!!";
+//Решение задач CodeWars 3/12
+{
+  //Простая сортировка по частоте
+  /**
+   * В этом задании вы будете сортировать элементы в массиве по убыванию частоты встречаемости элементов. Если два элемента встречаются одинаково часто, отсортируйте их по возрастанию значения.
+   *
+   * solve([2,3,5,3,7,9,5,3,7]) = [3,3,3,5,5,7,7,2,9]
+   * -- We sort by highest frequency to lowest frequency.
+   * -- If two elements have same frequency, we sort by increasing value.*/
+  function solve(data) {
+    const freq = data.reduce((r, e) => {
+      if (!r[e]) {
+        r[e] = 1;
+      } else r[e]++;
+      return r;
+    }, {});
+
+    return [...data].sort((a, b) => {
+      return freq[b] - freq[a] || a - b;
+    });
   }
 
-  console.log(automorphic(25));
+  console.log(solve([1, 2, 3, 0, 5, 0, 1, 6, 8, 8, 6, 9, 1]));
+  console.log(solve([2, 3, 5, 3, 7, 9, 5, 3, 7]));
+
+  // console.log(solve([2, 3, 5, 3, 7, 9, 5, 3, 7])); //[3,3,3,5,5,7,7,2,9]
 }
