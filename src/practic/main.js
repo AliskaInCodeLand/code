@@ -3198,19 +3198,53 @@
 //   console.log(countFruit(fruits));
 // }
 
+// {
+//   //Создать массив, который содержит в себе только уникальные значения
+//   //{'kiwi', 'apple', 'orange'}
+//
+//   const myFruits = ["kiwi", "apple", "kiwi", "orange", "kiwi", "apple"];
+//
+//   const uniqueItems = (fruits) => {
+//     const unique = {};
+//     fruits.forEach((fruit) => {
+//       unique[fruit] = true;
+//     });
+//     return Object.keys(unique);
+//   };
+//
+//   console.log(uniqueItems(myFruits));
+// }
+
 {
-  //Создать массив, который содержит в себе только уникальные значения
-  //{'kiwi', 'apple', 'orange'}
+  /**3.Создать функцию, которая сгруппирует студентов по возрасту.
+   * На выходе получить объект, где ключ - возраст,
+   * а значение - массив студентов
+   * {
+   *     '20': [{name: 'alex', age: 20}, {name: 'masha', age: 20}],
+   *     '24': [{name: 'mike', age: 24}]
+   *     '18': [{name: 'stas', age: 18}]
+   * }*/
 
-  const myFruits = ["kiwi", "apple", "kiwi", "orange", "kiwi", "apple"];
+  const students = [
+    { name: "alex", age: 20 },
+    { name: "mike", age: 24 },
+    { name: "masha", age: 20 },
+    { name: "stas", age: 18 },
+    { name: "alice", age: 22 },
+    { name: "anfisa", age: 18 },
+  ];
 
-  const uniqueItems = (fruits) => {
-    const unique = {};
-    fruits.forEach((fruit) => {
-      unique[fruit] = true;
+  function groupStudenta(list) {
+    const age = {};
+    list.forEach((item) => {
+      if (!age[item.age]) {
+        age[item.age] = [item];
+      } else {
+        age[item.age].push(item);
+      }
     });
-    return Object.keys(unique);
-  };
+    return age;
+  }
 
-  console.log(uniqueItems(myFruits));
+  console.log(groupStudenta(students));
 }
