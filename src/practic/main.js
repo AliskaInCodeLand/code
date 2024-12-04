@@ -3215,36 +3215,66 @@
 //   console.log(uniqueItems(myFruits));
 // }
 
+// {
+//   /**3.Создать функцию, которая сгруппирует студентов по возрасту.
+//    * На выходе получить объект, где ключ - возраст,
+//    * а значение - массив студентов
+//    * {
+//    *     '20': [{name: 'alex', age: 20}, {name: 'masha', age: 20}],
+//    *     '24': [{name: 'mike', age: 24}]
+//    *     '18': [{name: 'stas', age: 18}]
+//    * }*/
+//
+//   const students = [
+//     { name: "alex", age: 20 },
+//     { name: "mike", age: 24 },
+//     { name: "masha", age: 20 },
+//     { name: "stas", age: 18 },
+//     { name: "alice", age: 22 },
+//     { name: "anfisa", age: 18 },
+//   ];
+//
+//   function groupStudenta(list) {
+//     const age = {};
+//     list.forEach((item) => {
+//       if (!age[item.age]) {
+//         age[item.age] = [item];
+//       } else {
+//         age[item.age].push(item);
+//       }
+//     });
+//     return age;
+//   }
+//
+//   console.log(groupStudenta(students));
+// }
+
 {
-  /**3.Создать функцию, которая сгруппирует студентов по возрасту.
-   * На выходе получить объект, где ключ - возраст,
-   * а значение - массив студентов
-   * {
-   *     '20': [{name: 'alex', age: 20}, {name: 'masha', age: 20}],
-   *     '24': [{name: 'mike', age: 24}]
-   *     '18': [{name: 'stas', age: 18}]
-   * }*/
+  /**4.Написать функцию, которая принимает 2 аргумента:
+   * массив из уникальных целых чисел и сумму в виде целого числа.
+   * Если сумма двух любых чисел массива из аргумента равна числу,
+   * которое приходит вторым аргументом функция должна
+   * вернуть новый массив из этих двух чисел в любом порядке.
+   * Если решения нет, вернуть пустой массив.
+   *
+   * [-1,11] или [11, -1] - так как -1 + 11 = 10;
+   * */
 
-  const students = [
-    { name: "alex", age: 20 },
-    { name: "mike", age: 24 },
-    { name: "masha", age: 20 },
-    { name: "stas", age: 18 },
-    { name: "alice", age: 22 },
-    { name: "anfisa", age: 18 },
-  ];
+  const myNumbers = [3, 5, -4, 8, 11, 1, -1, 6];
+  const sum = 10;
 
-  function groupStudenta(list) {
-    const age = {};
-    list.forEach((item) => {
-      if (!age[item.age]) {
-        age[item.age] = [item];
-      } else {
-        age[item.age].push(item);
+  function findPairs(nums, target) {
+    for (let i = 0; i < nums.length; i++) {
+      const numFirst = nums[i];
+      for (let j = i + 1; j < nums.length; j++) {
+        const numSecond = nums[j];
+        if (numSecond + numFirst === target) {
+          return [numFirst, numSecond];
+        }
       }
-    });
-    return age;
+    }
+    return [];
   }
 
-  console.log(groupStudenta(students));
+  console.log(findPairs(myNumbers, sum));
 }
