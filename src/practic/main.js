@@ -3204,10 +3204,10 @@
 
   const myFruits = ["kiwi", "apple", "kiwi", "orange", "kiwi", "apple"];
 
-  const uniqueItems = (list) => {
+  const uniqueItems = (fruits) => {
     const unique = {};
-    list.forEach((f) => {
-      unique[f] = true;
+    fruits.forEach((fruit) => {
+      unique[fruit] = true;
     });
     return Object.keys(unique);
   };
