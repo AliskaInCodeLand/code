@@ -3178,22 +3178,39 @@
 // }
 
 //Решение задач CodeWars 4/12
+// {
+//   //Сколько раз каждый элемент встречается в массиве:
+//   //{kiwi: 3, apple: 2, orange:1}
+//   const fruits = ["kiwi", "apple", "kiwi", "orange", "kiwi", "apple"];
+//
+//   function countFruit(list) {
+//     const count = {};
+//     list.forEach((f) => {
+//       if (!count[f]) {
+//         count[f] = 1;
+//       } else {
+//         count[f]++;
+//       }
+//     });
+//     return count;
+//   }
+//
+//   console.log(countFruit(fruits));
+// }
+
 {
-  //Сколько раз каждый элемент встречается в массиве:
-  //{kiwi: 3, apple: 2, orange:1}
-  const fruits = ["kiwi", "apple", "kiwi", "orange", "kiwi", "apple"];
+  //Создать массив, который содержит в себе только уникальные значения
+  //{'kiwi', 'apple', 'orange'}
 
-  function countFruit(list) {
-    const count = {};
+  const myFruits = ["kiwi", "apple", "kiwi", "orange", "kiwi", "apple"];
+
+  const uniqueItems = (list) => {
+    const unique = {};
     list.forEach((f) => {
-      if (!count[f]) {
-        count[f] = 1;
-      } else {
-        count[f]++;
-      }
+      unique[f] = true;
     });
-    return count;
-  }
+    return Object.keys(unique);
+  };
 
-  console.log(countFruit(fruits));
+  console.log(uniqueItems(myFruits));
 }
