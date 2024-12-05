@@ -3328,4 +3328,14 @@
   }
 
   console.log(reverseString(myStr));
+
+  function reverseStringSecond(str) {
+    const newstr = [];
+    for (let i = str.length - 1; i >= 0; i--) {
+      newstr.push(str[i]);
+    }
+    return newstr.join("");
+  }
+
+  console.log(reverseStringSecond(myStr));
 }
