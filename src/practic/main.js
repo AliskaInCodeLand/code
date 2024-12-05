@@ -3309,4 +3309,10 @@
   }
 
   console.log(favoritePizza(friends));
+
+  const pizza = friends.reduce((acc, cur) => {
+    return [...acc, ...cur.pizzas];
+  }, []);
+
+  console.log(pizza);
 }
