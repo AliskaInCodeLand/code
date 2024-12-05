@@ -3280,39 +3280,52 @@
 // }
 
 //Решение задач 5/12
+// {
+//   /**
+//    * 5. Получить единый массив из любимых пицц каждого друга
+//    * ['cheese', 'pepperoni', 'fish']*/
+//
+//   const friends = [
+//     { name: "alex", pizzas: ["cheese", "pepperoni"] },
+//     { name: "mike", pizzas: ["salami", "margarita"] },
+//     { name: "stas", pizzas: ["meat", "pepperoni"] },
+//     { name: "anna", pizzas: ["fish"] },
+//   ];
+//
+//   function favoritePizza(friends) {
+//     const pizza = {};
+//     friends.forEach((friend) => {
+//       if (!pizza[friend.pizzas]) {
+//         if (friend.pizzas.length > 1) {
+//           friend.pizzas.forEach((p) => {
+//             pizza[p] = true;
+//           });
+//         } else {
+//           pizza[friend.pizzas] = true;
+//         }
+//       }
+//     });
+//     return Object.keys(pizza);
+//   }
+//
+//   console.log(favoritePizza(friends));
+//
+//   const pizza = friends.reduce((acc, cur) => {
+//     return [...acc, ...cur.pizzas];
+//   }, []);
+//
+//   console.log(pizza);
+// }
+
 {
   /**
-   * 5. Получить единый массив из любимых пицц каждого друга
-   * ['cheese', 'pepperoni', 'fish']*/
+   * 6. Записать строку (символы строки) в обратном порядке (2 способа)*/
 
-  const friends = [
-    { name: "alex", pizzas: ["cheese", "pepperoni"] },
-    { name: "mike", pizzas: ["salami", "margarita"] },
-    { name: "stas", pizzas: ["meat", "pepperoni"] },
-    { name: "anna", pizzas: ["fish"] },
-  ];
+  const myStr = "pizza";
 
-  function favoritePizza(friends) {
-    const pizza = {};
-    friends.forEach((friend) => {
-      if (!pizza[friend.pizzas]) {
-        if (friend.pizzas.length > 1) {
-          friend.pizzas.forEach((p) => {
-            pizza[p] = true;
-          });
-        } else {
-          pizza[friend.pizzas] = true;
-        }
-      }
-    });
-    return Object.keys(pizza);
+  function reverseString(str) {
+    return str.split("").reverse().join("");
   }
 
-  console.log(favoritePizza(friends));
-
-  const pizza = friends.reduce((acc, cur) => {
-    return [...acc, ...cur.pizzas];
-  }, []);
-
-  console.log(pizza);
+  console.log(reverseString(myStr));
 }
