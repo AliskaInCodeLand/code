@@ -3249,32 +3249,64 @@
 //   console.log(groupStudenta(students));
 // }
 
+// {
+//   /**4.Написать функцию, которая принимает 2 аргумента:
+//    * массив из уникальных целых чисел и сумму в виде целого числа.
+//    * Если сумма двух любых чисел массива из аргумента равна числу,
+//    * которое приходит вторым аргументом функция должна
+//    * вернуть новый массив из этих двух чисел в любом порядке.
+//    * Если решения нет, вернуть пустой массив.
+//    *
+//    * [-1,11] или [11, -1] - так как -1 + 11 = 10;
+//    * */
+//
+//   const myNumbers = [3, 5, -4, 8, 11, 1, -1, 6];
+//   const sum = 10;
+//
+//   function findPairs(nums, target) {
+//     for (let i = 0; i < nums.length; i++) {
+//       const numFirst = nums[i];
+//       for (let j = i + 1; j < nums.length; j++) {
+//         const numSecond = nums[j];
+//         if (numSecond + numFirst === target) {
+//           return [numFirst, numSecond];
+//         }
+//       }
+//     }
+//     return [];
+//   }
+//
+//   console.log(findPairs(myNumbers, sum));
+// }
+
+//Решение задач 5/12
 {
-  /**4.Написать функцию, которая принимает 2 аргумента:
-   * массив из уникальных целых чисел и сумму в виде целого числа.
-   * Если сумма двух любых чисел массива из аргумента равна числу,
-   * которое приходит вторым аргументом функция должна
-   * вернуть новый массив из этих двух чисел в любом порядке.
-   * Если решения нет, вернуть пустой массив.
-   *
-   * [-1,11] или [11, -1] - так как -1 + 11 = 10;
-   * */
+  /**
+   * 5. Получить единый массив из любимых пицц каждого друга
+   * ['cheese', 'pepperoni', 'fish']*/
 
-  const myNumbers = [3, 5, -4, 8, 11, 1, -1, 6];
-  const sum = 10;
+  const friends = [
+    { name: "alex", pizzas: ["cheese", "pepperoni"] },
+    { name: "mike", pizzas: ["salami", "margarita"] },
+    { name: "stas", pizzas: ["meat", "pepperoni"] },
+    { name: "anna", pizzas: ["fish"] },
+  ];
 
-  function findPairs(nums, target) {
-    for (let i = 0; i < nums.length; i++) {
-      const numFirst = nums[i];
-      for (let j = i + 1; j < nums.length; j++) {
-        const numSecond = nums[j];
-        if (numSecond + numFirst === target) {
-          return [numFirst, numSecond];
+  function favoritePizza(friends) {
+    const pizza = {};
+    friends.forEach((friend) => {
+      if (!pizza[friend.pizzas]) {
+        if (friend.pizzas.length > 1) {
+          friend.pizzas.forEach((p) => {
+            pizza[p] = true;
+          });
+        } else {
+          pizza[friend.pizzas] = true;
         }
       }
-    }
-    return [];
+    });
+    return Object.keys(pizza);
   }
 
-  console.log(findPairs(myNumbers, sum));
+  console.log(favoritePizza(friends));
 }
