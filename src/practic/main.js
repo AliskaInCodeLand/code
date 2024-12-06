@@ -3344,25 +3344,42 @@
 {
   //Какой сейчас век?
   {
+    // function whatCentury(year) {
+    //   let age = Number(year.slice(0, -2)) + 1;
+    //   if (Number(year.slice(1)) === 0) {
+    //     return `${age - 1}th`;
+    //   }
+    //   if (age % 10 === 1 && age / 10 > 2) {
+    //     return `${age}st`;
+    //   } else if (age % 10 === 2 && age / 10 > 2) {
+    //     return `${age}nd`;
+    //   } else if (age % 10 === 3 && age / 10 > 2) {
+    //     return `${age}rd`;
+    //   } else {
+    //     return `${age}th`;
+    //   }
+    // }
+
+    //other solution
     function whatCentury(year) {
-      let age = Number(year.slice(0, -2)) + 1;
-      if (Number(year.slice(1)) === 0) {
-        return `${age - 1}th`;
-      }
-      if (age % 10 === 1 && age / 10 > 2) {
-        return `${age}st`;
-      } else if (age % 10 === 2 && age / 10 > 2) {
-        return `${age}nd`;
-      } else if (age % 10 === 3 && age / 10 > 2) {
-        return `${age}rd`;
-      } else {
-        return `${age}th`;
+      var century = Math.ceil(year / 100);
+      console.log(century);
+      if (century > 10 && century < 20) return century + "th";
+      switch (century % 10) {
+        case 1:
+          return century + "st";
+        case 2:
+          return century + "nd";
+        case 3:
+          return century + "rd";
+        default:
+          return century + "th";
       }
     }
 
-    // console.log(whatCentury("2259"));
-    // console.log(whatCentury("1234"));
-    // console.log(whatCentury("1023"));
+    console.log(whatCentury("2259"));
+    console.log(whatCentury("1234"));
+    console.log(whatCentury("1023"));
     console.log(whatCentury("2000"));
     console.log(whatCentury("2011"));
   }
