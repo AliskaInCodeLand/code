@@ -3361,21 +3361,29 @@
     // }
 
     //other solution
-    function whatCentury(year) {
-      var century = Math.ceil(year / 100);
-      console.log(century);
-      if (century > 10 && century < 20) return century + "th";
-      switch (century % 10) {
-        case 1:
-          return century + "st";
-        case 2:
-          return century + "nd";
-        case 3:
-          return century + "rd";
-        default:
-          return century + "th";
-      }
-    }
+    // function whatCentury(year) {
+    //   var century = Math.ceil(year / 100);
+    //   console.log(century);
+    //   if (century > 10 && century < 20) return century + "th";
+    //   switch (century % 10) {
+    //     case 1:
+    //       return century + "st";
+    //     case 2:
+    //       return century + "nd";
+    //     case 3:
+    //       return century + "rd";
+    //     default:
+    //       return century + "th";
+    //   }
+    // }
+
+    const whatCentury = (
+      y,
+      c = Math.ceil(y / 100),
+      e = ["th", "st", "nd", "rd"],
+      t = e[0],
+      r = c + (c < 20 ? t : e[c % 10] || t),
+    ) => r;
 
     console.log(whatCentury("2259"));
     console.log(whatCentury("1234"));
