@@ -3317,25 +3317,53 @@
 //   console.log(pizza);
 // }
 
+// {
+//   /**
+//    * 6. Записать строку (символы строки) в обратном порядке (2 способа)*/
+//
+//   const myStr = "pizza";
+//
+//   function reverseString(str) {
+//     return str.split("").reverse().join("");
+//   }
+//
+//   console.log(reverseString(myStr));
+//
+//   function reverseStringSecond(str) {
+//     const newstr = [];
+//     for (let i = str.length - 1; i >= 0; i--) {
+//       newstr.push(str[i]);
+//     }
+//     return newstr.join("");
+//   }
+//
+//   console.log(reverseStringSecond(myStr));
+// }
+
+//Решение задач 6/12
 {
-  /**
-   * 6. Записать строку (символы строки) в обратном порядке (2 способа)*/
-
-  const myStr = "pizza";
-
-  function reverseString(str) {
-    return str.split("").reverse().join("");
-  }
-
-  console.log(reverseString(myStr));
-
-  function reverseStringSecond(str) {
-    const newstr = [];
-    for (let i = str.length - 1; i >= 0; i--) {
-      newstr.push(str[i]);
+  //Какой сейчас век?
+  {
+    function whatCentury(year) {
+      let age = Number(year.slice(0, -2)) + 1;
+      if (Number(year.slice(1)) === 0) {
+        return `${age - 1}th`;
+      }
+      if (age % 10 === 1 && age / 10 > 2) {
+        return `${age}st`;
+      } else if (age % 10 === 2 && age / 10 > 2) {
+        return `${age}nd`;
+      } else if (age % 10 === 3 && age / 10 > 2) {
+        return `${age}rd`;
+      } else {
+        return `${age}th`;
+      }
     }
-    return newstr.join("");
-  }
 
-  console.log(reverseStringSecond(myStr));
+    // console.log(whatCentury("2259"));
+    // console.log(whatCentury("1234"));
+    // console.log(whatCentury("1023"));
+    console.log(whatCentury("2000"));
+    console.log(whatCentury("2011"));
+  }
 }
