@@ -3432,25 +3432,58 @@
 //   }
 // }
 
+// {
+//   // function fizzbuzz(num) {
+//   //   let res = [];
+//   //   for (let i = 1; i <= num; i++) {
+//   //     if (i % 3 === 0) {
+//   //       res.push("fizz");
+//   //     }
+//   //     if (i % 5 === 0) {
+//   //       res.push("buzz");
+//   //     }
+//   //     if (i % 3 === 0 && i % 5 === 0) {
+//   //       res.push("fizzbuzz");
+//   //     }
+//   //     if (i % 3 !== 0 && i % 5 !== 0) {
+//   //       res.push(i);
+//   //     }
+//   //   }
+//   //   return res;
+//   // }
+//
+//   console.log(fizzbuzz(16));
+// }
+
 {
-  function fizzbuzz(num) {
-    let res = [];
-    for (let i = 1; i <= num; i++) {
-      if (i % 3 === 0) {
-        res.push("fizz");
-      }
-      if (i % 5 === 0) {
-        res.push("buzz");
-      }
-      if (i % 3 === 0 && i % 5 === 0) {
-        res.push("fizzbuzz");
-      }
-      if (i % 3 !== 0 && i % 5 !== 0) {
-        res.push(i);
+  //количество гласных в строке
+  function findVowels(str) {
+    let count = 0;
+    const vowels = [
+      "a",
+      "e",
+      "i",
+      "o",
+      "u",
+      "а",
+      "е",
+      "и",
+      "ё",
+      "о",
+      "у",
+      "э",
+      "ю",
+      "я",
+      "ы",
+    ];
+    for (let char of str.toLowerCase()) {
+      if (vowels.includes(char)) {
+        count++;
       }
     }
-    return res;
+    return count;
   }
 
-  console.log(fizzbuzz(16));
+  console.log(findVowels("Alice")); // 3
+  console.log(findVowels("Фамилия")); //4
 }
