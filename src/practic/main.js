@@ -3457,33 +3457,37 @@
 
 {
   //количество гласных в строке
+  // function findVowels(str) {
+  //   let count = 0;
+  //   const vowels = [
+  //     "a",
+  //     "e",
+  //     "i",
+  //     "o",
+  //     "u",
+  //     "а",
+  //     "е",
+  //     "и",
+  //     "ё",
+  //     "о",
+  //     "у",
+  //     "э",
+  //     "ю",
+  //     "я",
+  //     "ы",
+  //   ];
+  //   for (let char of str.toLowerCase()) {
+  //     if (vowels.includes(char)) {
+  //       count++;
+  //     }
+  //   }
+  //   return count;
+  // }
+
   function findVowels(str) {
-    let count = 0;
-    const vowels = [
-      "a",
-      "e",
-      "i",
-      "o",
-      "u",
-      "а",
-      "е",
-      "и",
-      "ё",
-      "о",
-      "у",
-      "э",
-      "ю",
-      "я",
-      "ы",
-    ];
-    for (let char of str.toLowerCase()) {
-      if (vowels.includes(char)) {
-        count++;
-      }
-    }
-    return count;
+    return str.match(/[aeoiuаыоэяёюиуе]+/gi).length;
   }
 
-  console.log(findVowels("Alice")); // 3
-  console.log(findVowels("Фамилия")); //4
+  console.log(findVowels("Alice"));
+  console.log(findVowels("Фамилия"));
 }
