@@ -3401,23 +3401,22 @@
   polindrome("А роза упала на лапу Азора"); //true
   polindrome("Анна"); //true
 
-  function polindrome(str) {
-    const word = str
-      .toLowerCase()
-      .split("")
-      .filter((char) => char !== " ")
-      .join("");
-    let newWord = str
-      .toLowerCase()
-      .split("")
-      .filter((char) => char !== " ")
-      .reverse()
-      .join("");
-    console.log(newWord === word);
+  // function polindrome(str) {
+  //   const word = str
+  //     .toLowerCase()
+  //     .split("")
+  //     .filter((char) => char !== " ")
+  //     .join("");
+  //   let newWord = str
+  //     .toLowerCase()
+  //     .split("")
+  //     .filter((char) => char !== " ")
+  //     .reverse()
+  //     .join("");
+  //   console.log(newWord === word);
 
-    // console.log(str.filter((char) => char !== " "));
-    // console.log(
-    //   str.toLowerCase().split("").reverse().join("") === str ? true : false,
-    // );
+  function polindrome(str) {
+    str = str.toLowerCase().replace(/\s/g, "");
+    console.log(str === str.split("").reverse().join(""));
   }
 }
