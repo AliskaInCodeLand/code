@@ -3341,54 +3341,83 @@
 // }
 
 //Решение задач 6/12
+// {
+//   //Какой сейчас век?
+//   {
+//     // function whatCentury(year) {
+//     //   let age = Number(year.slice(0, -2)) + 1;
+//     //   if (Number(year.slice(1)) === 0) {
+//     //     return `${age - 1}th`;
+//     //   }
+//     //   if (age % 10 === 1 && age / 10 > 2) {
+//     //     return `${age}st`;
+//     //   } else if (age % 10 === 2 && age / 10 > 2) {
+//     //     return `${age}nd`;
+//     //   } else if (age % 10 === 3 && age / 10 > 2) {
+//     //     return `${age}rd`;
+//     //   } else {
+//     //     return `${age}th`;
+//     //   }
+//     // }
+//
+//     //other solution
+//     // function whatCentury(year) {
+//     //   var century = Math.ceil(year / 100);
+//     //   console.log(century);
+//     //   if (century > 10 && century < 20) return century + "th";
+//     //   switch (century % 10) {
+//     //     case 1:
+//     //       return century + "st";
+//     //     case 2:
+//     //       return century + "nd";
+//     //     case 3:
+//     //       return century + "rd";
+//     //     default:
+//     //       return century + "th";
+//     //   }
+//     // }
+//
+//     const whatCentury = (
+//       y,
+//       c = Math.ceil(y / 100),
+//       e = ["th", "st", "nd", "rd"],
+//       t = e[0],
+//       r = c + (c < 20 ? t : e[c % 10] || t),
+//     ) => r;
+//
+//     console.log(whatCentury("2259"));
+//     console.log(whatCentury("1234"));
+//     console.log(whatCentury("1023"));
+//     console.log(whatCentury("2000"));
+//     console.log(whatCentury("2011"));
+//   }
+// }
+
+//Решение задач 7/12
 {
-  //Какой сейчас век?
-  {
-    // function whatCentury(year) {
-    //   let age = Number(year.slice(0, -2)) + 1;
-    //   if (Number(year.slice(1)) === 0) {
-    //     return `${age - 1}th`;
-    //   }
-    //   if (age % 10 === 1 && age / 10 > 2) {
-    //     return `${age}st`;
-    //   } else if (age % 10 === 2 && age / 10 > 2) {
-    //     return `${age}nd`;
-    //   } else if (age % 10 === 3 && age / 10 > 2) {
-    //     return `${age}rd`;
-    //   } else {
-    //     return `${age}th`;
-    //   }
-    // }
+  //написать палиндром
+  polindrome("racecar"); //true
+  polindrome("table"); //false
+  polindrome("А роза упала на лапу Азора"); //true
+  polindrome("Анна"); //true
 
-    //other solution
-    // function whatCentury(year) {
-    //   var century = Math.ceil(year / 100);
-    //   console.log(century);
-    //   if (century > 10 && century < 20) return century + "th";
-    //   switch (century % 10) {
-    //     case 1:
-    //       return century + "st";
-    //     case 2:
-    //       return century + "nd";
-    //     case 3:
-    //       return century + "rd";
-    //     default:
-    //       return century + "th";
-    //   }
-    // }
+  function polindrome(str) {
+    const word = str
+      .toLowerCase()
+      .split("")
+      .filter((char) => char !== " ")
+      .join("");
+    let newWord = str
+      .toLowerCase()
+      .split("")
+      .filter((char) => char !== " ")
+      .reverse()
+      .join("");
+    console.log(newWord === word);
 
-    const whatCentury = (
-      y,
-      c = Math.ceil(y / 100),
-      e = ["th", "st", "nd", "rd"],
-      t = e[0],
-      r = c + (c < 20 ? t : e[c % 10] || t),
-    ) => r;
-
-    console.log(whatCentury("2259"));
-    console.log(whatCentury("1234"));
-    console.log(whatCentury("1023"));
-    console.log(whatCentury("2000"));
-    console.log(whatCentury("2011"));
+    // console.log(str.filter((char) => char !== " "));
+    // console.log(
+    //   str.toLowerCase().split("").reverse().join("") === str ? true : false,
+    // );
   }
 }
