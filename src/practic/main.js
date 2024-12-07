@@ -3394,39 +3394,63 @@
 // }
 
 //Решение задач 7/12
+// {
+//   //написать палиндром
+//   polindrome("racecar"); //true
+//   polindrome("table"); //false
+//   polindrome("А роза упала на лапу Азора"); //true
+//   polindrome("Анна"); //true
+//
+//   // function polindrome(str) {
+//   //   const word = str
+//   //     .toLowerCase()
+//   //     .split("")
+//   //     .filter((char) => char !== " ")
+//   //     .join("");
+//   //   let newWord = str
+//   //     .toLowerCase()
+//   //     .split("")
+//   //     .filter((char) => char !== " ")
+//   //     .reverse()
+//   //     .join("");
+//   //   console.log(newWord === word);
+//
+//   // function polindrome(str) {
+//   //   str = str.toLowerCase().replace(/\s/g, "");
+//   //   console.log(str === str.split("").reverse().join(""));
+//   // }
+//
+//   function polindrome(str) {
+//     const len = Math.floor(str.length / 2);
+//     for (let i = 0; i < len; i++)
+//       if (str[i] !== str[str.length - i - 1]) {
+//         console.log("false");
+//         return false;
+//       }
+//     console.log("true");
+//     return true;
+//   }
+// }
+
 {
-  //написать палиндром
-  polindrome("racecar"); //true
-  polindrome("table"); //false
-  polindrome("А роза упала на лапу Азора"); //true
-  polindrome("Анна"); //true
-
-  // function polindrome(str) {
-  //   const word = str
-  //     .toLowerCase()
-  //     .split("")
-  //     .filter((char) => char !== " ")
-  //     .join("");
-  //   let newWord = str
-  //     .toLowerCase()
-  //     .split("")
-  //     .filter((char) => char !== " ")
-  //     .reverse()
-  //     .join("");
-  //   console.log(newWord === word);
-
-  // function polindrome(str) {
-  //   str = str.toLowerCase().replace(/\s/g, "");
-  //   console.log(str === str.split("").reverse().join(""));
-  // }
-
-  function polindrome(str) {
-    const len = Math.floor(str.length / 2);
-    for (let i = 0; i < len; i++) {
-      if (str[i] !== str[str.length - i - 1]) {
-        return false;
+  function fizzbuzz(num) {
+    let res = [];
+    for (let i = 1; i <= num; i++) {
+      if (i % 3 === 0) {
+        res.push("fizz");
+      }
+      if (i % 5 === 0) {
+        res.push("buzz");
+      }
+      if (i % 3 === 0 && i % 5 === 0) {
+        res.push("fizzbuzz");
+      }
+      if (i % 3 !== 0 && i % 5 !== 0) {
+        res.push(i);
       }
     }
-    return true;
+    return res;
   }
+
+  console.log(fizzbuzz(16));
 }
