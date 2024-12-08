@@ -3560,15 +3560,22 @@
   //   return arr[num - 1];
   // }
 
+  // function fibonacci(num) {
+  //   let a = 1;
+  //   let b = 1;
+  //   for (let i = 3; i < num; i++) {
+  //     let c = a + b;
+  //     a = b;
+  //     b = c;
+  //   }
+  //   return b;
+  // }
+
   function fibonacci(num) {
-    let a = 1;
-    let b = 1;
-    for (let i = 3; i < num; i++) {
-      let c = a + b;
-      a = b;
-      b = c;
+    if (num < 2) {
+      return num;
     }
-    return b;
+    return fibonacci(num - 1) + fibonacci(num - 2);
   }
 
   console.log(fibonacci(10));
