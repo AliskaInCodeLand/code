@@ -3540,14 +3540,22 @@
 // }
 {
   //Числа Фибоначчи
+  // function fibonacci(num) {
+  //   const arr = [];
+  //   for (let i = 0; i < num; i++) {
+  //     debugger;
+  //     if (i === 0) arr.push(i);
+  //     if (i === 1) arr.push(1);
+  //     if (i === 2) arr.push(1);
+  //     if (i >= 3) arr.push(arr[i - 1] + arr[i - 2]);
+  //   }
+  //   return arr[num - 1];
+  // }
+
   function fibonacci(num) {
-    const arr = [];
-    for (let i = 0; i < num; i++) {
-      debugger;
-      if (i === 0) arr.push(i);
-      if (i === 1) arr.push(1);
-      if (i === 2) arr.push(1);
-      if (i >= 3) arr.push(arr[i - 1] + arr[i - 2]);
+    const arr = [0, 1];
+    for (let i = 2; i < num; i++) {
+      arr.push(arr[i - 1] + arr[i - 2]);
     }
     return arr[num - 1];
   }
