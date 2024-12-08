@@ -3552,12 +3552,23 @@
   //   return arr[num - 1];
   // }
 
+  // function fibonacci(num) {
+  //   const arr = [0, 1];
+  //   for (let i = 2; i < num; i++) {
+  //     arr.push(arr[i - 1] + arr[i - 2]);
+  //   }
+  //   return arr[num - 1];
+  // }
+
   function fibonacci(num) {
-    const arr = [0, 1];
-    for (let i = 2; i < num; i++) {
-      arr.push(arr[i - 1] + arr[i - 2]);
+    let a = 1;
+    let b = 1;
+    for (let i = 3; i < num; i++) {
+      let c = a + b;
+      a = b;
+      b = c;
     }
-    return arr[num - 1];
+    return b;
   }
 
   console.log(fibonacci(10));
