@@ -3493,48 +3493,64 @@
 // }
 
 //Решение задач 8/12
+// {
+//   // function anagram(str1, str2) {
+//   //   if (str1.length !== str2.length) {
+//   //     return false;
+//   //   }
+//   //   for (let char of str1.toLowerCase()) {
+//   //     if (!str2.toLowerCase().includes(char)) {
+//   //       return false;
+//   //     }
+//   //   }
+//   //   return true;
+//   // }
+//
+//   // function buildCharObject(str) {
+//   //   const charObj = {};
+//   //   str = str.toLowerCase().replace(/[^\w]/g);
+//   //   for (let char of str) {
+//   //     charObj[char] = charObj[char] + 1 || 1;
+//   //   }
+//   //   return charObj;
+//   // }
+//   //
+//   // function anagram(str1, str2) {
+//   //   const obj1 = buildCharObject(str1);
+//   //   const obj2 = buildCharObject(str2);
+//   //
+//   //   if (Object.keys(obj1).length !== Object.keys(obj2).length) {
+//   //     return false;
+//   //   }
+//   //
+//   //   for (let char in obj1) {
+//   //     if (obj1[char] !== obj2[char]) {
+//   //       return false;
+//   //     }
+//   //   }
+//   //   return true;
+//   // }
+//
+//   const anagram = (a, b) =>
+//     [...a.toLowerCase()].sort().toString() ===
+//     [...b.toLowerCase()].sort().toString();
+//
+//   console.log(anagram("friend", "finder")); //true
+//   console.log(anagram("hello", "buy")); //false
+// }
 {
-  // function anagram(str1, str2) {
-  //   if (str1.length !== str2.length) {
-  //     return false;
-  //   }
-  //   for (let char of str1.toLowerCase()) {
-  //     if (!str2.toLowerCase().includes(char)) {
-  //       return false;
-  //     }
-  //   }
-  //   return true;
-  // }
+  //Числа Фибоначчи
+  function fibonacci(num) {
+    const arr = [];
+    for (let i = 0; i < num; i++) {
+      debugger;
+      if (i === 0) arr.push(i);
+      if (i === 1) arr.push(1);
+      if (i === 2) arr.push(1);
+      if (i >= 3) arr.push(arr[i - 1] + arr[i - 2]);
+    }
+    return arr[num - 1];
+  }
 
-  // function buildCharObject(str) {
-  //   const charObj = {};
-  //   str = str.toLowerCase().replace(/[^\w]/g);
-  //   for (let char of str) {
-  //     charObj[char] = charObj[char] + 1 || 1;
-  //   }
-  //   return charObj;
-  // }
-  //
-  // function anagram(str1, str2) {
-  //   const obj1 = buildCharObject(str1);
-  //   const obj2 = buildCharObject(str2);
-  //
-  //   if (Object.keys(obj1).length !== Object.keys(obj2).length) {
-  //     return false;
-  //   }
-  //
-  //   for (let char in obj1) {
-  //     if (obj1[char] !== obj2[char]) {
-  //       return false;
-  //     }
-  //   }
-  //   return true;
-  // }
-
-  const anagram = (a, b) =>
-    [...a.toLowerCase()].sort().toString() ===
-    [...b.toLowerCase()].sort().toString();
-
-  console.log(anagram("friend", "finder")); //true
-  console.log(anagram("hello", "buy")); //false
+  console.log(fibonacci(10));
 }
