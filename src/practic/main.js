@@ -3506,30 +3506,34 @@
   //   return true;
   // }
 
-  function buildCharObject(str) {
-    const charObj = {};
-    str = str.toLowerCase().replace(/[^\w]/g);
-    for (let char of str) {
-      charObj[char] = charObj[char] + 1 || 1;
-    }
-    return charObj;
-  }
+  // function buildCharObject(str) {
+  //   const charObj = {};
+  //   str = str.toLowerCase().replace(/[^\w]/g);
+  //   for (let char of str) {
+  //     charObj[char] = charObj[char] + 1 || 1;
+  //   }
+  //   return charObj;
+  // }
+  //
+  // function anagram(str1, str2) {
+  //   const obj1 = buildCharObject(str1);
+  //   const obj2 = buildCharObject(str2);
+  //
+  //   if (Object.keys(obj1).length !== Object.keys(obj2).length) {
+  //     return false;
+  //   }
+  //
+  //   for (let char in obj1) {
+  //     if (obj1[char] !== obj2[char]) {
+  //       return false;
+  //     }
+  //   }
+  //   return true;
+  // }
 
-  function anagram(str1, str2) {
-    const obj1 = buildCharObject(str1);
-    const obj2 = buildCharObject(str2);
-
-    if (Object.keys(obj1).length !== Object.keys(obj2).length) {
-      return false;
-    }
-
-    for (let char in obj1) {
-      if (obj1[char] !== obj2[char]) {
-        return false;
-      }
-    }
-    return true;
-  }
+  const anagram = (a, b) =>
+    [...a.toLowerCase()].sort().toString() ===
+    [...b.toLowerCase()].sort().toString();
 
   console.log(anagram("friend", "finder")); //true
   console.log(anagram("hello", "buy")); //false
