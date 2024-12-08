@@ -3455,39 +3455,57 @@
 //   console.log(fizzbuzz(16));
 // }
 
-{
-  //количество гласных в строке
-  // function findVowels(str) {
-  //   let count = 0;
-  //   const vowels = [
-  //     "a",
-  //     "e",
-  //     "i",
-  //     "o",
-  //     "u",
-  //     "а",
-  //     "е",
-  //     "и",
-  //     "ё",
-  //     "о",
-  //     "у",
-  //     "э",
-  //     "ю",
-  //     "я",
-  //     "ы",
-  //   ];
-  //   for (let char of str.toLowerCase()) {
-  //     if (vowels.includes(char)) {
-  //       count++;
-  //     }
-  //   }
-  //   return count;
-  // }
+// {
+//   //количество гласных в строке
+//   // function findVowels(str) {
+//   //   let count = 0;
+//   //   const vowels = [
+//   //     "a",
+//   //     "e",
+//   //     "i",
+//   //     "o",
+//   //     "u",
+//   //     "а",
+//   //     "е",
+//   //     "и",
+//   //     "ё",
+//   //     "о",
+//   //     "у",
+//   //     "э",
+//   //     "ю",
+//   //     "я",
+//   //     "ы",
+//   //   ];
+//   //   for (let char of str.toLowerCase()) {
+//   //     if (vowels.includes(char)) {
+//   //       count++;
+//   //     }
+//   //   }
+//   //   return count;
+//   // }
+//
+//   function findVowels(str) {
+//     return str.match(/[aeoiuаыоэяёюиуе]+/gi).length;
+//   }
+//
+//   console.log(findVowels("Alice"));
+//   console.log(findVowels("Фамилия"));
+// }
 
-  function findVowels(str) {
-    return str.match(/[aeoiuаыоэяёюиуе]+/gi).length;
+//Решение задач 8/12
+{
+  function anagram(str1, str2) {
+    if (str1.length !== str2.length) {
+      return false;
+    }
+    for (let char of str1.toLowerCase()) {
+      if (!str2.toLowerCase().includes(char)) {
+        return false;
+      }
+    }
+    return true;
   }
 
-  console.log(findVowels("Alice"));
-  console.log(findVowels("Фамилия"));
+  console.log(anagram("friend", "Finder")); //true
+  console.log(anagram("hello", "buy")); //false
 }
