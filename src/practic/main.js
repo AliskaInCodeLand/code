@@ -3582,38 +3582,91 @@
 // }
 
 //Решение задач 9/12{
+// {
+//   //Class Names
+//   /**отсортировать по частоте встречаемости в массиве*/
+//   let classNames = [
+//     "header",
+//     "menu",
+//     "menu-item",
+//     "menu-item",
+//     "menu-item",
+//     "footer",
+//     "menu",
+//     "link",
+//     "link",
+//     "link",
+//     "link",
+//   ];
+//
+//   function className(arr) {
+//     const obj = {};
+//     const newArr = [];
+//     for (let char of arr) {
+//       if (!obj[char]) {
+//         obj[char] = 1;
+//         newArr.push(char);
+//       } else {
+//         obj[char] += 1;
+//       }
+//     }
+//     let res = newArr.sort((a, b) => obj[b] - obj[a]);
+//     console.log(res);
+//   }
+//
+//   console.log(className(classNames));
+//   // let result = ['link', 'menu-item', 'menu', 'header', 'footer']
+// }
+
 {
-  //Class Names
-  /**отсортировать по частоте встречаемости в массиве*/
-  let classNames = [
-    "header",
-    "menu",
-    "menu-item",
-    "menu-item",
-    "menu-item",
-    "footer",
-    "menu",
-    "link",
-    "link",
-    "link",
-    "link",
+  //Currencies task
+  const input = [
+    ["usd", "buy", 10000],
+    ["usd", "sell", 5000],
+    ["gbp", "buy", 9000],
+    ["eur", "sell", 7000],
+    ["uah", "buy", 10000],
+    ["usd", "sell", 25000],
   ];
 
-  function className(arr) {
-    const obj = {};
-    const newArr = [];
-    for (let char of arr) {
-      if (!obj[char]) {
-        obj[char] = 1;
-        newArr.push(char);
+  function сurrencies(arr) {
+    let obj = {};
+    for (let i = 0; i < arr.length; i++) {
+      debugger;
+      if (!obj[arr[i][0]]) {
+        let newArr = [null, null];
+        if (arr[i][1] === "buy") {
+          newArr[0] = arr[i][2];
+        }
+        if (arr[i][1] === "sell") {
+          newArr[1] = arr[i][2];
+        }
+        if (newArr[0] === null) {
+          newArr[0] = 0;
+        }
+        if (newArr[1] === null) {
+          newArr[1] = 0;
+        }
+        obj[arr[i][0]] = newArr;
       } else {
-        obj[char] += 1;
+        if (arr[i][1] === "buy") {
+          obj[arr[i][0]][0] += arr[i][2];
+        }
+        if (arr[i][1] === "sell") {
+          obj[arr[i][0]][1] += arr[i][2];
+        }
       }
     }
-    let res = newArr.sort((a, b) => obj[b] - obj[a]);
-    console.log(res);
+    return obj;
   }
 
-  console.log(className(classNames));
-  // let result = ['link', 'menu-item', 'menu', 'header', 'footer']
+  console.log(сurrencies(input));
+
+  //Результат
+  // const output = {
+  //   usd: [10000, 30000],
+  //   gbp:  [9000, 0],
+  //   eur: [0, 7000],
+  //   uah: [10000, 0],
+  // }
 }
