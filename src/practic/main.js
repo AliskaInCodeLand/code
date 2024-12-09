@@ -3538,45 +3538,82 @@
 //   console.log(anagram("friend", "finder")); //true
 //   console.log(anagram("hello", "buy")); //false
 // }
+// {
+//   //Числа Фибоначчи
+//   // function fibonacci(num) {
+//   //   const arr = [];
+//   //   for (let i = 0; i < num; i++) {
+//   //     debugger;
+//   //     if (i === 0) arr.push(i);
+//   //     if (i === 1) arr.push(1);
+//   //     if (i === 2) arr.push(1);
+//   //     if (i >= 3) arr.push(arr[i - 1] + arr[i - 2]);
+//   //   }
+//   //   return arr[num - 1];
+//   // }
+//
+//   // function fibonacci(num) {
+//   //   const arr = [0, 1];
+//   //   for (let i = 2; i < num; i++) {
+//   //     arr.push(arr[i - 1] + arr[i - 2]);
+//   //   }
+//   //   return arr[num - 1];
+//   // }
+//
+//   // function fibonacci(num) {
+//   //   let a = 1;
+//   //   let b = 1;
+//   //   for (let i = 3; i < num; i++) {
+//   //     let c = a + b;
+//   //     a = b;
+//   //     b = c;
+//   //   }
+//   //   return b;
+//   // }
+//
+//   function fibonacci(num) {
+//     if (num < 2) {
+//       return num;
+//     }
+//     return fibonacci(num - 1) + fibonacci(num - 2);
+//   }
+//
+//   console.log(fibonacci(10));
+// }
+
+//Решение задач 9/12{
 {
-  //Числа Фибоначчи
-  // function fibonacci(num) {
-  //   const arr = [];
-  //   for (let i = 0; i < num; i++) {
-  //     debugger;
-  //     if (i === 0) arr.push(i);
-  //     if (i === 1) arr.push(1);
-  //     if (i === 2) arr.push(1);
-  //     if (i >= 3) arr.push(arr[i - 1] + arr[i - 2]);
-  //   }
-  //   return arr[num - 1];
-  // }
+  //Class Names
+  /**отсортировать по частоте встречаемости в массиве*/
+  let classNames = [
+    "header",
+    "menu",
+    "menu-item",
+    "menu-item",
+    "menu-item",
+    "footer",
+    "menu",
+    "link",
+    "link",
+    "link",
+    "link",
+  ];
 
-  // function fibonacci(num) {
-  //   const arr = [0, 1];
-  //   for (let i = 2; i < num; i++) {
-  //     arr.push(arr[i - 1] + arr[i - 2]);
-  //   }
-  //   return arr[num - 1];
-  // }
-
-  // function fibonacci(num) {
-  //   let a = 1;
-  //   let b = 1;
-  //   for (let i = 3; i < num; i++) {
-  //     let c = a + b;
-  //     a = b;
-  //     b = c;
-  //   }
-  //   return b;
-  // }
-
-  function fibonacci(num) {
-    if (num < 2) {
-      return num;
+  function className(arr) {
+    const obj = {};
+    const newArr = [];
+    for (let char of arr) {
+      debugger;
+      if (!obj[char]) {
+        obj[char] = 1;
+      } else {
+        obj[char] += 1;
+      }
     }
-    return fibonacci(num - 1) + fibonacci(num - 2);
+    Object.keys(obj).forEach(key => {})
+    return Object.keys(Object.);
   }
 
-  console.log(fibonacci(10));
+  console.log(className(classNames));
+  // let result = ['link', 'menu-item', 'menu', 'header', 'footer']
 }
