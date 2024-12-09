@@ -3605,11 +3605,12 @@
     for (let char of arr) {
       if (!obj[char]) {
         obj[char] = 1;
+        newArr.push(char);
       } else {
         obj[char] += 1;
       }
     }
-    let res = Object.keys(obj).sort((a, b) => obj[b] - obj[a]);
+    let res = newArr.sort((a, b) => obj[b] - obj[a]);
     console.log(res);
   }
 
