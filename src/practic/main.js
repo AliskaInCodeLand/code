@@ -3629,37 +3629,49 @@
     ["usd", "sell", 25000],
   ];
 
-  function сurrencies(arr) {
-    let obj = {};
-    for (let i = 0; i < arr.length; i++) {
-      debugger;
-      if (!obj[arr[i][0]]) {
-        let newArr = [null, null];
-        if (arr[i][1] === "buy") {
-          newArr[0] = arr[i][2];
-        }
-        if (arr[i][1] === "sell") {
-          newArr[1] = arr[i][2];
-        }
-        if (newArr[0] === null) {
-          newArr[0] = 0;
-        }
-        if (newArr[1] === null) {
-          newArr[1] = 0;
-        }
-        obj[arr[i][0]] = newArr;
-      } else {
-        if (arr[i][1] === "buy") {
-          obj[arr[i][0]][0] += arr[i][2];
-        }
-        if (arr[i][1] === "sell") {
-          obj[arr[i][0]][1] += arr[i][2];
-        }
-      }
-    }
-    return obj;
-  }
+  // function сurrencies(arr) {
+  //   let obj = {};
+  //   for (let i = 0; i < arr.length; i++) {
+  //     debugger;
+  //     if (!obj[arr[i][0]]) {
+  //       let newArr = [null, null];
+  //       if (arr[i][1] === "buy") {
+  //         newArr[0] = arr[i][2];
+  //       }
+  //       if (arr[i][1] === "sell") {
+  //         newArr[1] = arr[i][2];
+  //       }
+  //       if (newArr[0] === null) {
+  //         newArr[0] = 0;
+  //       }
+  //       if (newArr[1] === null) {
+  //         newArr[1] = 0;
+  //       }
+  //       obj[arr[i][0]] = newArr;
+  //     } else {
+  //       if (arr[i][1] === "buy") {
+  //         obj[arr[i][0]][0] += arr[i][2];
+  //       }
+  //       if (arr[i][1] === "sell") {
+  //         obj[arr[i][0]][1] += arr[i][2];
+  //       }
+  //     }
+  //   }
+  //   return obj;
+  // }
 
+  function сurrencies(arr) {
+    let res = {};
+    arr.forEach((item) => {
+      let [currency, type, amount] = item;
+      if (!res[currency]) {
+        res[currency] = [0, 0];
+      }
+
+      res[currency][type === "buy" ? 0 : 1] += amount;
+    });
+    return res;
+  }
   console.log(сurrencies(input));
 
   //Результат
