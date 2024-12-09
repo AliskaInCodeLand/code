@@ -3603,15 +3603,14 @@
     const obj = {};
     const newArr = [];
     for (let char of arr) {
-      debugger;
       if (!obj[char]) {
         obj[char] = 1;
       } else {
         obj[char] += 1;
       }
     }
-    Object.keys(obj).forEach(key => {})
-    return Object.keys(Object.);
+    let res = Object.keys(obj).sort((a, b) => obj[b] - obj[a]);
+    console.log(res);
   }
 
   console.log(className(classNames));
