@@ -3660,16 +3660,26 @@
   //   return obj;
   // }
 
-  function сurrencies(arr) {
-    let res = {};
-    arr.forEach((item) => {
-      let [currency, type, amount] = item;
-      if (!res[currency]) {
-        res[currency] = [0, 0];
-      }
+  // function сurrencies(arr) {
+  //   let res = {};
+  //   arr.forEach((item) => {
+  //     let [currency, type, amount] = item;
+  //     if (!res[currency]) {
+  //       res[currency] = [0, 0];
+  //     }
+  //
+  //     res[currency][type === "buy" ? 0 : 1] += amount;
+  //   });
+  //   return res;
+  // }
 
-      res[currency][type === "buy" ? 0 : 1] += amount;
-    });
+  function сurrencies(arr) {
+    let res = arr.reduce((acc, cur) => {
+      debugger;
+      acc[cur[0]] = acc[cur[0]] || [0, 0];
+      acc[cur[0]][cur[1] === "buy" ? 0 : 1] += cur[2];
+      return acc;
+    }, {});
     return res;
   }
   console.log(сurrencies(input));
