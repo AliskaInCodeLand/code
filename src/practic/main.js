@@ -3618,77 +3618,133 @@
 //   // let result = ['link', 'menu-item', 'menu', 'header', 'footer']
 // }
 
+// {
+//   //Currencies task
+//   const input = [
+//     ["usd", "buy", 10000],
+//     ["usd", "sell", 5000],
+//     ["gbp", "buy", 9000],
+//     ["eur", "sell", 7000],
+//     ["uah", "buy", 10000],
+//     ["usd", "sell", 25000],
+//   ];
+//
+//   // function сurrencies(arr) {
+//   //   let obj = {};
+//   //   for (let i = 0; i < arr.length; i++) {
+//   //     debugger;
+//   //     if (!obj[arr[i][0]]) {
+//   //       let newArr = [null, null];
+//   //       if (arr[i][1] === "buy") {
+//   //         newArr[0] = arr[i][2];
+//   //       }
+//   //       if (arr[i][1] === "sell") {
+//   //         newArr[1] = arr[i][2];
+//   //       }
+//   //       if (newArr[0] === null) {
+//   //         newArr[0] = 0;
+//   //       }
+//   //       if (newArr[1] === null) {
+//   //         newArr[1] = 0;
+//   //       }
+//   //       obj[arr[i][0]] = newArr;
+//   //     } else {
+//   //       if (arr[i][1] === "buy") {
+//   //         obj[arr[i][0]][0] += arr[i][2];
+//   //       }
+//   //       if (arr[i][1] === "sell") {
+//   //         obj[arr[i][0]][1] += arr[i][2];
+//   //       }
+//   //     }
+//   //   }
+//   //   return obj;
+//   // }
+//
+//   // function сurrencies(arr) {
+//   //   let res = {};
+//   //   arr.forEach((item) => {
+//   //     let [currency, type, amount] = item;
+//   //     if (!res[currency]) {
+//   //       res[currency] = [0, 0];
+//   //     }
+//   //
+//   //     res[currency][type === "buy" ? 0 : 1] += amount;
+//   //   });
+//   //   return res;
+//   // }
+//
+//   // function сurrencies(arr) {
+//   //   let res = arr.reduce((acc, cur) => {
+//   //     debugger;
+//   //     acc[cur[0]] = acc[cur[0]] || [0, 0];
+//   //     acc[cur[0]][cur[1] === "buy" ? 0 : 1] += cur[2];
+//   //     return acc;
+//   //   }, {});
+//   //   return res;
+//   // }
+//   // console.log(сurrencies(input));
+//
+//   //Результат
+//   // const output = {
+//   //   usd: [10000, 30000],
+//   //   gbp:  [9000, 0],
+//   //   eur: [0, 7000],
+//   //   uah: [10000, 0],
+//   // }
+// }
+
+//Решение задач 9/12
 {
-  //Currencies task
-  const input = [
-    ["usd", "buy", 10000],
-    ["usd", "sell", 5000],
-    ["gbp", "buy", 9000],
-    ["eur", "sell", 7000],
-    ["uah", "buy", 10000],
-    ["usd", "sell", 25000],
+  let maze = [
+    [1, 1, 1, 0, 0, 1],
+    [1, 1, 1, 1, 0, 1],
+    [0, 0, 0, 0, 0, 0],
+    [0, 1, 1, 1, 1, 1],
+    [0, 0, 0, 0, 0, 0],
+    [1, 1, 1, 1, 1, 0],
   ];
 
-  // function сurrencies(arr) {
-  //   let obj = {};
-  //   for (let i = 0; i < arr.length; i++) {
-  //     debugger;
-  //     if (!obj[arr[i][0]]) {
-  //       let newArr = [null, null];
-  //       if (arr[i][1] === "buy") {
-  //         newArr[0] = arr[i][2];
-  //       }
-  //       if (arr[i][1] === "sell") {
-  //         newArr[1] = arr[i][2];
-  //       }
-  //       if (newArr[0] === null) {
-  //         newArr[0] = 0;
-  //       }
-  //       if (newArr[1] === null) {
-  //         newArr[1] = 0;
-  //       }
-  //       obj[arr[i][0]] = newArr;
-  //     } else {
-  //       if (arr[i][1] === "buy") {
-  //         obj[arr[i][0]][0] += arr[i][2];
-  //       }
-  //       if (arr[i][1] === "sell") {
-  //         obj[arr[i][0]][1] += arr[i][2];
-  //       }
-  //     }
-  //   }
-  //   return obj;
-  // }
+  function checkPath(start, end) {
+    debugger;
+    maze[start.y][start.x] = 5;
+    let siblings = getValidSib(start);
+    if (siblings.length > 0) {
+      for (let i = 0; i < siblings.length; i++) {
+        let current = siblings[i];
 
-  // function сurrencies(arr) {
-  //   let res = {};
-  //   arr.forEach((item) => {
-  //     let [currency, type, amount] = item;
-  //     if (!res[currency]) {
-  //       res[currency] = [0, 0];
-  //     }
-  //
-  //     res[currency][type === "buy" ? 0 : 1] += amount;
-  //   });
-  //   return res;
-  // }
+        let isSolved = current.x === end.x && current.y === end.y;
+        let notVisited = maze[current.y][current.x] !== 5;
 
-  function сurrencies(arr) {
-    let res = arr.reduce((acc, cur) => {
-      debugger;
-      acc[cur[0]] = acc[cur[0]] || [0, 0];
-      acc[cur[0]][cur[1] === "buy" ? 0 : 1] += cur[2];
-      return acc;
-    }, {});
-    return res;
+        if (isSolved || (notVisited && checkPath(current, end))) {
+          return true;
+        }
+      }
+    }
+    return false;
   }
-  console.log(сurrencies(input));
 
-  //Результат
-  // const output = {
-  //   usd: [10000, 30000],
-  //   gbp:  [9000, 0],
-  //   eur: [0, 7000],
-  //   uah: [10000, 0],
-  // }
+  function getValidSib(cord) {
+    let { x, y } = cord;
+
+    let cords = [];
+    // debugger;
+
+    if (maze[y - 1] !== undefined) {
+      cords.push({ x: x, y: y - 1, val: maze[y - 1][x] });
+    }
+    if (maze[y + 1] !== undefined) {
+      cords.push({ x: x, y: y + 1, val: maze[y + 1][x] });
+    }
+
+    if (maze[y][x - 1] !== undefined) {
+      cords.push({ x: x - 1, y: y, val: maze[y][x - 1] });
+    }
+    if (maze[y][x + 1] !== undefined) {
+      cords.push({ x: x + 1, y: y, val: maze[y][x + 1] });
+    }
+
+    return cords.filter((el) => el.val === 0);
+  }
+
+  console.log(checkPath({ x: 3, y: 0 }, { x: 5, y: 5 }));
 }
