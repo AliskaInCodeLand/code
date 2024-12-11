@@ -3897,15 +3897,16 @@
     //Простые числа
     function isPrime(num) {
       let res = [];
-      for (let i = 1; i <= num; i++) {
+      for (let i = 1; i <= num / 2; i++) {
+        debugger;
         if (num % i === 0) {
           res.push(i);
         }
       }
-      if (res.length === 2) {
-        return true;
+      if (res.length > 2) {
+        return false;
       }
-      return false;
+      return true;
     }
     //>1 на себя и на 1
     console.log(isPrime(3)); //true
