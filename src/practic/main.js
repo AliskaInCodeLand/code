@@ -3859,36 +3859,56 @@
   //   return res;
   // }
 
-  function iWantToGet(ammountRequired, limits) {
-    function collect(ammount, nominals) {
-      if (ammount === 0) return {};
-      if (!nominals.length) return;
-
-      let currentNominal = nominals[0]; //номинал банкноты
-      let availableNotes = limits[currentNominal]; //количество банкнот
-      let notesNeeded = Math.floor(ammount / currentNominal); //количество необходимых банкнот
-      let numberOfNotes = Math.min(availableNotes, notesNeeded); //банкноты, которые автомат сможет выдать
-
-      for (let i = numberOfNotes; i >= 0; i--) {
-        let res = collect(ammount - currentNominal * i, nominals.slice(1));
-
-        if (res) {
-          return i ? { [currentNominal]: i, ...res } : res;
+  //   function iWantToGet(ammountRequired, limits) {
+  //     debugger;
+  //     function collect(ammount, nominals) {
+  //       if (ammount === 0) return {};
+  //       if (!nominals.length) return;
+  //
+  //       let currentNominal = nominals[0]; //номинал банкноты
+  //       let availableNotes = limits[currentNominal]; //количество банкнот
+  //       let notesNeeded = Math.floor(ammount / currentNominal); //количество необходимых банкнот
+  //       let numberOfNotes = Math.min(availableNotes, notesNeeded); //банкноты, которые автомат сможет выдать
+  //
+  //       for (let i = numberOfNotes; i >= 0; i--) {
+  //         let res = collect(ammount - currentNominal * i, nominals.slice(1));
+  //
+  //         if (res) {
+  //           return i ? { [currentNominal]: i, ...res } : res;
+  //         }
+  //       }
+  //     }
+  //
+  //     let nominals = Object.keys(limits)
+  //       .map(Number)
+  //       .sort((a, b) => b - a);
+  //
+  //     return collect(ammountRequired, nominals);
+  //   }
+  //
+  //   let limits = { 1000: 5, 500: 2, 100: 5, 50: 100, 30: 6 };
+  //   // console.log(iWantToGet(230, limits)); // {30: 1, 100: 2}
+  //   // console.log(iWantToGet(150, limits)); // {50: 1, 100: 1}
+  //   console.log(iWantToGet(120, limits)); // {30: 4}
+  //   // console.log(iWantToGet(275, limits)); //
+  //   // console.log(iWantToGet(50000, limits)); //
+  // }
+  {
+    //Простые числа
+    function isPrime(num) {
+      let res = [];
+      for (let i = 1; i <= num; i++) {
+        if (num % i === 0) {
+          res.push(i);
         }
       }
+      if (res.length === 2) {
+        return true;
+      }
+      return false;
     }
-
-    let nominals = Object.keys(limits)
-      .map(Number)
-      .sort((a, b) => b - a);
-
-    return collect(ammountRequired, nominals);
+    //>1 на себя и на 1
+    console.log(isPrime(3)); //true
+    console.log(isPrime(18)); //false
   }
-
-  let limits = { 1000: 5, 500: 2, 100: 5, 50: 100, 30: 6 };
-  console.log(iWantToGet(230, limits)); // {30: 1, 100: 2}
-  console.log(iWantToGet(150, limits)); // {50: 1, 100: 1}
-  console.log(iWantToGet(120, limits)); // {30: 4}
-  console.log(iWantToGet(275, limits)); //
-  console.log(iWantToGet(50000, limits)); //
 }
