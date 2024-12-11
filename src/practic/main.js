@@ -3895,21 +3895,30 @@
   // }
   {
     //Простые числа
+    // function isPrime(num) {
+    //   let res = [];
+    //   for (let i = 1; i <= num; i++) {
+    //     if (num % i === 0) {
+    //       res.push(i);
+    //     }
+    //   }
+    //   if (res.length > 2) {
+    //     return false;
+    //   }
+    //   return true;
+    // }
+
     function isPrime(num) {
       let res = [];
-      for (let i = 1; i <= num / 2; i++) {
-        debugger;
+      for (let i = 2, max = Math.sqrt(num); i <= max; i++) {
         if (num % i === 0) {
-          res.push(i);
+          return false;
         }
       }
-      if (res.length > 2) {
-        return false;
-      }
-      return true;
+      return num > 1;
     }
     //>1 на себя и на 1
     console.log(isPrime(3)); //true
-    console.log(isPrime(18)); //false
+    console.log(isPrime(8)); //false
   }
 }
