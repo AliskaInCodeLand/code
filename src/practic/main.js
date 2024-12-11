@@ -3908,17 +3908,42 @@
     //   return true;
     // }
 
-    function isPrime(num) {
-      let res = [];
-      for (let i = 2, max = Math.sqrt(num); i <= max; i++) {
-        if (num % i === 0) {
-          return false;
+    // function isPrime(num) {
+    //   let res = [];
+    //   for (let i = 2, max = Math.sqrt(num); i <= max; i++) {
+    //     if (num % i === 0) {
+    //       return false;
+    //     }
+    //   }
+    //   return num > 1;
+    // }
+    // //>1 на себя и на 1
+    // console.log(isPrime(3)); //true
+    // console.log(isPrime(8)); //false
+
+    //Функция выдающая массив всех простых чисел в диапазоне от 0 до заданного числа
+    function getPrimes(num) {
+      let result = [];
+      for (let i = 2; i <= num; i++) {
+        debugger;
+        let res = [];
+
+        for (let j = 1; j <= i; j++) {
+          if (i % j === 0) {
+            res.push([j]);
+          }
+        }
+        if (res.length === 2) {
+          result.push(i);
+          while (res.length > 0) {
+            res.pop();
+          }
         }
       }
-      return num > 1;
+      return result;
     }
-    //>1 на себя и на 1
-    console.log(isPrime(3)); //true
-    console.log(isPrime(8)); //false
+
+    console.log(getPrimes(32));
+    [2, 3, 5, 7];
   }
 }
