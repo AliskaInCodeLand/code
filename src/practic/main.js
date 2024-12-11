@@ -3815,24 +3815,53 @@
 // }
 
 //Решение задач 11/12
-{
-  function bank(money) {
-    const bank = [100, 50, 20, 10];
-    let res = [];
+// {
+//   function bank(money) {
+//     const bank = [100, 50, 20, 10];
+//     let res = [];
+//
+//     if (money > 0) {
+//       for (let i = 0; i <= bank.length; i++) {
+//         let note = bank[i];
+//         if (money - note >= 0) {
+//           money -= note;
+//           res.push(note);
+//         }
+//       }
+//       return res;
+//     } else {
+//       return "Sorry";
+//     }
+//   }
+//
+//   console.log(bank(180));
+// }
 
-    if (money > 0) {
-      for (let i = 0; i <= bank.length; i++) {
-        let note = bank[i];
-        if (money - note >= 0) {
-          money -= note;
-          res.push(note);
-        }
-      }
-      return res;
-    } else {
-      return "Sorry";
+{
+  function iWantToGet(amountRequired, limits) {
+    let res = {};
+    if (amountRequired > 0 || amountRequired % 10 === 0) {
+      Object.keys(limits)
+        .sort((a, b) => b - a)
+        .forEach((item) => {
+          debugger;
+          while (amountRequired - item >= 0 && limits[item] > 0) {
+            amountRequired -= item;
+            limits[item]--;
+            if (!res[item]) {
+              res[item] = 1;
+            } else {
+              res[item]++;
+            }
+          }
+        });
     }
+    return res;
   }
 
-  console.log(bank(180));
+  let limits = { 1000: 5, 500: 2, 100: 5, 50: 100, 30: 6 };
+  console.log(iWantToGet(200, limits)); // {100: 2}
+  console.log(iWantToGet(150, limits)); // {50: 1, 100: 1}
+  console.log(iWantToGet(120, limits)); // {30: 4}
+  // console.log(iWantToGet(275,limits)); //
 }
