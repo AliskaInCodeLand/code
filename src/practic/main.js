@@ -3787,29 +3787,52 @@
 //   console.log(checkPath({ x: 3, y: 0 }, { x: 5, y: 5 }));
 // }
 
+// {
+//   //Банкомат
+//   //Выдать наименьшее количество банкнот номиналом 100, 50, 20 и 10
+//
+//   function iWantToGet(ammountRequired) {
+//     let avalibleNotes = [100, 50, 20, 10];
+//     const result = [];
+//
+//     if (ammountRequired > 0) {
+//       for (let i = 0; i < avalibleNotes.length; i++) {
+//         let notes = avalibleNotes[i];
+//
+//         while (ammountRequired - notes >= 0) {
+//           ammountRequired -= notes;
+//           result.push(notes);
+//         }
+//       }
+//     } else {
+//       console.log("Pls enter new amount");
+//     }
+//
+//     return result;
+//   }
+//
+//   console.log(iWantToGet(0));
+// }
+
+//Решение задач 11/12
 {
-  //Банкомат
-  //Выдать наименьшее количество банкнот номиналом 100, 50, 20 и 10
+  function bank(money) {
+    const bank = [100, 50, 20, 10];
+    let res = [];
 
-  function iWantToGet(ammountRequired) {
-    let avalibleNotes = [100, 50, 20, 10];
-    const result = [];
-
-    if (ammountRequired > 0) {
-      for (let i = 0; i < avalibleNotes.length; i++) {
-        let notes = avalibleNotes[i];
-
-        while (ammountRequired - notes >= 0) {
-          ammountRequired -= notes;
-          result.push(notes);
+    if (money > 0) {
+      for (let i = 0; i <= bank.length; i++) {
+        let note = bank[i];
+        if (money - note >= 0) {
+          money -= note;
+          res.push(note);
         }
       }
+      return res;
     } else {
-      console.log("Pls enter new amount");
+      return "Sorry";
     }
-
-    return result;
   }
 
-  console.log(iWantToGet(0));
+  console.log(bank(180));
 }
