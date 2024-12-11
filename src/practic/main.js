@@ -3792,10 +3792,18 @@
   //Выдать наименьшее количество банкнот номиналом 100, 50, 20 и 10
 
   function iWantToGet(ammountRequired) {
-    let avalibleNotes = [10, 20, 50, 100];
+    let avalibleNotes = [100, 50, 20, 10];
     const result = [];
 
     if (ammountRequired > 0) {
+      for (let i = 0; i < avalibleNotes.length; i++) {
+        let notes = avalibleNotes[i];
+
+        while (ammountRequired - notes >= 0) {
+          ammountRequired -= notes;
+          result.push(notes);
+        }
+      }
     } else {
       console.log("Pls enter new amount");
     }
@@ -3803,5 +3811,5 @@
     return result;
   }
 
-  console.log(iWantToGet(160));
+  console.log(iWantToGet(0));
 }
