@@ -3922,28 +3922,43 @@
     // console.log(isPrime(8)); //false
 
     //Функция выдающая массив всех простых чисел в диапазоне от 0 до заданного числа
+    // function getPrimes(num) {
+    //   let result = [];
+    //   for (let i = 2; i <= num; i++) {
+    //     debugger;
+    //     let res = [];
+    //
+    //     for (let j = 1; j <= i; j++) {
+    //       if (i % j === 0) {
+    //         res.push([j]);
+    //       }
+    //     }
+    //     if (res.length === 2) {
+    //       result.push(i);
+    //       while (res.length > 0) {
+    //         res.pop();
+    //       }
+    //     }
+    //   }
+    //   return result;
+    // }
+
     function getPrimes(num) {
-      let result = [];
+      let seive = [];
+      let primes = [];
       for (let i = 2; i <= num; i++) {
         debugger;
-        let res = [];
-
-        for (let j = 1; j <= i; j++) {
-          if (i % j === 0) {
-            res.push([j]);
-          }
-        }
-        if (res.length === 2) {
-          result.push(i);
-          while (res.length > 0) {
-            res.pop();
+        if (!seive[i]) {
+          primes.push(i);
+          for (let j = i * i; j <= num; j += i) {
+            seive[j] = true;
           }
         }
       }
-      return result;
+      return primes;
     }
 
-    console.log(getPrimes(32));
+    console.log(getPrimes(8));
     [2, 3, 5, 7];
   }
 }
