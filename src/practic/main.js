@@ -3965,19 +3965,34 @@
 
 //Решение задач 12/12
 {
+  // function sumOfTwo(arr, num) {
+  //   let res = [];
+  //   for (let i = 0; i < arr.length; i++) {
+  //     debugger;
+  //     for (let j = i + 1; j < arr.length; j++) {
+  //       if (arr[i] + arr[j] === num) {
+  //         res.push(i);
+  //         res.push(j);
+  //       }
+  //     }
+  //   }
+  //   return res;
+  // }
+
   function sumOfTwo(arr, num) {
-    let res = [];
+    let numObj = {};
     for (let i = 0; i < arr.length; i++) {
       debugger;
-      for (let j = i + 1; j < arr.length; j++) {
-        if (arr[i] + arr[j] === num) {
-          res.push(arr[i]);
-          res.push(arr[j]);
-        }
+      numObj[arr[i]] = i;
+    }
+    for (let j = 0; j < arr.length; j++) {
+      const diff = num - arr[j];
+      if (numObj[diff] && numObj[diff] !== j) {
+        return [j, numObj[diff]];
       }
     }
-    return res;
+    return [];
   }
 
-  console.log(sumOfTwo([2, 7, 11, 15], 9));
+  console.log(sumOfTwo([2, 7, 11, 15], 14));
 }
