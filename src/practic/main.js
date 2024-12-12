@@ -3837,128 +3837,147 @@
 //   console.log(bank(180));
 // }
 
+// {
+// function iWantToGet(amountRequired, limits) {
+//   let res = {};
+//   if (amountRequired > 0 || amountRequired % 10 === 0) {
+//     Object.keys(limits)
+//       .sort((a, b) => b - a)
+//       .forEach((item) => {
+//         debugger;
+//         while (amountRequired - item >= 0 && limits[item] > 0) {
+//           amountRequired -= item;
+//           limits[item]--;
+//           if (!res[item]) {
+//             res[item] = 1;
+//           } else {
+//             res[item]++;
+//           }
+//         }
+//       });
+//   }
+//   return res;
+// }
+
+//   function iWantToGet(ammountRequired, limits) {
+//     debugger;
+//     function collect(ammount, nominals) {
+//       if (ammount === 0) return {};
+//       if (!nominals.length) return;
+//
+//       let currentNominal = nominals[0]; //номинал банкноты
+//       let availableNotes = limits[currentNominal]; //количество банкнот
+//       let notesNeeded = Math.floor(ammount / currentNominal); //количество необходимых банкнот
+//       let numberOfNotes = Math.min(availableNotes, notesNeeded); //банкноты, которые автомат сможет выдать
+//
+//       for (let i = numberOfNotes; i >= 0; i--) {
+//         let res = collect(ammount - currentNominal * i, nominals.slice(1));
+//
+//         if (res) {
+//           return i ? { [currentNominal]: i, ...res } : res;
+//         }
+//       }
+//     }
+//
+//     let nominals = Object.keys(limits)
+//       .map(Number)
+//       .sort((a, b) => b - a);
+//
+//     return collect(ammountRequired, nominals);
+//   }
+//
+//   let limits = { 1000: 5, 500: 2, 100: 5, 50: 100, 30: 6 };
+//   // console.log(iWantToGet(230, limits)); // {30: 1, 100: 2}
+//   // console.log(iWantToGet(150, limits)); // {50: 1, 100: 1}
+//   console.log(iWantToGet(120, limits)); // {30: 4}
+//   // console.log(iWantToGet(275, limits)); //
+//   // console.log(iWantToGet(50000, limits)); //
+// }
+//   {
+//     //Простые числа
+//     // function isPrime(num) {
+//     //   let res = [];
+//     //   for (let i = 1; i <= num; i++) {
+//     //     if (num % i === 0) {
+//     //       res.push(i);
+//     //     }
+//     //   }
+//     //   if (res.length > 2) {
+//     //     return false;
+//     //   }
+//     //   return true;
+//     // }
+//
+//     // function isPrime(num) {
+//     //   let res = [];
+//     //   for (let i = 2, max = Math.sqrt(num); i <= max; i++) {
+//     //     if (num % i === 0) {
+//     //       return false;
+//     //     }
+//     //   }
+//     //   return num > 1;
+//     // }
+//     // //>1 на себя и на 1
+//     // console.log(isPrime(3)); //true
+//     // console.log(isPrime(8)); //false
+//
+//     //Функция выдающая массив всех простых чисел в диапазоне от 0 до заданного числа
+//     // function getPrimes(num) {
+//     //   let result = [];
+//     //   for (let i = 2; i <= num; i++) {
+//     //     debugger;
+//     //     let res = [];
+//     //
+//     //     for (let j = 1; j <= i; j++) {
+//     //       if (i % j === 0) {
+//     //         res.push([j]);
+//     //       }
+//     //     }
+//     //     if (res.length === 2) {
+//     //       result.push(i);
+//     //       while (res.length > 0) {
+//     //         res.pop();
+//     //       }
+//     //     }
+//     //   }
+//     //   return result;
+//     // }
+//
+//   //   function getPrimes(num) {
+//   //     let seive = [];
+//   //     let primes = [];
+//   //     for (let i = 2; i <= num; i++) {
+//   //       debugger;
+//   //       if (!seive[i]) {
+//   //         primes.push(i);
+//   //         for (let j = i * i; j <= num; j += i) {
+//   //           seive[j] = true;
+//   //         }
+//   //       }
+//   //     }
+//   //     return primes;
+//   //   }
+//   //
+//   //   console.log(getPrimes(8));
+//   //   [2, 3, 5, 7];
+//   // }
+// }
+
+//Решение задач 12/12
 {
-  // function iWantToGet(amountRequired, limits) {
-  //   let res = {};
-  //   if (amountRequired > 0 || amountRequired % 10 === 0) {
-  //     Object.keys(limits)
-  //       .sort((a, b) => b - a)
-  //       .forEach((item) => {
-  //         debugger;
-  //         while (amountRequired - item >= 0 && limits[item] > 0) {
-  //           amountRequired -= item;
-  //           limits[item]--;
-  //           if (!res[item]) {
-  //             res[item] = 1;
-  //           } else {
-  //             res[item]++;
-  //           }
-  //         }
-  //       });
-  //   }
-  //   return res;
-  // }
-
-  //   function iWantToGet(ammountRequired, limits) {
-  //     debugger;
-  //     function collect(ammount, nominals) {
-  //       if (ammount === 0) return {};
-  //       if (!nominals.length) return;
-  //
-  //       let currentNominal = nominals[0]; //номинал банкноты
-  //       let availableNotes = limits[currentNominal]; //количество банкнот
-  //       let notesNeeded = Math.floor(ammount / currentNominal); //количество необходимых банкнот
-  //       let numberOfNotes = Math.min(availableNotes, notesNeeded); //банкноты, которые автомат сможет выдать
-  //
-  //       for (let i = numberOfNotes; i >= 0; i--) {
-  //         let res = collect(ammount - currentNominal * i, nominals.slice(1));
-  //
-  //         if (res) {
-  //           return i ? { [currentNominal]: i, ...res } : res;
-  //         }
-  //       }
-  //     }
-  //
-  //     let nominals = Object.keys(limits)
-  //       .map(Number)
-  //       .sort((a, b) => b - a);
-  //
-  //     return collect(ammountRequired, nominals);
-  //   }
-  //
-  //   let limits = { 1000: 5, 500: 2, 100: 5, 50: 100, 30: 6 };
-  //   // console.log(iWantToGet(230, limits)); // {30: 1, 100: 2}
-  //   // console.log(iWantToGet(150, limits)); // {50: 1, 100: 1}
-  //   console.log(iWantToGet(120, limits)); // {30: 4}
-  //   // console.log(iWantToGet(275, limits)); //
-  //   // console.log(iWantToGet(50000, limits)); //
-  // }
-  {
-    //Простые числа
-    // function isPrime(num) {
-    //   let res = [];
-    //   for (let i = 1; i <= num; i++) {
-    //     if (num % i === 0) {
-    //       res.push(i);
-    //     }
-    //   }
-    //   if (res.length > 2) {
-    //     return false;
-    //   }
-    //   return true;
-    // }
-
-    // function isPrime(num) {
-    //   let res = [];
-    //   for (let i = 2, max = Math.sqrt(num); i <= max; i++) {
-    //     if (num % i === 0) {
-    //       return false;
-    //     }
-    //   }
-    //   return num > 1;
-    // }
-    // //>1 на себя и на 1
-    // console.log(isPrime(3)); //true
-    // console.log(isPrime(8)); //false
-
-    //Функция выдающая массив всех простых чисел в диапазоне от 0 до заданного числа
-    // function getPrimes(num) {
-    //   let result = [];
-    //   for (let i = 2; i <= num; i++) {
-    //     debugger;
-    //     let res = [];
-    //
-    //     for (let j = 1; j <= i; j++) {
-    //       if (i % j === 0) {
-    //         res.push([j]);
-    //       }
-    //     }
-    //     if (res.length === 2) {
-    //       result.push(i);
-    //       while (res.length > 0) {
-    //         res.pop();
-    //       }
-    //     }
-    //   }
-    //   return result;
-    // }
-
-    function getPrimes(num) {
-      let seive = [];
-      let primes = [];
-      for (let i = 2; i <= num; i++) {
-        debugger;
-        if (!seive[i]) {
-          primes.push(i);
-          for (let j = i * i; j <= num; j += i) {
-            seive[j] = true;
-          }
+  function sumOfTwo(arr, num) {
+    let res = [];
+    for (let i = 0; i < arr.length; i++) {
+      debugger;
+      for (let j = i + 1; j < arr.length; j++) {
+        if (arr[i] + arr[j] === num) {
+          res.push(arr[i]);
+          res.push(arr[j]);
         }
       }
-      return primes;
     }
-
-    console.log(getPrimes(8));
-    [2, 3, 5, 7];
+    return res;
   }
+
+  console.log(sumOfTwo([2, 7, 11, 15], 9));
 }
