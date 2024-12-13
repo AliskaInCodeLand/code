@@ -46,16 +46,42 @@
 //
 //   console.log(threeSum(array)); // [[-1, -1, 2], [-1, 0, 1]]
 // }
+// {
+//   const arr1 = [1, 1, 2];
+//   const arr2 = [0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 3, 3, 4];
+//
+//   let removeDuplicates = function (nums) {
+//     for (let i = 0; i < nums.length; i++) {
+//       debugger;
+//       if (nums[i] === nums[i - 1]) {
+//         nums.splice(i, 1);
+//         i--;
+//       }
+//     }
+//     return nums.length;
+//   };
+//
+//   console.log(removeDuplicates(arr1));
+//   console.log(arr1);
+//   console.log(removeDuplicates(arr2));
+//   console.log(arr2);
+// }
 {
-  const arr1 = [1, 1, 2];
-  const arr2 = [0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 3, 3, 4];
+  const input = [4, 1, 2, 1, 2];
 
-  let removeDuplicates = function (nums) {
-    return nums.filter((num, index) => nums[index] !== nums[index + 1]);
-  };
-
-  console.log(removeDuplicates(arr1));
-  console.log(arr1);
-  console.log(removeDuplicates(arr2));
-  console.log(arr2);
+  function singleCode(nums) {
+    for (let i = 0; i < nums.length - 1; i++) {
+      debugger;
+      for (let j = i + 1; j < nums.length; j++) {
+        if (nums[i] === nums[j]) {
+          nums.splice(i, 1);
+          nums.splice(j - i, 1);
+          i--;
+          j--;
+        }
+      }
+    }
+    return nums;
+  }
+  console.log(singleCode(input));
 }
