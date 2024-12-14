@@ -84,22 +84,34 @@
   //   return nums;
   // }
 
+  // function singleCode(nums) {
+  //   let uniq = new Set();
+  //   let uniqSum = 0;
+  //   let numSum = 0;
+  //
+  //   for (let i = 0; i < nums.length; i++) {
+  //     debugger;
+  //     const current = nums[i];
+  //
+  //     if (!uniq.has(current)) {
+  //       uniq.add(current);
+  //       uniqSum += current;
+  //     }
+  //     numSum += current;
+  //   }
+  //   return uniqSum * 2 - numSum;
+  // }
+
   function singleCode(nums) {
-    let uniq = new Set();
-    let uniqSum = 0;
-    let numSum = 0;
+    let uniq = Array.from(new Set(nums));
 
-    for (let i = 0; i < nums.length; i++) {
-      debugger;
-      const current = nums[i];
+    let reduceSum = (a, b) => a + b;
 
-      if (!uniq.has(current)) {
-        uniq.add(current);
-        uniqSum += current;
-      }
-      numSum += current;
-    }
+    let uniqSum = uniq.reduce(reduceSum);
+    let numSum = nums.reduce(reduceSum);
+
     return uniqSum * 2 - numSum;
   }
+
   console.log(singleCode(input));
 }
