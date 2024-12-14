@@ -66,52 +66,86 @@
 //   console.log(removeDuplicates(arr2));
 //   console.log(arr2);
 // }
+// {
+//   const input = [4, 1, 2, 1, 2];
+//
+//   // function singleCode(nums) {
+//   //   for (let i = 0; i < nums.length - 1; i++) {
+//   //     debugger;
+//   //     for (let j = i + 1; j < nums.length; j++) {
+//   //       if (nums[i] === nums[j]) {
+//   //         nums.splice(i, 1);
+//   //         nums.splice(j - i, 1);
+//   //         i--;
+//   //         j--;
+//   //       }
+//   //     }
+//   //   }
+//   //   return nums;
+//   // }
+//
+//   // function singleCode(nums) {
+//   //   let uniq = new Set();
+//   //   let uniqSum = 0;
+//   //   let numSum = 0;
+//   //
+//   //   for (let i = 0; i < nums.length; i++) {
+//   //     debugger;
+//   //     const current = nums[i];
+//   //
+//   //     if (!uniq.has(current)) {
+//   //       uniq.add(current);
+//   //       uniqSum += current;
+//   //     }
+//   //     numSum += current;
+//   //   }
+//   //   return uniqSum * 2 - numSum;
+//   // }
+//
+//   function singleCode(nums) {
+//     let uniq = Array.from(new Set(nums));
+//
+//     let reduceSum = (a, b) => a + b;
+//
+//     let uniqSum = uniq.reduce(reduceSum);
+//     let numSum = nums.reduce(reduceSum);
+//
+//     return uniqSum * 2 - numSum;
+//   }
+//
+//   console.log(singleCode(input));
+// }
+
+//Решение задач 14/12
 {
-  const input = [4, 1, 2, 1, 2];
+  const input1 = [1, 0, 0, 0, 1, 0, 1]; //2
+  const input2 = [1, 0, 0, 0]; //3
 
-  // function singleCode(nums) {
-  //   for (let i = 0; i < nums.length - 1; i++) {
-  //     debugger;
-  //     for (let j = i + 1; j < nums.length; j++) {
-  //       if (nums[i] === nums[j]) {
-  //         nums.splice(i, 1);
-  //         nums.splice(j - i, 1);
-  //         i--;
-  //         j--;
-  //       }
-  //     }
-  //   }
-  //   return nums;
-  // }
+  const maxDistToClosest = function (seats) {
+    let max = 0;
+    let sumNone = 0;
+    let num = 0;
+    for (let i = 0; i < seats.length; i++) {
+      debugger;
+      if (seats[i] === 1 && num === 0) {
+        num = seats[i];
+        continue;
+      }
+      if (seats[i] === 0) {
+        sumNone++;
+        if (sumNone > max) {
+          max = sumNone;
+        }
+      }
+      if (seats[i] === 1 && num !== 0) {
+        num = 0;
+        sumNone = 0;
+        max--;
+      }
+    }
+    return max;
+  };
 
-  // function singleCode(nums) {
-  //   let uniq = new Set();
-  //   let uniqSum = 0;
-  //   let numSum = 0;
-  //
-  //   for (let i = 0; i < nums.length; i++) {
-  //     debugger;
-  //     const current = nums[i];
-  //
-  //     if (!uniq.has(current)) {
-  //       uniq.add(current);
-  //       uniqSum += current;
-  //     }
-  //     numSum += current;
-  //   }
-  //   return uniqSum * 2 - numSum;
-  // }
-
-  function singleCode(nums) {
-    let uniq = Array.from(new Set(nums));
-
-    let reduceSum = (a, b) => a + b;
-
-    let uniqSum = uniq.reduce(reduceSum);
-    let numSum = nums.reduce(reduceSum);
-
-    return uniqSum * 2 - numSum;
-  }
-
-  console.log(singleCode(input));
+  console.log(maxDistToClosest(input1));
+  console.log(maxDistToClosest(input2));
 }
