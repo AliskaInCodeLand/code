@@ -1,90 +1,55 @@
 //Решение задач 15/12
-//sum of Three
-{
-  const array = [-1, 0, 1, 2, -1, -4];
+//
+const input1 = [
+  [1, 1, 1],
+  [1, 0, 1],
+  [1, 1, 1],
+];
 
-  // const threeSum = function (nums, target = 0) {
-  //   const res = [];
-  //
-  //   if (nums.length < 3) return res;
-  //
-  //   nums = nums.sort((a, b) => a - b);
-  //
-  //   for (let i = 1; i < nums.length - 2; i++) {
-  //     if (nums[i] > target) {
-  //       break;
-  //     }
-  //
-  //     if (i > 0 && nums[i] === nums[i - 1]) {
-  //       continue;
-  //     }
-  //
-  //     let j = i + 1;
-  //     let k = nums.length - 1;
-  //     while (j < k) {
-  //       let sum = nums[i] + nums[j] + nums[k];
-  //       if (sum === target) {
-  //         res.push([nums[i], nums[j], nums[k]]);
-  //
-  //         while (nums[j] === nums[j + 1]) j++;
-  //         while (nums[j] === nums[j + 1]) k++;
-  //
-  //         j++;
-  //         k--;
-  //         continue;
-  //       }
-  //       if (sum < target) {
-  //         j++;
-  //         continue;
-  //       }
-  //       if (sum > target) {
-  //         k--;
-  //         continue;
-  //       }
-  //     }
-  //   }
-  //   return res;
-  // };
+const input2 = [
+  [0, 1, 2, 0],
+  [3, 4, 5, 2],
+  [1, 3, 1, 5],
+];
 
-  const threeSum = function (nums, target = 0) {
-    let res = [];
+const setZeroes = function (matrix) {
+  let isCol = false;
 
-    nums = nums.sort((a, b) => a - b);
-
-    if (nums.length < 3) return res;
-
-    for (let i = 0; i < nums.length - 2; i++) {
-      if (i > 0 && nums[i] === nums[i - 1]) continue;
-
-      let j = i + 1;
-      let k = nums.length - 1;
-      while (j < k) {
-        let sum = nums[i] + nums[j] + nums[k];
-        if (sum === target) {
-          res.push([nums[i], nums[j], nums[k]]);
-
-          while (nums[j] === nums[j + 1]) j++;
-          while (nums[k] === nums[k - 1]) k--;
-
-          j++;
-          k--;
-          continue;
-        }
-
-        if (sum < target) {
-          j++;
-          continue;
-        }
-
-        if (sum > target) {
-          k--;
-          continue;
-        }
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
+      if (matrix[i][j] === 0) {
+        matrix[i][0] = 0;
+        matrix[0][j] = 0;
+        isCol = true;
       }
     }
+  }
 
-    return res;
-  };
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
+      if (matrix[i][0] === 0) {
+        while (matrix[i].length > 0) {
+          matrix[i][j] = 0;
+          j++;
+        }
 
-  console.log(threeSum(array));
-}
+        matrix[i].forEach((el) => (el = 0));
+      }
+      if (matrix[0][j] === 0 && isCol) {
+        matrix[i][j] = 0;
+      }
+    }
+  }
+
+  return matrix;
+};
+
+console.log(setZeroes(input2));
+
+let user = { name: "John" };
+
+let admin = user;
+
+admin.name = "Pete"; // изменено по ссылке из переменной "admin"
+
+alert(user.name); // 'Pete', изменения видны по ссылке из переменной "user"
