@@ -84,8 +84,32 @@ let solveSudoku = function (board) {
     return null;
   };
 
+  const validate = (num, pos, board) => {
+    const [r, c] = pos;
+
+    //Check rows
+    for (let i = 0; i < size; i++) {
+      if (board[i][c] === num && i !== r) {
+        return false;
+      }
+    }
+
+    //Check cols
+    for (let i = 0; i < size; i++) {
+      if (board[r][i] === num && i !== c) {
+        return false;
+      }
+    }
+
+    return true;
+  };
+
   const solve = () => {
     const currPos = findEmpty(board);
+
+    if (currPos === null) {
+      return true;
+    }
 
     return false;
   };
