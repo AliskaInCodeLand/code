@@ -101,6 +101,18 @@ let solveSudoku = function (board) {
       }
     }
 
+    //Check box
+    const bowRow = Math.floor(r / boxSize) * boxSize;
+    const bowCol = Math.floor(c / boxSize) * boxSize;
+
+    for (let i = 0; i < boxRow + boxSize; i++) {
+      for (let j = 0; j < boxCol + boxSize; j++) {
+        if (board[i][j] === num && i !== r && j !== c) {
+          return false;
+        }
+      }
+    }
+
     return true;
   };
 
