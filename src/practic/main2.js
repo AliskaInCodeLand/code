@@ -102,11 +102,11 @@ let solveSudoku = function (board) {
     }
 
     //Check box
-    const bowRow = Math.floor(r / boxSize) * boxSize;
-    const bowCol = Math.floor(c / boxSize) * boxSize;
+    const boxRow = Math.floor(r / boxSize) * boxSize;
+    const boxCol = Math.floor(c / boxSize) * boxSize;
 
-    for (let i = 0; i < boxRow + boxSize; i++) {
-      for (let j = 0; j < boxCol + boxSize; j++) {
+    for (let i = boxRow; i < boxSize; i++) {
+      for (let j = boxCol; j < boxSize; j++) {
         if (board[i][j] === num && i !== r && j !== c) {
           return false;
         }
@@ -146,5 +146,5 @@ let solveSudoku = function (board) {
   return board;
 };
 
-console.log(input);
-console.log(solveSudoku(input));
+console.table(input);
+console.table(solveSudoku(input));
