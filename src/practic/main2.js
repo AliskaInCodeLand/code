@@ -154,25 +154,41 @@
 
 //Решение задачи 19/12
 
-const input1 = 121; //output: true
-const input2 = -121; //output: false
-const input3 = 10; //output: false
+// const input1 = 121; //output: true
+// const input2 = -121; //output: false
+// const input3 = 10; //output: false
+//
+// function isPalindromeNumber(x) {
+//   if (x < 0) return false;
+//   if (x < 10) return true;
+//   if (x % 10 === 0) return false;
+//
+//   let rev = 0;
+//   while (x > rev) {
+//     rev *= 10;
+//     rev += x % 10;
+//     x = Math.trunc(x / 10);
+//   }
+//
+//   return x === rev || x === Math.trunc(rev / 10);
+// }
+//
+// console.log(isPalindromeNumber(input1));
+// console.log(isPalindromeNumber(input2));
+// console.log(isPalindromeNumber(input3));
 
-function isPalindromeNumber(x) {
-  if (x < 0) return false;
-  if (x < 10) return true;
-  if (x % 10 === 0) return false;
+//Лабиринт
+let maze = [
+  [1, 1, 1, 0, 0, 1],
+  [1, 1, 1, 1, 0, 1],
+  [0, 0, 0, 0, 0, 0],
+  [0, 1, 1, 1, 1, 1],
+  [0, 0, 0, 0, 0, 0],
+  [1, 1, 1, 1, 1, 0],
+];
 
-  let rev = 0;
-  while (x > rev) {
-    rev *= 10;
-    rev += x % 10;
-    x = Math.trunc(x / 10);
-  }
+console.log(maze);
 
-  return x === rev || x === Math.trunc(rev / 10);
-}
+function checkPath(start, end) {}
 
-console.log(isPalindromeNumber(input1));
-console.log(isPalindromeNumber(input2));
-console.log(isPalindromeNumber(input3));
+console.log(checkPath({ x: 3, y: 0 }, { x: 5, y: 5 }));
