@@ -194,6 +194,14 @@ function checkPath(start, end) {
 
   let siblings = getValidSib(start);
 
+  if (siblings.length > 0) {
+    for (let i = 0; i < siblings.length; i++) {
+      let current = siblings[i];
+
+      let isSolves = current.x === end.x && current.y === end.y;
+      let notVisited = maze[current.y][current.x] !== 5;
+    }
+  }
   return false;
 }
 
