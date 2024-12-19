@@ -200,6 +200,10 @@ function checkPath(start, end) {
 
       let isSolves = current.x === end.x && current.y === end.y;
       let notVisited = maze[current.y][current.x] !== 5;
+
+      if (isSolves || (notVisited && checkPath(current, end))) {
+        return true;
+      }
     }
   }
   return false;
