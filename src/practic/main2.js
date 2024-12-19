@@ -189,6 +189,12 @@ let maze = [
 
 console.log(maze);
 
-function checkPath(start, end) {}
+function checkPath(start, end) {
+  maze[start.y][start.x] = 5;
+
+  let siblings = getValidSib(start);
+
+  return false;
+}
 
 console.log(checkPath({ x: 3, y: 0 }, { x: 5, y: 5 }));
