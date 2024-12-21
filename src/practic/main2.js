@@ -248,3 +248,10 @@ let prices = {
   orange: 2,
   meat: 4,
 };
+let salaries = {
+  John: 100,
+  Pete: 300,
+  Mary: 250,
+};
+
+alert(sumSalaries(salaries)); // 650
