@@ -233,25 +233,25 @@
 //
 // console.log(checkPath({ x: 3, y: 0 }, { x: 5, y: 5 }));
 
-let user = {
-  name: "John",
-  age: 30,
-};
-
-// перебор значений
-for (let value of Object.values(user)) {
-  alert(value); // John, затем 30
-}
-
-let prices = {
-  banana: 1,
-  orange: 2,
-  meat: 4,
-};
-let salaries = {
-  John: 100,
-  Pete: 300,
-  Mary: 250,
-};
-
-alert(sumSalaries(salaries)); // 650
+// let user = {
+//   name: "John",
+//   age: 30,
+// };
+//
+// // перебор значений
+// for (let value of Object.values(user)) {
+//   alert(value); // John, затем 30
+// }
+//
+// let prices = {
+//   banana: 1,
+//   orange: 2,
+//   meat: 4,
+// };
+// let salaries = {
+//   John: 100,
+//   Pete: 300,
+//   Mary: 250,
+// };
+//
+// alert(sumSalaries(salaries)); // 650
