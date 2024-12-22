@@ -1,33 +1,5 @@
-function getFunc() {
-  let value = "test";
+// бинарный плюс использует хинт "default"
+let total = obj1 + obj2;
 
-  let func = new Function("alert(value)");
-
-  return func;
-}
-
-getFunc()(); // ошибка: value не определено
-
-function getFunc() {
-  let value = "test";
-
-  let func = function () {
-    alert(value);
-  };
-
-  return func;
-}
-
-getFunc()(); // "test", из лексического окружения функции getFunc
-
-// вывод
-alert(obj);
-
-// используем объект в качестве ключа
-anotherObj[obj] = 123;
-
-// вывод
-alert(obj);
-
-// используем объект в качестве ключа
-anotherObj[obj] = 123;
+// obj == number использует хинт "default"
+if (user == 1) { ... };
