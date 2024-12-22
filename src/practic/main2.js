@@ -19,3 +19,9 @@ function getFunc() {
 }
 
 getFunc()(); // "test", из лексического окружения функции getFunc
+
+// вывод
+alert(obj);
+
+// используем объект в качестве ключа
+anotherObj[obj] = 123;
